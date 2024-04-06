@@ -10,6 +10,4 @@
             <a href=""><img src="" alt="shopping cart"></a>
         </header>
     <?php }
-
-    output_header();
 ?>
