@@ -2,11 +2,10 @@
     function output_header() {?>
         <header>
             <a href=""><h1 id="logo-txt">SaS</h1></a>
-            <a href=""><h1>Browse Items</h1></a>
+            <img src="" alt="Search Icon">
             <input type="text" id="search-bar">
-            <a href=""><h1 id="login-btn">Login</h1></a>
-            <a href=""><h1 id="register-btn">Register</h1></a>
-            <a id="user-profile"><img src="" alt="profile picture"></a>
+            <a href="login.php"><h1 id="login-btn">Login</h1></a> <!-- login page not implemented -->
+            <a id="user-profile" href="profile.php"><img src="" alt="profile picture"></a> <!-- profile page not implemented -->
             <a href=""><img src="" alt="shopping cart"></a>
         </header>
     <?php }
