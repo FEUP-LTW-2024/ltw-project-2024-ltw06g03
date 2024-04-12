@@ -9,16 +9,25 @@ output_head("Smooth As Silk");
 <body>
     <?php output_header(); ?>
     <h1 id="big-logo">SAS</h1>
-    <section>
-        <div>
-            Category
-        </div>
-        <div>
-            Category
-        </div>
-        <div>
-            Category
-        </div>
+    <section id="main-page">
+        <ul>
+            <li>Category</li>
+            <li>Category</li>
+            <li>Category</li>
+            <li>Category</li>
+            <li>Category</li>
+            <li>Category</li>
+            <li>Category</li>
+            <li>Category</li>
+            <li>Category</li>
+            <li>Category</li>
+            <li>Category</li>
+            <li>Category</li>
+            <li>Category</li>
+            <li>Category</li>
+            <li>Category</li>
+            <li>Category</li>   
+        </ul>
     </section>
     <?php output_footer(); ?>
 
