@@ -34,3 +34,10 @@ body
     border-color: var(--green);
     border: none;
 }
+
+footer {
+    background-color: var(--very_dark_green);
+    color: white;
+    padding: 1em;
+    text-align: center;
+}
