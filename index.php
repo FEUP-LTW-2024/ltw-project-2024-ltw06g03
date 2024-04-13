@@ -1,8 +1,13 @@
 <?php
-
+include_once("database/connect.php");
 include_once("templates/head.php");
 include_once("templates/header.php");
 include_once("templates/footer.php");
+/*
+$db= getDatabaseConnection("");
+$stmt = $db->prepare('SELECT * FROM categories') ;
+$stmt->execute();
+$categories = $stmt->fetchAll();*/
 
 output_head("Smooth As Silk");
 ?>
@@ -11,22 +16,22 @@ output_head("Smooth As Silk");
     <h1 id="big-logo">SAS</h1>
     <section id="main-page">
         <ul>
-            <li>Category</li>
-            <li>Category</li>
-            <li>Category</li>
-            <li>Category</li>
-            <li>Category</li>
-            <li>Category</li>
-            <li>Category</li>
-            <li>Category</li>
-            <li>Category</li>
-            <li>Category</li>
-            <li>Category</li>
-            <li>Category</li>
-            <li>Category</li>
-            <li>Category</li>
-            <li>Category</li>
-            <li>Category</li>   
+            <?php
+                // foreach($categories as $category) {
+                //     echo "<li><a href=''>" . $category['name'] . "</a></li>";
+                // }
+            ?>
+            <li><a href="">Category</a></li>
+            <li><a href="">Category</a></li>
+            <li><a href="">Category</a></li>
+            <li><a href="">Category</a></li>
+            <li><a href="">Category</a></li>
+            <li><a href="">Category</a></li>
+            <li><a href="">Category</a></li>
+            <li><a href="">Category</a></li>
+            <li><a href="">Category</a></li>
+            <li><a href="">Category</a></li>
+
         </ul>
     </section>
     <?php output_footer(); ?>
