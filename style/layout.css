@@ -24,6 +24,7 @@
 
 /* Footer */
 footer {
+    bottom: 0;
     text-align: center;
 }
 
@@ -43,8 +44,17 @@ footer {
 }
 
 
-.profile-picture-container {
+.profile-picture-container{
     display: flex;
     justify-content: center;
+    margin-top: 50px;
+    width: 100%;
+}
+
+#profile-page{
+    height: 700px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     margin-top: 50px;
 }

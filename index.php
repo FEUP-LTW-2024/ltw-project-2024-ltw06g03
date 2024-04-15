@@ -34,8 +34,8 @@ output_head("Smooth As Silk");
 
         </ul>
     </section>
-    <?php output_footer(); ?>
+    
 
 </body>
-
+<?php output_footer(); ?>
 </html>

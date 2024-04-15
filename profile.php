@@ -9,7 +9,7 @@ output_head("Smooth As Silk");
 <body>
     <?php output_header(); ?>
     <div class="profile-picture-container">
-        <a id="user-profile"><img src="./assets/usericon.png" alt="profile picture"></a>    
+        <a id="profile-picture"><img src="./assets/usericon.png" alt="profile picture"></a>    
     </div>
     <section id="profile-page">
         <h2>Profile</h2>
@@ -23,8 +23,9 @@ output_head("Smooth As Silk");
             <input type="submit" value="Update">
         </form>
     </section>
+    
     <?php output_footer(); ?>
-
 </body>
+
 
 </html>

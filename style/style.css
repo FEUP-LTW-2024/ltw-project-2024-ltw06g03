@@ -104,3 +104,10 @@ footer {
 /* Profile Page */
 
 
+#profile-picture > img
+{
+    align-items: center;
+    width: 200%;
+    background-color: var(--briht_green);
+    border-radius: 25px;
+}
