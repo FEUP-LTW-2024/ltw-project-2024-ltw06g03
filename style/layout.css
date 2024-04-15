@@ -41,3 +41,10 @@ footer {
 #main-page > ul > li:nth-child(5) {
     transform: translateY(-10px); 
 }
+
+
+.profile-picture-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 50px;
+}
