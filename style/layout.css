@@ -28,6 +28,12 @@ footer {
 }
 
 /* Main Page */
+#main-page {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
 #main-page > ul
 {
     display: flex;
@@ -36,8 +42,12 @@ footer {
     overflow: hidden;
 }
 
-
 #main-page > ul > li:first-child,
 #main-page > ul > li:nth-child(5) {
-    transform: translateY(-10px); 
+    transform: translateY(-15px); 
+}
+
+.arrow 
+{
+    
 }
