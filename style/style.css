@@ -1,0 +1,106 @@
+@import url('colors.css');
+body
+{
+    margin: 0;
+    padding-top: 6em;    
+    background: linear-gradient(to bottom, var( --very_dark_green),var(--dark_green), var(--green), var(--green) ,var(--dark_green),var( --very_dark_green));
+ }
+
+/* Navbar */
+#navbar {
+    background-color: var(--very_dark_green);
+    padding: 1em; 
+    position: fixed;
+    top: 0;
+    width: 100%;
+}
+#navbar > ul li a
+{
+    text-decoration: none;
+    color: var(--beige);
+    font-weight: normal;
+}
+#navbar li {
+    margin: 0 1em;
+}
+
+#navbar ul {
+    margin: 0;
+    padding: 0;
+}
+#navbar li:nth-child(2)  {
+    padding-left: 0.5em;
+    padding-right: 1.5em;
+}
+#navbar li:nth-child(2) > img {
+    margin-top: 0.5em;
+    margin-bottom: 0.3em;
+    margin-right: 0.5em;
+    height: 1.7em;
+}
+#navbar li:nth-child(2) > input {
+    background-color: var(--green);
+    border: none;
+    outline: none;
+    color:var(--beige);
+}
+#search-bar {
+    width: 100%;
+    height: 40%;
+    border-radius: 25px;
+    background-color: var(--green);
+    border: none;
+}
+
+/* Footer */
+footer {
+    background-color: var(--very_dark_green);
+    color: white;
+    padding: 1em;
+}
+
+/* Main Page */
+
+#main-page > ul
+{
+    color: white;
+    width: 1000px; 
+    margin: auto;
+    padding: 0;
+    padding-bottom: 3em;
+    list-style-type: none;
+}
+
+#main-page > ul li a
+{
+    text-decoration: none;
+    font-weight: normal;
+    color: var(--beige);
+    background-color: var(--bright_green);
+    padding: 1.5em 3em;
+    border-radius: 15px;
+}
+
+#main-page 
+{
+    margin-bottom: 8em;
+}
+
+#main-page > ul li
+{
+   /* margin: 5em,1em,1em,2em;*/
+    margin-left: 1em;
+    margin-right: 1em;
+    margin-bot: 2em;
+    margin-top: 5em;
+    text-align: center;
+}
+
+
+#big-logo
+{
+    text-align: center;
+    font-size: 20em;
+    margin-top: 100px;
+    margin-bottom: 50px;
+}
