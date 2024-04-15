@@ -15,7 +15,7 @@ output_head("Smooth As Silk");
     <?php output_header(); ?>
     <h1 id="big-logo">SAS</h1>
     <section id="main-page">
-        <a href=""><img src="" alt=""></a>
+        <button class="arrow-left" ><img  src="./assets/search.png" alt="arrow-left"></button>
         <ul>
             <?php
                 // foreach($categories as $category) {
@@ -31,9 +31,8 @@ output_head("Smooth As Silk");
             <li><a href="">Category</a></li>
             <li><a href="">Caory</a></li>
             <li><a href="">Cateory</a></li>
-            <li><a href="">Category</a></li>
         </ul>
-        <a class="arrow" href=""><img src="" alt=""></a>
+        <button class="arrow-right" ><img  src="./assets/search.png" alt="arrow-right"></button>
     </section>
     <?php output_footer(); ?>
 </body>

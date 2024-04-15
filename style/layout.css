@@ -39,12 +39,13 @@ footer {
     display: flex;
     flex-direction: row;
     align-items: center;
+    justify-content: center;
     overflow: hidden;
 }
 
 #main-page > ul > li {
     justify-content: center;
-    align-items: center;;
+    align-items: center;
     display: flex;
 }
 #main-page > ul > li > a {
@@ -53,10 +54,6 @@ footer {
     align-items: center;
 }
 
-#main-page > ul > li:first-child,
-#main-page > ul > li:nth-child(5) {
-    transform: translateY(-15px); 
-}
 
 .arrow 
 {

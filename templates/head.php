@@ -9,6 +9,7 @@
             <link href="style/style.css" rel="stylesheet">
             <link href="style/layout.css" rel="stylesheet">
             <link href="style/responsive.css" rel="stylesheet">
+            <script src="script.js"></script>
         </head>
     <?php }
 ?>
