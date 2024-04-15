@@ -38,8 +38,19 @@ footer {
 {
     display: flex;
     flex-direction: row;
-    align-items: left;
+    align-items: center;
     overflow: hidden;
+}
+
+#main-page > ul > li {
+    justify-content: center;
+    align-items: center;;
+    display: flex;
+}
+#main-page > ul > li > a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 #main-page > ul > li:first-child,
