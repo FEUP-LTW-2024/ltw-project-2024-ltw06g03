@@ -1,0 +1,53 @@
+
+/* Navbar */
+#navbar li {
+    display: flex;
+    align-items: center;
+}
+
+#navbar li:nth-child(2) {
+    flex: 1;
+    display: flex;
+    justify-content: space-between;
+}
+
+#navbar li:nth-child(2) > input{
+    flex: 1;
+}
+
+#navbar ul {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+}
+
+/* Main Page */
+#main-page {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+#main-page > ul
+{
+    display: flex;
+    flex-direction: row;
+    align-items: left;
+    overflow: hidden;
+}
+
+#main-page > ul > li:first-child,
+#main-page > ul > li:nth-child(5) {
+    transform: translateY(-15px); 
+}
+
+.arrow 
+{
+    
+}
