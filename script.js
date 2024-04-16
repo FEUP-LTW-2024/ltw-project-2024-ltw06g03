@@ -36,10 +36,10 @@ document.addEventListener('DOMContentLoaded', function() {
         }, 900);
         setTimeout(() => {
             categoriesList.append(categoriesList.firstChild);
+            this.disabled = false;
         }, 901);
         categories.forEach(category =>{
             category.style.transition = 'transform 1s';            
-            this.disabled = false;
         });
     });
     function updateCategories(offset) {
