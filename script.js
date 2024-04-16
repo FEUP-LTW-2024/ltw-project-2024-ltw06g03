@@ -33,10 +33,10 @@ document.addEventListener('DOMContentLoaded', function() {
                 category.style.transition = 'transform 0s';
                 category.style.transform = null;
             });
-        }, 1100);
+        }, 900);
         setTimeout(() => {
             categoriesList.append(categoriesList.firstChild);
-        }, 1101);
+        }, 901);
         categories.forEach(category =>{
             category.style.transition = 'transform 1s';            
             this.disabled = false;
