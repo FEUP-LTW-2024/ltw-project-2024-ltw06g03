@@ -35,7 +35,7 @@ document.addEventListener('DOMContentLoaded', function() {
             });
         }, 900);
         setTimeout(() => {
-            categoriesList.append(categoriesList.firstChild);
+            categoriesList.append(categoriesList.firstElementChild);
             this.disabled = false;
         }, 901);
         categories.forEach(category =>{
