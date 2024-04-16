@@ -3,11 +3,8 @@
 }
 #main-page > ul > li
 {
-    transition: transform 1s ease;
+    transition: transform 1s ;
 }
-/*
-#main-page > ul > li:first-child,
-#main-page > ul > li:nth-child(5) {
-    transform: translateY(-15px); 
-}*/
+
+
 

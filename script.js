@@ -5,24 +5,42 @@ document.addEventListener('DOMContentLoaded', function() {
     const cycle_right = document.querySelector('.arrow-right');
     const categoriesList = document.querySelector('#main-page > ul');
     const categories = document.querySelectorAll('#main-page > ul li');
-    let categoryWidth = 0;
+    let categoryWidth = 220;
 
     cycle_right.addEventListener('click', function() {
-        categoryWidth += 220;
+        this.disabled = true;
         updateCategories(categoryWidth);
-        // categories.forEach(category =>{
-        //     category.style.transform = null;
-        // });
-        categoriesList.prepend(categoriesList.lastElementChild);
+        setTimeout(() => {
+            categories.forEach(category =>{
+                category.style.transition = 'transform 0s';
+                category.style.transform = null;
+            });
+        }, 900);
+        setTimeout(() => {
+            categoriesList.prepend(categoriesList.lastElementChild);
+            this.disabled = false;
+        }, 901);
+        categories.forEach(category =>{
+            category.style.transition = 'transform 1s';
+        });
     });
 
     cycle_left.addEventListener('click', function() {
-        categoryWidth -= 220;
-        updateCategories(categoryWidth);
-        // categories.forEach(category =>{
-        //     category.style.transform = null;
-        // });
-        categoriesList.appendChild(categoriesList.firstElementChild);
+        this.disabled = true;
+        updateCategories(-categoryWidth);
+        setTimeout(() => {
+            categories.forEach(category =>{
+                category.style.transition = 'transform 0s';
+                category.style.transform = null;
+            });
+        }, 1100);
+        setTimeout(() => {
+            categoriesList.append(categoriesList.firstChild);
+        }, 1101);
+        categories.forEach(category =>{
+            category.style.transition = 'transform 1s';            
+            this.disabled = false;
+        });
     });
     function updateCategories(offset) {
         categories.forEach((category, index) => {
