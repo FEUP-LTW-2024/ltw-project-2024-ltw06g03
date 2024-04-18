@@ -1,18 +1,16 @@
 @import url('colors.css');
+@import url('https://fonts.googleapis.com/css2?family=Libre+Barcode+39+Text&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
 body
 {
     margin: 0;
-    padding-top: 6em;    
     background: linear-gradient(to bottom, var( --very_dark_green),var(--dark_green), var(--green), var(--green) ,var(--dark_green),var( --very_dark_green));
- }
+    font-family: 'Roboto', 'Arial';
+}
 
 /* Navbar */
 #navbar {
     background-color: var(--very_dark_green);
     padding: 1em; 
-    position: fixed;
-    top: 0;
-    width: 100%;
 }
 #navbar > ul li a
 {
@@ -38,7 +36,7 @@ body
     margin-right: 0.5em;
     height: 1.7em;
 }
-#navbar li:nth-child(2) > input {
+input {
     background-color: var(--green);
     border: none;
     outline: none;
@@ -91,7 +89,7 @@ footer {
    /* margin: 5em,1em,1em,2em;*/
     margin-left: 1em;
     margin-right: 1em;
-    margin-bot: 2em;
+    margin-bottom: 2em;
     margin-top: 5em;
     text-align: center;
 }
@@ -104,3 +102,60 @@ footer {
     margin-top: 100px;
     margin-bottom: 50px;
 }
+
+#login-sec {
+    background-color: var(--very_dark_green);
+    width: 50em;
+    margin: 5em auto 8em auto;
+    padding: 2em;
+    text-align: center;
+    color: var(--beige);
+    border-radius: 4em;
+}
+
+#logo-txt {
+    font-family: 'Libre Barcode 39 Text', 'Arial';
+    margin: 0;
+}
+
+#logo-li {
+    font-size: 200%;
+}
+
+#login-div > h1, #register-div > h1 {
+    font-size: 60px;
+    margin: 0.5em auto 0.3em auto;
+}
+
+#separator {
+    width: 3px;
+    margin: 1em 0;
+    background-color: var(--beige);
+}
+
+#login-body {
+    background-color: var(--green);
+}
+
+form > * {
+    padding: 0.5em 0;
+}
+
+form input {
+    border-radius: 1em;
+    height: 2.5em;
+    margin-top: 1em;
+    width: 17em;
+}
+
+form label {
+    font-size: 20px;
+    font-weight: 500;
+}
+
+input[type="submit"] {
+    width: 10em;
+    margin: 1em auto;
+    font-weight: 600;
+}
+

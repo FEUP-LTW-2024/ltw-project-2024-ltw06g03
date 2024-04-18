@@ -8,6 +8,7 @@
             <title><?=$name?></title>
             <link href="style/style.css" rel="stylesheet">
             <link href="style/layout.css" rel="stylesheet">
+            <link rel="icon" type="image/x-icon" href="assets/favicon.png">
         </head>
     <?php }
 ?>

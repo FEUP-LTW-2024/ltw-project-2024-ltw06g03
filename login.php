@@ -2,14 +2,15 @@
 
 include_once("templates/head.php");
 include_once("templates/header.php");
+include_once("templates/footer.php");
 
 output_head("Smooth As Silk");
 output_header();
 ?>
 
-<body>
-    <section>
-        <div id="login">
+<body id="login-body">
+    <section id="login-sec">
+        <div id="login-div">
             <h1>Login</h1>
             <form action="actions/login.php" method="post">
                 <label for="email">
@@ -23,8 +24,9 @@ output_header();
                 <input type="submit" value="Login">
             </form>
         </div>
-        <div id="register">
-            <h1>Login</h1>
+        <div id="separator"></div>
+        <div id="register-div">
+            <h1>Register</h1>
             <form action="actions/register.php" method="post">
                 <label for="email">
                     Email
@@ -46,4 +48,5 @@ output_header();
             </form>
         </div>
     </section>
+    <?php output_footer("login-footer"); ?>
 </body>
