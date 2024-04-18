@@ -35,7 +35,7 @@ output_head("Smooth As Silk");
         </ul>
         <div class="arrow"><a href=""><img src="" alt=""></a></div>
     </section>
-    <?php output_footer(); ?>
+    <?php output_footer("index-footer"); ?>
 </body>
 
 </html>

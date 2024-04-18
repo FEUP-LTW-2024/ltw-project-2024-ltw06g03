@@ -2,6 +2,7 @@
 
 include_once("templates/head.php");
 include_once("templates/header.php");
+include_once("templates/footer.php");
 
 output_head("Smooth As Silk");
 output_header();
@@ -47,4 +48,5 @@ output_header();
             </form>
         </div>
     </section>
+    <?php output_footer("login-footer"); ?>
 </body>
