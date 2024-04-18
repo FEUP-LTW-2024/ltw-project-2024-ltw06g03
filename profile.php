@@ -9,7 +9,7 @@ output_head("Smooth As Silk");
 <body>
     <?php output_header(); ?>
     <div class="profile-picture-container">
-        <a id="profile-picture"><img src="./assets/usericon.png" alt="profile picture"></a>    
+        <a id="profile-picture"><img src="./assets/user_profile.png" alt="profile picture"></a>    
     </div>
     <section id="profile-page">
         <h2>Profile</h2>
