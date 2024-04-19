@@ -15,23 +15,36 @@ output_head("Smooth As Silk");
     </div>
     <section id="profile-page">
         <div class="profile-info">
-            <p><strong><span class="username" id="username" onclick="handleFieldClick('username')">Username</span></strong>
-                <button id="edit-username" class="edit-button" onclick="editField('new-username')" style="display: none;">Edit</button>
-            </p>
-            <!-- Input field for editing username -->
-            <input type="text" id="new-username" style="display: none;">
 
-            <p><strong><span class="name" id="name" onclick="handleFieldClick('name')">Name</span></strong>
-                <button id="edit-name" class="edit-button" onclick="editField('new-name')" style="display: none;">Edit</button>
-            </p>
-            <!-- Input field for editing name -->
-            <input type="text" id="new-name" style="display: none;">
+            <div class="field-container">
+                <p><strong><span class="username" id="username" onclick="handleFieldClick('username')">Username</span></strong>
+                    <button id="edit-username" class="edit-button" onclick="editField('new-username')" style="display: none;">Edit</button>
+                </p>
+                <!-- Input field for editing username -->
 
-            <p><strong><span class="email" id="email" onclick="handleFieldClick('email')">Email</span></strong>
-                <button id="edit-email" class="edit-button" onclick="editField('new-email')" style="display: none;">Edit</button>
-            </p>
-            <!-- Input field for editing email -->
-            <input type="email" id="new-email" style="display: none;">
+                <input type="text" id="new-username" style="display: none;">
+            </div>
+            <div class="field-container">
+                <p><strong><span class="name" id="name" onclick="handleFieldClick('name')">Name</span></strong>
+                    <button id="edit-name" class="edit-button" onclick="editField('new-name')" style="display: none;">Edit</button>
+                </p>
+                <!-- Input field for editing name -->
+                <input type="text" id="new-name" style="display: none;">
+            </div>
+            <div class="field-container">
+                <p><strong><span class="email" id="email" onclick="handleFieldClick('email')">Email</span></strong>
+                    <button id="edit-email" class="edit-button" onclick="editField('new-email')" style="display: none;">Edit</button>
+                </p>
+                <!-- Input field for editing email -->
+                <input type="email" id="new-email" style="display: none;">
+            </div>
+            <div class="field-container">
+                <p><strong><span class="password" id="password" onclick="handleFieldClick('password')">Password</span></strong>
+                    <button id="edit-password" class="edit-button" onclick="editField('new-password')" style="display: none;">Edit</button>
+                </p>
+                <!-- Input field for editing username -->
+                <input type="password" id="new-password" style="display: none;">
+            </div>
         </div>
         <div class="profile-actions">
             <button onclick="saveChanges()">Save Changes</button>
@@ -52,6 +65,11 @@ output_head("Smooth As Silk");
         function editEmail() {
             document.getElementById('new-email').style.display = 'block';
         }
+
+        function editPassword() {
+            document.getElementById('new-password').style.display = 'block';
+        }
+
         function showEditButton(buttonId) {
             document.getElementById(buttonId).style.display = 'inline-block';
             document.getElementById(buttonId).previousSibling.style.textDecoration = 'underline';

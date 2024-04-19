@@ -227,17 +227,26 @@ footer {
     font-weight: bold;
 }
 
-
-
+/* Change the profile info */
 
 .username:hover,
 .name:hover,
-.email:hover {
+.email:hover,
+.password:hover {
     text-decoration: underline;
+    cursor: pointer;
+    padding-bottom: 1em;
 }
 
 .username:hover + #edit-username,
 .name:hover + #edit-name,
-.email:hover + #edit-email {
+.email:hover + #edit-email,
+.password:hover + #edit-password {
     display: inline;
+}
+
+.field-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
