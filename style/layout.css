@@ -59,12 +59,3 @@ footer {
 }
 
 
-#profile-page > form {
-    input, label {
-        display: block;
-    }
-    
-    label {
-        text-align: left;
-    }
-}

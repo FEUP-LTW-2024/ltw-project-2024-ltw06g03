@@ -113,28 +113,80 @@ footer {
     margin-bottom: 20px;
 }
 
-#profile-page
-{
-    form > * {
-        padding: 0.5em 0;
-    }
-    
-    form input {
-        border-radius: 1em;
-        height: 2.5em;
-        margin-top: 1em;
-        width: 17em;
-    }
-    
-    form label {
-        font-size: 20px;
-        font-weight: 500;
-    }
-    
-    input[type="submit"] {
-        width: 10em;
-        margin: 1em auto;
-        font-weight: 600;
-    }   
+
+.profile-picture-container {
+    text-align: center;
+    margin-top: 20px;
 }
 
+#profile-picture img {
+    border-radius: 50%;
+    width: 300px;
+    height: 300px;
+}
+
+.profile-item-username {
+    background-color: var(--very_dark_green);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    font-size: 24px;
+    color: #fff;
+    font-weight: 700;
+    margin-bottom: 10px;
+    border-radius: 30px;
+    padding-left: 2em;
+    padding-right: 2em;
+}
+
+.profile-info {
+    background-color: var(--very_dark_green);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 10px;
+    padding-left: 10em;
+    padding-right: 10em;
+    border-radius: 40px;
+}
+
+.profile-item {
+    background-color: var(--green);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding-left: 7em;
+    padding-right: 7em; 
+    padding-top: 10px;
+    padding-bottom: 10px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    color: #fff;
+    border-radius: 20px;
+}
+
+.profile-item:last-child {
+    border-bottom: none;
+}
+
+.profile-item p {
+    margin: 0;
+}
+
+.profile-item strong {
+    margin-right: 10px;
+}
+
+.profile-actions {
+    text-align: center;
+}
+
+.profile-actions button {
+    background-color: var(--very_dark_green);
+    border: none;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-bottom: 100px;
+}
+
+.profile-actions button:hover {
+    color:#000;
+    background-color: var(--beige);
+}
