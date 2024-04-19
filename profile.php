@@ -13,19 +13,17 @@ output_head("Smooth As Silk");
     </div>
     <section id="profile-page">
         <h2>Profile</h2>
-        <form action="actions/update_profile.php" method="post">
-            <label for="username">Username:</label>
-            <input type="text" name="username" id="username" value="username" required>
-            <label for="username">Name:</label>
-            <input type="text" name="name" id="name" value="name" required>
-            <label for="email">Email:</label>
-            <input type="email" name="email" id="email" value="email" required>
-            <input type="submit" value="Update">
-        </form>
+        <div class="profile-info">
+            <p><strong>Username:</strong> <!-- TODO: Get username from database --></p>
+            <p><strong>Name:</strong> <!-- TODO: Get name from database --></p>
+            <p><strong>Email:</strong> <!-- TODO: Get email from database --></p>
+        </div>
+        <div class="profile-actions">
+            <a href="edit-profile.php"><button>Edit Profile</button></a>
+            <button onclick="changePassword()">Change Password</button>
+        </div>
     </section>
     
     <?php output_footer(); ?>
 </body>
-
-
 </html>
