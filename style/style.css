@@ -88,7 +88,7 @@ footer {
 {
     margin-left: 2em;
     margin-right: 2em;
-    margin-bot: 2em;
+    margin-bottom: 2em;
     margin-top: 5em;
     text-align: center;
     background-color: var(--briht_green);
@@ -131,7 +131,7 @@ footer {
     font-size: 24px;
     color: #fff;
     font-weight: 700;
-    margin-bottom: 10px;
+    margin-bottom: 30px;
     border-radius: 30px;
     padding-left: 2em;
     padding-right: 2em;
@@ -184,9 +184,60 @@ footer {
     cursor: pointer;
     transition: background-color 0.3s ease;
     margin-bottom: 100px;
+    margin-top: 50px;
 }
 
 .profile-actions button:hover {
     color:#000;
     background-color: var(--beige);
+}
+
+/* Edit Profile Page */
+
+#edit-profile-picture {
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    margin-top: 50px;
+    margin-bottom: 20px;
+}
+
+.edit-profile-picture-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+.edit-profile-picture-container button {
+    background-color: var(--very_dark_green);
+    color: #fff;
+    padding: 2em;
+    border:none;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    font-weight: bold;
+    font-size:xx-small;
+
+}
+
+.edit-profile-picture-container button:hover {
+    color:#000;
+    background-color: var(--beige);
+    font-weight: bold;
+}
+
+
+
+
+.username:hover,
+.name:hover,
+.email:hover {
+    text-decoration: underline;
+}
+
+.username:hover + #edit-username,
+.name:hover + #edit-name,
+.email:hover + #edit-email {
+    display: inline;
 }

@@ -8,28 +8,27 @@ output_head("Smooth As Silk");
 ?>
 <body>
     <?php output_header(); ?>
-    <div class="profile-picture-container">
-        <img id="profile-picture" src="./assets/user_profile.png" alt="profile picture">
+    <div class="edit-profile-picture-container">
+        <img id="edit-profile-picture" src="./assets/user_profile.png" alt="profile picture">
         <input type="file" id="profile-picture-upload" style="display: none;">
-        <button onclick="uploadProfilePicture()">Change Picture</button>
+        <button onclick="document.getElementById('profile-picture-upload').click()">EDIT PROFILE PICTURE</button>
     </div>
     <section id="profile-page">
-        <h2>Edit Profile</h2>
         <div class="profile-info">
-            <p><strong>Username:</strong> <!-- TODO: Display username from database -->
-                <button onclick="editUsername()">Edit</button>
+            <p><strong><span class="username" id="username" onclick="handleFieldClick('username')">Username</span></strong>
+                <button id="edit-username" class="edit-button" onclick="editField('new-username')" style="display: none;">Edit</button>
             </p>
             <!-- Input field for editing username -->
             <input type="text" id="new-username" style="display: none;">
-            
-            <p><strong>Name:</strong> <!-- TODO: Display name from database -->
-                <button onclick="editName()">Edit</button>
+
+            <p><strong><span class="name" id="name" onclick="handleFieldClick('name')">Name</span></strong>
+                <button id="edit-name" class="edit-button" onclick="editField('new-name')" style="display: none;">Edit</button>
             </p>
             <!-- Input field for editing name -->
             <input type="text" id="new-name" style="display: none;">
-            
-            <p><strong>Email:</strong> <!-- TODO: Display email from database -->
-                <button onclick="editEmail()">Edit</button>
+
+            <p><strong><span class="email" id="email" onclick="handleFieldClick('email')">Email</span></strong>
+                <button id="edit-email" class="edit-button" onclick="editField('new-email')" style="display: none;">Edit</button>
             </p>
             <!-- Input field for editing email -->
             <input type="email" id="new-email" style="display: none;">
@@ -53,13 +52,38 @@ output_head("Smooth As Silk");
         function editEmail() {
             document.getElementById('new-email').style.display = 'block';
         }
-        
-        function uploadProfilePicture() {
-            document.getElementById('profile-picture-upload').click();
+        function showEditButton(buttonId) {
+            document.getElementById(buttonId).style.display = 'inline-block';
+            document.getElementById(buttonId).previousSibling.style.textDecoration = 'underline';
         }
         
+        function hideEditButton(buttonId) {
+            document.getElementById(buttonId).style.display = 'none';
+            document.getElementById(buttonId).previousSibling.style.textDecoration = 'none';
+        }
+        
+        function editField(fieldId) {
+            document.getElementById(fieldId).style.display = 'block';
+            document.getElementById(fieldId).focus();
+        }
+        
+        function hideField(fieldId) {
+            document.getElementById(fieldId).style.display = 'none';
+        }
+
+        function handleFieldClick(fieldId) {
+            var field = document.getElementById(fieldId);
+            var editButton = document.getElementById('edit-' + fieldId);
+
+            if (document.getElementById('new-' + fieldId).style.display === 'block') {
+                hideField('new-' + fieldId);
+            } else {
+                editField('new-' + fieldId);
+            }
+        }
+
         function saveChanges() {
-            // Implement functionality to save changes to the database
+            // TODO: Implement functionality to save changes to the database
             alert('Changes saved!');
         }
     </script>
