@@ -4,7 +4,7 @@ body
     margin: 0;
     padding-top: 6em;    
     background: linear-gradient(to bottom, var( --very_dark_green),var(--dark_green), var(--green), var(--green) ,var(--dark_green),var( --very_dark_green));
- }
+}
 
 /* Navbar */
 #navbar {
@@ -61,14 +61,18 @@ footer {
 
 /* Main Page */
 
+#main-page-body
+{
+    overflow-y: hidden;
+}
 #main-page > ul
 {
     color: white;
     width: 1100px; 
     height: 100px;
     padding: 0;
-    margin: auto;
     list-style-type: none;
+    border-radius: 50px;
 }
 
 #main-page > ul > li > a
@@ -83,13 +87,12 @@ footer {
 }
 #main-page 
 {
-    margin-bottom: 8em;
+    margin-bottom: 7em;
+    margin-top: 5em;
 }
 
 #main-page > ul li
 {
-   /* margin: 5em,1em,2em,1em;*/
-
     text-align: center;
     width: 200px;
     min-width: 200px;
@@ -104,4 +107,22 @@ footer {
     font-size: 20em;
     margin-top: 100px;
     margin-bottom: 50px;
+}
+
+
+#main-page button {
+    background-color: transparent;
+    background-repeat: no-repeat;
+    border: none;
+    cursor: pointer;
+    overflow: hidden;
+    outline: none;
+    margin-left: 4em;
+    margin-right: 4em;
+    padding: 0;
+}
+#main-page button img{
+    height: 40px;
+    width: auto;
+    color: var(--beige);
 }
