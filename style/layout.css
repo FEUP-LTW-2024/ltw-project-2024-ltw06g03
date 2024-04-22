@@ -47,6 +47,7 @@ footer {
     transform: translateY(-15px); 
 }
 
+/*login/register page*/
 #login-sec {
     display: grid;
     justify-items: center;
@@ -73,4 +74,36 @@ input, label {
 
 label {
     text-align: left;
+}
+
+/* Post page */
+#post-page {
+    display: grid;
+    grid-template-columns: [start] auto [end];
+    grid-template-rows:[header] auto [nav] auto [sort-bar] auto [posts] auto [footer];
+}
+
+#post-page #navbar{
+    grid-column:start/end;
+    grid-row: header;
+}
+
+#link-tree{
+    grid-column:start/end;
+    grid-row: nav;
+}
+
+#filter {
+    grid-column: start;
+    grid-row: sort-bar/posts;
+}
+
+#sort-bar {
+    grid-column: end;
+    grid-row: sort-bar;
+}
+
+#post-section {
+    grid-column: end;
+    grid-row: posts;
 }
