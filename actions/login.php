@@ -1,5 +1,11 @@
 <?php
 include_once('../database/connect.php');
+
+const FIELDS = [
+    'email' => 'email',
+    'password' => 'string'
+];
+
 if(strtoupper($_SERVER['REQUEST_METHOD']) === 'POST') {
     $email = $_POST['email'];
     $userPassword = $_POST['password'];
