@@ -5,23 +5,27 @@ include_once ("templates/header.php");
 include_once ("templates/footer.php");
 output_head("Smooth As Silk");
 ?>
-<?php output_header(); ?>
 
 <body id="post-page">
+    <?php output_header(); ?>
     <nav id="link-tree">
         <ul>
 
         </ul>
     </nav>
-    <section id="sort-bar">
+    <section id="sort-bar" class="box-format">
         <div>
             <button>
 
             </button>
-            <h3></h3>
+            <h4>ligar Filtros</h4>
         </div>
-        <input type="number" name="number" value="20" min="20" max="50" step="15">
         <div>
+            <h4>posts per page</h4>
+            <input type="number" name="number" value="20" min="20" max="50" step="15">
+        </div>
+        <div>
+            <h4>sort options</h4>
             <select name="sort-option" id="">
                 <option value="high-prices">Higher Prices</option>
                 <option value="lower-prices">Lower Prices</option>
@@ -30,22 +34,23 @@ output_head("Smooth As Silk");
             </select>
         </div>
     </section>
-    <aside id="filters">
+    <aside id="filters" class="box-format">
         <header>
-            <h1>Filtros</h1>
+            <h2>Filtros</h2>
         </header>
         <article>
-            <h2>titolo</h2>
+            <h3>titolo</h3>
         </article>
     </aside>
-    <section id="posts-section">
+    <section id="posts-section" class="box-format">
         <article>
             <img src="" alt="">
-            <h3></h3>
+            <h4></h4>
             <button></button>
             <button></button>
         </article>
     </section>
+    <?php output_footer("posts-footer"); ?>
 </body>
 
 </html>

@@ -79,31 +79,45 @@ label {
 /* Post page */
 #post-page {
     display: grid;
-    grid-template-columns: [start] auto [end];
-    grid-template-rows:[header] auto [nav] auto [sort-bar] auto [posts] auto [footer];
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows:auto 0.5fr 0.5fr 9.5fr auto;
+    grid-template-areas: 
+    "header header"
+    "link-tree link-tree"
+    "filter sort-bar"
+    "filter post-section"
+    "footer footer";
 }
 
 #post-page #navbar{
-    grid-column:start/end;
-    grid-row: header;
+    grid-area: header;
 }
 
 #link-tree{
-    grid-column:start/end;
-    grid-row: nav;
+    grid-area: link-tree;
 }
 
-#filter {
-    grid-column: start;
-    grid-row: sort-bar/posts;
+#filters {
+    grid-area: filter;
 }
 
 #sort-bar {
-    grid-column: end;
-    grid-row: sort-bar;
+    grid-area: sort-bar;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+#sort-bar > div {
+    align-items: center;
+    display: flex;
 }
 
 #post-section {
-    grid-column: end;
-    grid-row: posts;
+    grid-area: post-section;
+}
+
+#posts-footer {
+    grid-area: footer;
 }

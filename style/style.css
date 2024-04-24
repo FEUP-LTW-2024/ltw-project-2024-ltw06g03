@@ -162,9 +162,23 @@ input[type="submit"] {
 }
 
 /* Post-page */
-#box-format {
+.box-format {
     border: none;
     border-radius: 25px;
+    background-color: var(--very_dark_green);
+    margin: 1em;
+}
+
+#link-tree{
+}
+
+#filter {
+}
+
+#sort-bar {
+}
+
+#post-section {
 }
 
 
