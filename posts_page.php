@@ -13,7 +13,7 @@ output_head("Smooth As Silk");
 
         </ul>
     </nav>
-    <section id="sort-bar" class="box-format">
+    <section id="sort-bar" class="outer-box-format">
         <div>
             <button>
 
@@ -34,21 +34,74 @@ output_head("Smooth As Silk");
             </select>
         </div>
     </section>
-    <aside id="filters" class="box-format">
-        <header>
+    <aside id="filters" class="outer-box-format">
+        <header class="iner-box-format">
             <h2>Filtros</h2>
         </header>
-        <article>
+        <article class="iner-box-format">
             <h3>titolo</h3>
         </article>
     </aside>
-    <section id="posts-section" class="box-format">
-        <article>
+    <section id="posts-section" class="outer-box-format">
+        <article class="iner-box-format">
+            <img src="" alt="">
+            <h4></h4>
+            <button><img src="" alt=""></button>
+            <button><img src="" alt=""></button>
+        </article>
+        <article class="iner-box-format">
             <img src="" alt="">
             <h4></h4>
             <button></button>
             <button></button>
         </article>
+        <article class="iner-box-format">
+            <img src="" alt="">
+            <h4></h4>
+            <button></button>
+            <button></button>
+        </article>
+        <article class="iner-box-format">
+            <img src="" alt="">
+            <h4></h4>
+            <button></button>
+            <button></button>
+        </article>
+        <article class="iner-box-format">
+            <img src="" alt="">
+            <h4></h4>
+            <button></button>
+            <button></button>
+        </article>
+        <article class="iner-box-format">
+            <img src="" alt="">
+            <h4></h4>
+            <button></button>
+            <button></button>
+        </article>
+        <article class="iner-box-format">
+            <img src="" alt="">
+            <h4></h4>
+            <button><img src="" alt=""></button>
+            <button><img src="" alt=""></button>
+        </article>
+        <article class="iner-box-format">
+            <img src="" alt="">
+            <h4></h4>
+            <button><img src="" alt=""></button>
+            <button><img src="" alt=""></button>
+        </article>
+        <article class="iner-box-format">
+            <img src="" alt="">
+            <h4></h4>
+            <button><img src="" alt=""></button>
+            <button><img src="" alt=""></button>
+        </article>
+        <div id="page-number">
+            <button><img src="" alt=""></button>
+            <h4></h4>
+            <button><img src="" alt=""></button>
+        </div>
     </section>
     <?php output_footer("posts-footer"); ?>
 </body>

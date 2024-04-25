@@ -79,8 +79,8 @@ label {
 /* Post page */
 #post-page {
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows:auto 0.5fr 0.5fr 9.5fr auto;
+    grid-template-columns: 0.25fr 1fr;
+    grid-template-rows:auto 0.5fr 0.5fr 8fr auto;
     grid-template-areas: 
     "header header"
     "link-tree link-tree"
@@ -114,10 +114,20 @@ label {
     display: flex;
 }
 
-#post-section {
+#posts-section {
     grid-area: post-section;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    position: relative;
 }
 
 #posts-footer {
     grid-area: footer;
+}
+#page-number
+{
+    position: absolute;
+    bottom: 0;
+    display: flex;
+    flex-direction: row;
 }

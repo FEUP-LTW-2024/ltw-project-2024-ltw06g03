@@ -162,11 +162,20 @@ input[type="submit"] {
 }
 
 /* Post-page */
-.box-format {
+.outer-box-format {
     border: none;
     border-radius: 25px;
     background-color: var(--very_dark_green);
     margin: 1em;
+    padding: 1em;
+}
+
+.iner-box-format {
+    border: none;
+    border-radius: 15px;
+    background-color: var(--dark_green);
+    margin: 1em;
+    padding: 1em;
 }
 
 #link-tree{
@@ -178,8 +187,15 @@ input[type="submit"] {
 #sort-bar {
 }
 
-#post-section {
+#posts-section {
+    overflow: hidden;
+    padding-bottom: 3em;
 }
 
-
+#sort-bar > div * {
+    margin: 0; 
+}
+#page-number
+{
+}
 
