@@ -172,3 +172,6 @@ input[type="checkbox"] {
     margin: 5em auto 3em auto;
 }
 
+label[for="buyer"], label[for="seller"] {
+    margin: 0 1em;
+}
