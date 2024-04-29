@@ -12,6 +12,13 @@ if(strtoupper($_SERVER['REQUEST_METHOD']) === 'POST') {
 
     $location = '';
 
+    $errors = validateRegister($email, $username, $password, $name, false, $buyer ? true : false, $seller ? true : false);
+    if (!empty($errors)) {
+        $errorString = implode("&", $errors);
+        header("Location: http://localhost:9000/login.php?$errorString");
+        exit;
+    }
+
     try {
         if (register_user($email, $username, $password, $name, false, $buyer ? true : false, $seller ? true : false)) {
             header("Location: http://localhost:9000/index.php");

@@ -3,13 +3,19 @@
 include_once("templates/head.php");
 include_once("templates/header.php");
 include_once("templates/footer.php");
+include_once("templates/register_errors.php");
 
 output_head("Smooth As Silk");
 output_header();
 ?>
 
 <body id="login-body">
-    <section id="login-sec">
+    <?php
+        if (isset($_GET['username']) || isset($_GET['email'])) {
+            output_errors(isset($_GET['username']), isset($_GET['email']));
+        }
+    ?>
+    <section id="login-sec" class="login-container">
         <div id="login-div">
             <h1>Login</h1>
             <form action="actions/login.php" method="post">

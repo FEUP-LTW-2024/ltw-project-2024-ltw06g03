@@ -103,7 +103,7 @@ footer {
     margin-bottom: 50px;
 }
 
-#login-sec {
+.login-container{
     background-color: var(--very_dark_green);
     width: 50em;
     margin: 5em auto 8em auto;
@@ -166,3 +166,9 @@ input[type="checkbox"] {
 .align-center {
     margin: 0.5em auto;
 }
+
+#errors-div {
+    padding: 0.5em;
+    margin: 5em auto 3em auto;
+}
+
