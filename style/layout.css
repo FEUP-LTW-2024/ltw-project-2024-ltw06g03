@@ -96,6 +96,12 @@ label {
 #link-tree{
     grid-area: link-tree;
 }
+#link-tree ul {
+    display: flex;
+    flex-direction: row;
+    justify-content: left;
+    align-items: center;
+}
 
 #filters {
     grid-area: filter;
@@ -109,8 +115,18 @@ label {
     justify-content: space-between;
 }
 
+#sort-bar > div:first-child {
+    flex: 1;
+}
+
 #sort-bar > div {
     align-items: center;
+    display: flex;
+}
+
+#sort-bar > div *{
+    align-items: center;
+    justify-content: center;
     display: flex;
 }
 
@@ -124,6 +140,7 @@ label {
 #posts-footer {
     grid-area: footer;
 }
+
 #page-number
 {
     position: absolute;

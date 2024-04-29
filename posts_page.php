@@ -10,20 +10,24 @@ output_head("Smooth As Silk");
     <?php output_header(); ?>
     <nav id="link-tree">
         <ul>
-
+            <li><a href="">HOME</a></li>
+            <li><a href="">POSTS</a></li>
+            <li><a href="">CENAS</a></li>
         </ul>
     </nav>
     <section id="sort-bar" class="outer-box-format">
         <div>
             <button>
-
+                <img src="./assets/filter-icon.png" alt="">
             </button>
-            <h4>ligar Filtros</h4>
         </div>
         <div>
             <h4>posts per page</h4>
-            <input type="number" name="number" value="20" min="20" max="50" step="15">
-        </div>
+            <select name="numbers-per-page" id="">
+                <option value="15">15</option>
+                <option value="30">30</option>
+                <option value="60">60</option>
+            </select>        </div>
         <div>
             <h4>sort options</h4>
             <select name="sort-option" id="">
