@@ -1,11 +1,6 @@
 <?php
 include_once('../database/connect.php');
 
-const FIELDS = [
-    'email' => 'email',
-    'password' => 'string'
-];
-
 if(strtoupper($_SERVER['REQUEST_METHOD']) === 'POST') {
     $email = $_POST['email'];
     $userPassword = $_POST['password'];
@@ -25,7 +20,8 @@ if(strtoupper($_SERVER['REQUEST_METHOD']) === 'POST') {
         if ($result) {
             $password = $result['password'];
             if ($password === $userPassword) {
-                echo 'Logged In';
+                header("Location: http://localhost:9000/index.php");
+                exit;
             }
         }
     } catch (PDOException $e) {
