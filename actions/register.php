@@ -11,10 +11,12 @@ if(strtoupper($_SERVER['REQUEST_METHOD']) === 'POST') {
     $seller = $_POST['seller'];
 
     $location = '';
-    print_r($_POST);
 
     try {
-        register_user($email, $username, $password, $name, false, $buyer ? true : false, $seller ? true : false);
+        if (register_user($email, $username, $password, $name, false, $buyer ? true : false, $seller ? true : false)) {
+            header("Location: http://localhost:9000/index.php");
+            exit;
+        }
     } catch (PDOException $e) {
         echo "Error: " . $e->getMessage();
     }
