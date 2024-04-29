@@ -159,3 +159,10 @@ input[type="submit"] {
     font-weight: 600;
 }
 
+input[type="checkbox"] {
+    width: fit-content;
+}
+
+.align-center {
+    margin: 0.5em auto;
+}

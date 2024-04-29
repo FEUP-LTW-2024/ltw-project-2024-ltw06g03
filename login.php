@@ -44,6 +44,16 @@ output_header();
                     Username
                     <input type="text" name="username">
                 </label>
+                <div id="buyer-seller">
+                    <label for="buyer">
+                        Buyer
+                        <input type="checkbox" name ="buyer" class="align-center" value="buyer">
+                    </label>
+                    <label for="seller">
+                        Seller
+                        <input type="checkbox" name="seller" class="align-center" value="seller">
+                    </label>
+                </div>
                 <input type="submit" value="Register">
             </form>
         </div>
