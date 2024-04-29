@@ -1,5 +1,5 @@
 <?php
-    function output_head(string $name, ) { ?>
+    function output_head(string $name,string $scriptName ) { ?>
         <!DOCTYPE html>
         <html lang="en">
         <head>
@@ -9,6 +9,7 @@
             <link href="style/style.css" rel="stylesheet">
             <link href="style/layout.css" rel="stylesheet">
             <link rel="icon" type="image/x-icon" href="assets/favicon.png">
+            <script src="<?=$scriptName?>"></script>
         </head>
     <?php }
 ?>

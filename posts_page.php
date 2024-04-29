@@ -3,7 +3,7 @@ include_once ("database/connect.php");
 include_once ("templates/head.php");
 include_once ("templates/header.php");
 include_once ("templates/footer.php");
-output_head("Smooth As Silk");
+output_head("Smooth As Silk","scripts/post-page-script.js");
 ?>
 
 <body id="post-page">
@@ -84,6 +84,91 @@ output_head("Smooth As Silk");
             <button></button>
         </article>
         <article class="iner-box-format">
+            <img src="" alt="">
+            <h4></h4>
+            <button><img src="" alt=""></button>
+            <button><img src="" alt=""></button>
+        </article>
+        <article class="iner-box-format">
+            <img src="" alt="">
+            <h4></h4>
+            <button><img src="" alt=""></button>
+            <button><img src="" alt=""></button>
+        </article>
+        <article class="iner-box-format">
+            <img src="" alt="">
+            <h4></h4>
+            <button><img src="" alt=""></button>
+            <button><img src="" alt=""></button>
+        </article><article class="iner-box-format">
+            <img src="" alt="">
+            <h4></h4>
+            <button><img src="" alt=""></button>
+            <button><img src="" alt=""></button>
+        </article>
+        <article class="iner-box-format">
+            <img src="" alt="">
+            <h4></h4>
+            <button><img src="" alt=""></button>
+            <button><img src="" alt=""></button>
+        </article>
+        <article class="iner-box-format">
+            <img src="" alt="">
+            <h4></h4>
+            <button><img src="" alt=""></button>
+            <button><img src="" alt=""></button>
+        </article><article class="iner-box-format">
+            <img src="" alt="">
+            <h4></h4>
+            <button><img src="" alt=""></button>
+            <button><img src="" alt=""></button>
+        </article>
+        <article class="iner-box-format">
+            <img src="" alt="">
+            <h4></h4>
+            <button><img src="" alt=""></button>
+            <button><img src="" alt=""></button>
+        </article>
+        <article class="iner-box-format">
+            <img src="" alt="">
+            <h4></h4>
+            <button><img src="" alt=""></button>
+            <button><img src="" alt=""></button>
+        </article><article class="iner-box-format">
+            <img src="" alt="">
+            <h4></h4>
+            <button><img src="" alt=""></button>
+            <button><img src="" alt=""></button>
+        </article>
+        <article class="iner-box-format">
+            <img src="" alt="">
+            <h4></h4>
+            <button><img src="" alt=""></button>
+            <button><img src="" alt=""></button>
+        </article>
+        <article class="iner-box-format">
+            <img src="" alt="">
+            <h4></h4>
+            <button><img src="" alt=""></button>
+            <button><img src="" alt=""></button>
+        </article><article class="iner-box-format">
+            <img src="" alt="">
+            <h4></h4>
+            <button><img src="" alt=""></button>
+            <button><img src="" alt=""></button>
+        </article>
+        <article class="iner-box-format">
+            <img src="" alt="">
+            <h4></h4>
+            <button><img src="" alt=""></button>
+            <button><img src="" alt=""></button>
+        </article>
+        <article class="iner-box-format">
+            <img src="" alt="">
+            <h4></h4>
+            <button><img src="" alt=""></button>
+            <button><img src="" alt=""></button>
+        </article><article class="iner-box-format">
             <img src="" alt="">
             <h4></h4>
             <button><img src="" alt=""></button>

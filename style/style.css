@@ -223,8 +223,21 @@ input[type="submit"] {
 }
 
 #posts-section {
-    overflow: hidden;
+    overflow-y: scroll;
     padding-bottom: 3em;
+}
+#posts-section::-webkit-scrollbar {
+    width: 10px;
+     
+}
+
+#posts-section::-webkit-scrollbar-track {
+    background: transparent; 
+}
+
+#posts-section::-webkit-scrollbar-thumb {
+    background: var(--dark_green); 
+    border-radius: 5px; 
 }
 
 #page-number
