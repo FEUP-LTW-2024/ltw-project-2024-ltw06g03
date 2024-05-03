@@ -4,7 +4,7 @@ body
 {
     margin: 0;
     padding-top: 6em;    
-    background: linear-gradient(to bottom, var( --very_dark_green),var(--dark_green), var(--green), var(--green) ,var(--dark_green),var( --very_dark_green));
+    background: var(--beige);
     font-family: 'Roboto', 'Arial'; 
 }
 
@@ -194,59 +194,3 @@ footer {
 
 /* Edit Profile Page */
 
-#edit-profile-picture {
-    width: 300px;
-    height: 300px;
-    border-radius: 50%;
-    margin-top: 50px;
-    margin-bottom: 20px;
-}
-
-.edit-profile-picture-container {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-}
-.edit-profile-picture-container button {
-    background-color: var(--very_dark_green);
-    color: #fff;
-    padding: 2em;
-    border:none;
-    border-radius: 30px;
-    cursor: pointer;
-    transition: background-color 0.3s;
-    font-weight: bold;
-    font-size:xx-small;
-
-}
-
-.edit-profile-picture-container button:hover {
-    color:#000;
-    background-color: var(--beige);
-    font-weight: bold;
-}
-
-/* Change the profile info */
-
-.username:hover,
-.name:hover,
-.email:hover,
-.password:hover {
-    text-decoration: underline;
-    cursor: pointer;
-    padding-bottom: 1em;
-}
-
-.username:hover + #edit-username,
-.name:hover + #edit-name,
-.email:hover + #edit-email,
-.password:hover + #edit-password {
-    display: inline;
-}
-
-.field-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
