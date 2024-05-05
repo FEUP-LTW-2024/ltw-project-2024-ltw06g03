@@ -199,13 +199,17 @@ footer {
     height: 500px;
 }
 
-.card-1 > img{ 
-    width: 50%;
+.photo-edit > img{ 
+    border-radius: 50%;
+    object-fit: cover;
+    background: #dfdfdf;
+    width: 150px;
+    height: 150px;
     margin: auto;
 }
 
 .card-1 {
-    width:30%;
+    width: 30%;
     display: flex;
     padding: 2em;
     flex-direction: column;
@@ -260,17 +264,3 @@ footer {
     box-shadow: 8px 8px 16px 0 rgba(0, 0, 0, 0.2);
 }
 
-.form-control {
-    margin: 0 auto;
-    width: 210px;
-}
-
-.form-control label{
-    display: inline-block;
-    text-align: right;
-}
-
-.form-control input{
-    display: inline-block;
-    text-align: left;
-}
