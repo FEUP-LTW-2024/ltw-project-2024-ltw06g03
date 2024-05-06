@@ -14,7 +14,7 @@ output_head("Smooth As Silk");
                 <div class="photo-edit">
                     <img id="profile-picture" src="./assets/user_profile.png" alt="profile picture">
                     <input type="file" id="profile-photo" class="form-control-file" accept="image/*" style="display: none;">
-                    <button id="change-photo-btn" class="btn btn-primary mt-2">Choose File</button>
+                    <button class="button-edit" id="choose-btn">Choose File</button>
                 </div>
                 <div class="profile-basic-info">
                     <div class="username-edit">
@@ -42,7 +42,7 @@ output_head("Smooth As Silk");
                     </div>
                 </div>
                 <div class="save-changes">
-                    <button class="btn btn-primary profile-button" type="button">Save Profile</button>
+                    <button class="button-edit" id="save-btn" type="button">Save Profile</button>
                 </div>
                 
             </div>
@@ -52,7 +52,7 @@ output_head("Smooth As Silk");
     <?php output_footer(); ?>
     <script>
         // Função para lidar com a mudança de foto do perfil
-        document.getElementById('change-photo-btn').addEventListener('click', function() {
+        document.getElementById('choose-btn').addEventListener('click', function() {
             document.getElementById('profile-photo').click();
         });
 
