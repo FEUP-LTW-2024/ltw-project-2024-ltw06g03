@@ -1,6 +1,8 @@
 <?php
 include_once('../database/connect.php');
 
+session_start();
+
 if(strtoupper($_SERVER['REQUEST_METHOD']) === 'POST') {
     $email = $_POST['email'];
     $userPassword = $_POST['password'];
@@ -20,6 +22,7 @@ if(strtoupper($_SERVER['REQUEST_METHOD']) === 'POST') {
         if ($result) {
             $password = $result['password'];
             if ($password === $userPassword) {
+                $_SESSION['user_email'] = $email;
                 header("Location: http://localhost:9000/index.php");
                 exit;
             }

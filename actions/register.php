@@ -1,6 +1,9 @@
 <?php
 include_once('../database/connect.php');
 include_once('./auth.php');
+
+session_start();
+
 if(strtoupper($_SERVER['REQUEST_METHOD']) === 'POST') {
     $email = $_POST['email'];
     $password = $_POST['password'];
@@ -21,6 +24,7 @@ if(strtoupper($_SERVER['REQUEST_METHOD']) === 'POST') {
 
     try {
         if (register_user($email, $username, $password, $name, false, $buyer ? true : false, $seller ? true : false)) {
+            $_SESSION['user_email'] = $email;
             header("Location: http://localhost:9000/index.php");
             exit;
         }
