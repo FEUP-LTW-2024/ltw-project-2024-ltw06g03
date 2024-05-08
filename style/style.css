@@ -192,6 +192,7 @@ footer {
     background-color: var(--beige);
 }
 
+
 /* Edit Profile Page */
 .row {
     display: flex;
@@ -207,7 +208,7 @@ footer {
     height: 150px;
     margin: auto;
     margin-bottom: 20px;
-    border: 2px solid var(--beige); /* Adiciona uma borda ao redor da imagem */
+    border: 2px solid var(--beige); 
 }
 
 .photo-edit {
@@ -217,36 +218,36 @@ footer {
 }
 
 .button-edit {
-    border: none; /* Remove bordas */
-    color: white; /* Cor do texto */
-    padding: 15px 32px; /* Espaçamento interno */
-    text-align: center; /* Alinhamento do texto */
-    text-decoration: none; /* Remove sublinhado */
+    border: none; 
+    color: white; 
+    padding: 15px 32px; 
+    text-align: center; 
+    text-decoration: none; 
     display: inline-block;
     font-size: 16px;
     margin: 4px 2px;
-    cursor: pointer; /* Muda o cursor para um ponteiro quando você passa o mouse sobre o botão */
-    border-radius: 30px; /* Borda arredondada */
+    cursor: pointer; 
+    border-radius: 30px; 
 }
 
 #save-btn {
-    background-color: var(--green); /* Cor de fundo */
+    background-color: var(--green); 
     transition: background-color 0.3s ease;
 
 }
 
 #choose-btn {
-    background-color: var(--very_dark_green); /* Cor de fundo */
+    background-color: var(--very_dark_green); 
     transition: background-color 0.3s ease;
 
 }
 
 #save-btn:hover {
-    background-color: var(--very_dark_green); /* Cor de fundo */
+    background-color: var(--very_dark_green); 
 }
 
 #choose-btn:hover {
-    background-color: var(--beige); /* Cor de fundo */
+    background-color: var(--beige); 
     color:#000;
 }
 
@@ -277,6 +278,13 @@ footer {
 .username-edit {
     margin-bottom:10px;
 }
+
+.username-edit, .name-edit, .email-edit, .password-edit, .confirm-password-edit {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
 
 .card-2 {
     margin: 2em;
@@ -317,9 +325,9 @@ footer {
 
 .profile-settings { 
     display: flex;
-    flex-direction: column; /* Arrange items in a column */
-    justify-content: center; /* Center items horizontally */
-    align-items: center; /* Center items vertically (optional) */
+    flex-direction: column; 
+    justify-content: center; 
+    align-items: center; 
 }
 
 .email-edit, .password-edit{
