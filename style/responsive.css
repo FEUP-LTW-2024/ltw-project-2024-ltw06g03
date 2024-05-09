@@ -1,0 +1,10 @@
+/* Main Page*/
+#main-page > ul  {
+}
+#main-page > ul > li
+{
+    transition: transform 1s ;
+}
+
+
+

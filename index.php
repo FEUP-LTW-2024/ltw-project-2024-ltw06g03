@@ -11,11 +11,12 @@ $categories = $stmt->fetchAll();*/
 
 output_head("Smooth As Silk");
 ?>
-<body>
+<body id="main-page-body">
     <?php output_header(); ?>
     <h1 id="big-logo">SAS</h1>
     <section id="main-page">
-        <div class="arrow"><a href=""><img src="" alt=""></a></div>
+        <button class="arrow-right" ><img  src="./assets/arrowleft.png" alt="arrow-right"></button>
+
         <ul>
             <?php
                 // foreach($categories as $category) {
@@ -23,17 +24,17 @@ output_head("Smooth As Silk");
                 // }
             ?>
             <li><a href="">Category</a></li>
+            <li><a href="">Catsnabaegqwqwewry</a></li>
+            <li><a href="">Caegory</a></li>
+            <li><a href="">Caory</a></li>
             <li><a href="">Category</a></li>
+            <li><a href="">Caewqtegory</a></li>
             <li><a href="">Category</a></li>
-            <li><a href="">Category</a></li>
-            <li><a href="">Category</a></li>
-            <li><a href="">Category</a></li>
-            <li><a href="">Category</a></li>
-            <li><a href="">Category</a></li>
-            <li><a href="">Category</a></li>
-            <li><a href="">Category</a></li>
+            <li><a href="">Caory</a></li>
+            <li><a href="">Cateory</a></li>
         </ul>
-        <div class="arrow"><a href=""><img src="" alt=""></a></div>
+        <button class="arrow-left" ><img  src="./assets/arrowright.png" alt="arrow-left"></button>
+
     </section>
     <?php output_footer("index-footer"); ?>
 </body>
