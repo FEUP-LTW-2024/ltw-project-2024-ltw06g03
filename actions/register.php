@@ -25,6 +25,7 @@ if(strtoupper($_SERVER['REQUEST_METHOD']) === 'POST') {
     try {
         if (register_user($email, $username, $password, $name, false, $buyer ? true : false, $seller ? true : false)) {
             $_SESSION['user_email'] = $email;
+            $_SESSION['logged_in'] = true;
             header("Location: http://localhost:9000/index.php");
             exit;
         }

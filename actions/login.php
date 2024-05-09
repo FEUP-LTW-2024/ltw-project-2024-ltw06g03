@@ -23,10 +23,14 @@ if(strtoupper($_SERVER['REQUEST_METHOD']) === 'POST') {
             $password = $result['password'];
             if ($password === $userPassword) {
                 $_SESSION['user_email'] = $email;
+                $_SESSION['logged_in'] = true;
                 header("Location: http://localhost:9000/index.php");
                 exit;
             }
         }
+        header("Location: http://localhost:9000/login.php");
+        //do not forget to print the errors in login
+        exit;
     } catch (PDOException $e) {
         echo 'Error: ' . $e->getMessage();
     }

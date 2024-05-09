@@ -10,9 +10,17 @@ $stmt->execute();
 $categories = $stmt->fetchAll();*/
 
 output_head("Smooth As Silk");
+
+session_start();
 ?>
 <body>
-    <?php output_header(); ?>
+    <?php 
+    if ($_SESSION['logged_in'] === true) {
+        output_logged_in_header();
+    } else {
+        output_header(); 
+    }
+    ?>
     <h1 id="big-logo">SAS</h1>
     <section id="main-page">
         <div class="arrow"><a href=""><img src="" alt=""></a></div>
