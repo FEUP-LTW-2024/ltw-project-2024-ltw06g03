@@ -3,7 +3,7 @@ include_once ("database/connect.php");
 include_once ("templates/head.php");
 include_once ("templates/header.php");
 include_once ("templates/footer.php");
-output_head("Smooth As Silk","scripts/post-page-script.js");
+output_head("Smooth As Silk", "scripts/post-page-script.js");
 ?>
 
 <body id="post-page">
@@ -27,7 +27,8 @@ output_head("Smooth As Silk","scripts/post-page-script.js");
                 <option value="15">15</option>
                 <option value="30">30</option>
                 <option value="60">60</option>
-            </select>        </div>
+            </select>
+        </div>
         <div>
             <h4>sort options</h4>
             <select name="sort-option" id="">
@@ -48,150 +49,21 @@ output_head("Smooth As Silk","scripts/post-page-script.js");
     </aside>
     <section id="posts-section" class="outer-box-format">
         <article class="iner-box-format">
-            <img src="" alt="">
-            <h4></h4>
-            <button><img src="" alt=""></button>
-            <button><img src="" alt=""></button>
+            <img src="./assets/shopping-cart.png" alt="">
+            <h4>asiudaiosdiohasidi asoid oasidio aosidhioasiodoiasdio oas d oasod aosd aosidoas doais doasj doiajsodjasodij asoidj aosidj oasijd oasidj oasidj oajd oasijd osa</h4>
+            <button><img src="" alt="">
+                <h5>Add to Wishlist</h5>
+            </button>
+            <button><img src="./assets/shopping-cart.png" alt="">
+                <h5>Add to Cart</h5>
+            </button>
         </article>
-        <article class="iner-box-format">
-            <img src="" alt="">
-            <h4></h4>
-            <button></button>
-            <button></button>
-        </article>
-        <article class="iner-box-format">
-            <img src="" alt="">
-            <h4></h4>
-            <button></button>
-            <button></button>
-        </article>
-        <article class="iner-box-format">
-            <img src="" alt="">
-            <h4></h4>
-            <button></button>
-            <button></button>
-        </article>
-        <article class="iner-box-format">
-            <img src="" alt="">
-            <h4></h4>
-            <button></button>
-            <button></button>
-        </article>
-        <article class="iner-box-format">
-            <img src="" alt="">
-            <h4></h4>
-            <button></button>
-            <button></button>
-        </article>
-        <article class="iner-box-format">
-            <img src="" alt="">
-            <h4></h4>
-            <button><img src="" alt=""></button>
-            <button><img src="" alt=""></button>
-        </article>
-        <article class="iner-box-format">
-            <img src="" alt="">
-            <h4></h4>
-            <button><img src="" alt=""></button>
-            <button><img src="" alt=""></button>
-        </article>
-        <article class="iner-box-format">
-            <img src="" alt="">
-            <h4></h4>
-            <button><img src="" alt=""></button>
-            <button><img src="" alt=""></button>
-        </article><article class="iner-box-format">
-            <img src="" alt="">
-            <h4></h4>
-            <button><img src="" alt=""></button>
-            <button><img src="" alt=""></button>
-        </article>
-        <article class="iner-box-format">
-            <img src="" alt="">
-            <h4></h4>
-            <button><img src="" alt=""></button>
-            <button><img src="" alt=""></button>
-        </article>
-        <article class="iner-box-format">
-            <img src="" alt="">
-            <h4></h4>
-            <button><img src="" alt=""></button>
-            <button><img src="" alt=""></button>
-        </article><article class="iner-box-format">
-            <img src="" alt="">
-            <h4></h4>
-            <button><img src="" alt=""></button>
-            <button><img src="" alt=""></button>
-        </article>
-        <article class="iner-box-format">
-            <img src="" alt="">
-            <h4></h4>
-            <button><img src="" alt=""></button>
-            <button><img src="" alt=""></button>
-        </article>
-        <article class="iner-box-format">
-            <img src="" alt="">
-            <h4></h4>
-            <button><img src="" alt=""></button>
-            <button><img src="" alt=""></button>
-        </article><article class="iner-box-format">
-            <img src="" alt="">
-            <h4></h4>
-            <button><img src="" alt=""></button>
-            <button><img src="" alt=""></button>
-        </article>
-        <article class="iner-box-format">
-            <img src="" alt="">
-            <h4></h4>
-            <button><img src="" alt=""></button>
-            <button><img src="" alt=""></button>
-        </article>
-        <article class="iner-box-format">
-            <img src="" alt="">
-            <h4></h4>
-            <button><img src="" alt=""></button>
-            <button><img src="" alt=""></button>
-        </article><article class="iner-box-format">
-            <img src="" alt="">
-            <h4></h4>
-            <button><img src="" alt=""></button>
-            <button><img src="" alt=""></button>
-        </article>
-        <article class="iner-box-format">
-            <img src="" alt="">
-            <h4></h4>
-            <button><img src="" alt=""></button>
-            <button><img src="" alt=""></button>
-        </article>
-        <article class="iner-box-format">
-            <img src="" alt="">
-            <h4></h4>
-            <button><img src="" alt=""></button>
-            <button><img src="" alt=""></button>
-        </article><article class="iner-box-format">
-            <img src="" alt="">
-            <h4></h4>
-            <button><img src="" alt=""></button>
-            <button><img src="" alt=""></button>
-        </article>
-        <article class="iner-box-format">
-            <img src="" alt="">
-            <h4></h4>
-            <button><img src="" alt=""></button>
-            <button><img src="" alt=""></button>
-        </article>
-        <article class="iner-box-format">
-            <img src="" alt="">
-            <h4></h4>
-            <button><img src="" alt=""></button>
-            <button><img src="" alt=""></button>
-        </article>
-        <div id="page-number">
+    </section>
+    <div id="page-number">
             <button><img src="" alt=""></button>
             <h4></h4>
             <button><img src="" alt=""></button>
         </div>
-    </section>
     <?php output_footer("posts-footer"); ?>
 </body>
 

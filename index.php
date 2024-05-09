@@ -9,7 +9,7 @@ $stmt = $db->prepare('SELECT * FROM categories') ;
 $stmt->execute();
 $categories = $stmt->fetchAll();*/
 
-output_head("Smooth As Silk");
+output_head("Smooth As Silk","scripts/index-script.js");
 ?>
 <body>
     <?php output_header(); ?>

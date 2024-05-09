@@ -6,7 +6,15 @@ body
     background: linear-gradient(to bottom, var( --very_dark_green),var(--dark_green), var(--green), var(--green) ,var(--dark_green),var( --very_dark_green));
     font-family: 'Roboto', 'Arial';
 }
-
+button {
+    background-color: transparent;
+    background-repeat: no-repeat;
+    border: none;
+    cursor: pointer;
+    overflow: hidden;
+    outline: none;
+    padding: 0;
+}
 
 
 /* Navbar */
@@ -226,9 +234,9 @@ input[type="submit"] {
     overflow-y: scroll;
     padding-bottom: 3em;
 }
+
 #posts-section::-webkit-scrollbar {
     width: 10px;
-     
 }
 
 #posts-section::-webkit-scrollbar-track {
@@ -239,7 +247,18 @@ input[type="submit"] {
     background: var(--dark_green); 
     border-radius: 5px; 
 }
-
+#posts-section article{
+    width: 260px;
+    height: 300px;
+}
+#posts-section article img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    border-radius: 15px;
+}
+#posts-section article h4 {
+}
 #page-number
 {
 }

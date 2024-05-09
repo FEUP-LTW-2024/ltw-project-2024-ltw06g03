@@ -89,6 +89,36 @@ label {
     "footer footer";
 }
 
+#posts-section article {
+    align-items: center;
+    justify-content: center;
+    display: grid;
+    grid-template-rows: 2fr 1fr 0.25fr;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas: 
+    "image image"
+    "decription decription"
+    "likebutton cartbutton";
+}
+#posts-section article img {
+    grid-area: image;
+}
+#posts-section article h4 {
+    grid-area: decription;
+    text-align: center;
+}
+#posts-section article button{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+}
+#posts-section article button:first-child {
+    grid-area: likebutton;
+}
+#posts-section article button:nth-child(2) {
+    grid-area: cartbutton;
+}
 #post-page #navbar{
     grid-area: header;
 }
