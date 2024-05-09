@@ -126,7 +126,7 @@ footer {
 }
 
 #login-sec {
-    background-color: var(--very_dark_green);
+    background-color: var(--dark_green);
     width: 50em;
     margin: 5em auto 8em auto;
     padding: 2em;
