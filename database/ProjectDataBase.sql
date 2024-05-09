@@ -19,7 +19,8 @@ CREATE TABLE users (
     password VARCHAR NOT NULL,
     email VARCHAR NOT NULL,
     location VARCHAR NOT NULL,
-    register_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+    register_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    name VARCHAR NOT NULL
 );
 
 CREATE TABLE seller (

@@ -83,3 +83,9 @@ label {
     text-align: left;
 
 }
+
+#buyer-seller {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}

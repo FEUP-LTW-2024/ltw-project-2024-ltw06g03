@@ -109,8 +109,6 @@ footer {
     margin-bottom: 50px;
 }
 
-
-
 #main-page button {
     background-color: transparent;
     background-repeat: no-repeat;
@@ -183,4 +181,19 @@ input[type="submit"] {
     font-weight: 600;
 }
 
+input[type="checkbox"] {
+    width: fit-content;
+}
 
+.align-center {
+    margin: 0.5em auto;
+}
+
+#errors-div {
+    padding: 0.5em;
+    margin: 5em auto 3em auto;
+}
+
+label[for="buyer"], label[for="seller"] {
+    margin: 0 1em;
+}
