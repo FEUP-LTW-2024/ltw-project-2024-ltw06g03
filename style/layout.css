@@ -32,20 +32,28 @@ footer {
     display: flex;
     flex-direction: row;
     align-items: center;
+    justify-content: center;
 }
 
 #main-page > ul
 {
     display: flex;
     flex-direction: row;
-    align-items: left;
+    align-items: center;
+    justify-content: center;
     overflow: hidden;
 }
 
-#main-page > ul > li:first-child,
-#main-page > ul > li:nth-child(5) {
-    transform: translateY(-15px); 
+#main-page > ul > li {
+    justify-content: center;
+    align-items: center;
+    display: flex;
 }
+
+#main-page > ul > li > a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 
 #login-sec {
     display: grid;
@@ -73,6 +81,7 @@ input, label {
 
 label {
     text-align: left;
+
 }
 
 #buyer-seller {

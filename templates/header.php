@@ -1,6 +1,6 @@
 <?php
-    function output_header() {?>
-        <nav id="navbar">
+    function output_header(string $username = "Login") {?>
+        <header id="navbar">
             <ul>
                 <li id="logo-li"><a href="index.php"><h1 id="logo-txt">SAS</h1></a></li>
                 <li id="search-bar"><img src="./assets/search.png" alt="search icon"><input type="text" ></li>
@@ -18,6 +18,6 @@
                 <li><a href=""><img src="./assets/shopping-cart.png" alt="shopping cart"></a></li>
                 <li><a href="../actions/logout.php">Logout</a></li>
             </ul>
-        </nav>
+        </header>
     <?php }
 ?>
