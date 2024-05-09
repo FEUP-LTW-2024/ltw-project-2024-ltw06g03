@@ -36,7 +36,7 @@ output_head("Smooth As Silk");
         <button class="arrow-left" ><img  src="./assets/arrowright.png" alt="arrow-left"></button>
 
     </section>
-    <?php output_footer(); ?>
+    <?php output_footer("index-footer"); ?>
 </body>
 
 </html>
