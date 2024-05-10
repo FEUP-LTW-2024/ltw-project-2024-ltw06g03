@@ -20,7 +20,7 @@ session_start();
         output_header(); 
     }
     ?>
-    <h1 id="big-logo">SAS</h1>
+    <h1 id="big-logo" class="barcode">SAS</h1>
     <section id="main-page">
         <button class="arrow-right"><img src="./assets/arrowleft.png" alt="arrow-right"></button>
 

@@ -107,6 +107,7 @@ footer {
     font-size: 20em;
     margin-top: 100px;
     margin-bottom: 50px;
+    color: var(--beige);
 }
 
 #main-page button {
@@ -136,7 +137,6 @@ footer {
 }
 
 #logo-txt {
-    font-family: 'Libre Barcode 39 Text', 'Arial';
     margin: 0;
 }
 
@@ -196,4 +196,8 @@ input[type="checkbox"] {
 
 label[for="buyer"], label[for="seller"] {
     margin: 0 1em;
+}
+
+.barcode {
+    font-family: 'Libre Barcode 39 Text', 'Arial';
 }
