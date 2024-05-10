@@ -31,7 +31,18 @@ INSERT INTO admin (user_id) VALUES (5);
 
 -- Insert sample categories
 INSERT INTO categories (name) VALUES 
-('Electronics'), ('Clothing'), ('Furniture'), ('Books');
+('Electronics'), 
+('Clothing'), 
+('Furniture'), 
+('Books'),
+('Automobiles'), 
+('Kitchen Appliances'), 
+('Gardening'), 
+('Sports Equipment'), 
+('Musical Instruments'), 
+('Toys'), 
+('Art Supplies'), 
+('Pet Supplies');
 
 -- Insert sample items
 INSERT INTO items (seller_id, category_id, brand, model, size, condition, price) VALUES 
