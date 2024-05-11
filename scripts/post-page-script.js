@@ -2,6 +2,7 @@ document.addEventListener("DOMContentLoaded", function () {
   const filterButton = document.querySelector("#sort-bar div button");
   const filtersBar = document.querySelector("#filters");
   const pageBody = document.querySelector("#post-page");
+  const postContainer = document.querySelector("#posts-section");
   console.log("filterButton", filterButton);
 
   function toggleFiltersBar() {
@@ -9,9 +10,11 @@ document.addEventListener("DOMContentLoaded", function () {
     if (filtersBar.style.display === "none") {
       filtersBar.style.display = "block";
       pageBody.style.gridTemplateColumns = "0.25fr 1fr";
+      postContainer.style.gridTemplateColumns = "1fr 1fr 1fr 1fr";
     } else {
       filtersBar.style.display = "none";
       pageBody.style.gridTemplateColumns = "0fr 1fr";
+      postContainer.style.gridTemplateColumns = "1fr 1fr 1fr 1fr 1fr";
     }
   }
 

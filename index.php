@@ -8,7 +8,7 @@ $stmt = $db->prepare('SELECT * FROM categories') ;
 $stmt->execute();
 $categories = $stmt->fetchAll();
 
-output_head("Smooth As Silk","scripts/index-script.js");
+output_head("Smooth As Silk","script.js");
 session_start();
 ?>
 <body id="main-page-body">

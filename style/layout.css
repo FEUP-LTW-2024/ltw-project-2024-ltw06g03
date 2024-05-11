@@ -107,9 +107,9 @@ label {
 
 #posts-section article {
     align-items: center;
-    justify-content: center;
+    justify-items: center;
     display: grid;
-    grid-template-rows: 2fr 1fr 0.25fr;
+    grid-template-rows: 1.5fr 1fr 0.25fr;
     grid-template-columns: 1fr 1fr;
     grid-template-areas: 
     "image image"
@@ -180,9 +180,9 @@ label {
 #posts-section {
     grid-area: post-section;
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
     position: relative;
+    justify-items: center;
 }
 
 #posts-footer {

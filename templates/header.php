@@ -1,5 +1,5 @@
 <?php
-    function output_header(string $username = "Login") {?>
+    function output_header(string $username = "Login") {?> 
         <header id="navbar">
             <ul>
                 <li id="logo-li"><a href="index.php"><h1 id="logo-txt" class="barcode">SAS</h1></a></li>
