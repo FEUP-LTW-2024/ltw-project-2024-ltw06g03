@@ -45,10 +45,12 @@ output_head("Smooth As Silk", "scripts/post-page-script.js");
         </header>
         <article class="iner-box-format">
             <h3>titolo</h3>
+            <input type="range" name="" id="price_slider" class="slider" value="0" min="0" max ="100000">
         </article>
     </aside>
     <section id="posts-section" class="outer-box-format">
         <article class="iner-box-format">
+            <h3>Post title</h3>
             <img src="./assets/noimg.png" alt="">
             <h4 class="text-box-format">asiudaiosdiohasidi asoid oasidio aosidhioasiodoiasdio oas d oasod aosd aosidoas doais doasj doiajsodjasodij asoidj aosidj oasijd oasidj oasidj oajd oasijd osa</h4>
             <button><img src="./assets/heartempty.png" alt="">
@@ -58,127 +60,6 @@ output_head("Smooth As Silk", "scripts/post-page-script.js");
                 <h5>Add to Cart</h5>
             </button>
         </article>
-        <article class="iner-box-format">
-            <img src="./assets/noimg.png" alt="">
-            <h4 class="text-box-format">asiudaiosdiohasidi asoid oasidio aosidhioasiodoiasdio oas d oasod aosd aosidoas doais doasj doiajsodjasodij asoidj aosidj oasijd oasidj oasidj oajd oasijd osa</h4>
-            <button><img src="./assets/heartempty.png" alt="">
-                <h5>Add to Wishlist</h5>
-            </button>
-            <button><img src="./assets/shopping-cart.png" alt="">
-                <h5>Add to Cart</h5>
-            </button>
-        </article>
-        <article class="iner-box-format">
-            <img src="./assets/noimg.png" alt="">
-            <h4 class="text-box-format">asiudaiosdiohasidi asoid oasidio aosidhioasiodoiasdio oas d oasod aosd aosidoas doais doasj doiajsodjasodij asoidj aosidj oasijd oasidj oasidj oajd oasijd osa</h4>
-            <button><img src="./assets/heartempty.png" alt="">
-                <h5>Add to Wishlist</h5>
-            </button>
-            <button><img src="./assets/shopping-cart.png" alt="">
-                <h5>Add to Cart</h5>
-            </button>
-        </article>
-        <article class="iner-box-format">
-            <img src="./assets/noimg.png" alt="">
-            <h4 class="text-box-format">asiudaiosdiohasidi asoid oasidio aosidhioasiodoiasdio oas d oasod aosd aosidoas doais doasj doiajsodjasodij asoidj aosidj oasijd oasidj oasidj oajd oasijd osa</h4>
-            <button><img src="./assets/heartempty.png" alt="">
-                <h5>Add to Wishlist</h5>
-            </button>
-            <button><img src="./assets/shopping-cart.png" alt="">
-                <h5>Add to Cart</h5>
-            </button>
-        </article>
-        <article class="iner-box-format">
-            <img src="./assets/noimg.png" alt="">
-            <h4 class="text-box-format">asiudaiosdiohasidi asoid oasidio aosidhioasiodoiasdio oas d oasod aosd aosidoas doais doasj doiajsodjasodij asoidj aosidj oasijd oasidj oasidj oajd oasijd osa</h4>
-            <button><img src="./assets/heartempty.png" alt="">
-                <h5>Add to Wishlist</h5>
-            </button>
-            <button><img src="./assets/shopping-cart.png" alt="">
-                <h5>Add to Cart</h5>
-            </button>
-        </article>
-        <article class="iner-box-format">
-            <img src="./assets/noimg.png" alt="">
-            <h4 class="text-box-format">asiudaiosdiohasidi asoid oasidio aosidhioasiodoiasdio oas d oasod aosd aosidoas doais doasj doiajsodjasodij asoidj aosidj oasijd oasidj oasidj oajd oasijd osa</h4>
-            <button><img src="./assets/heartempty.png" alt="">
-                <h5>Add to Wishlist</h5>
-            </button>
-            <button><img src="./assets/shopping-cart.png" alt="">
-                <h5>Add to Cart</h5>
-            </button>
-        </article>
-        <article class="iner-box-format">
-            <img src="./assets/noimg.png" alt="">
-            <h4 class="text-box-format">asiudaiosdiohasidi asoid oasidio aosidhioasiodoiasdio oas d oasod aosd aosidoas doais doasj doiajsodjasodij asoidj aosidj oasijd oasidj oasidj oajd oasijd osa</h4>
-            <button><img src="./assets/heartempty.png" alt="">
-                <h5>Add to Wishlist</h5>
-            </button>
-            <button><img src="./assets/shopping-cart.png" alt="">
-                <h5>Add to Cart</h5>
-            </button>
-        </article>
-        <article class="iner-box-format">
-            <img src="./assets/noimg.png" alt="">
-            <h4 class="text-box-format">asiudaiosdiohasidi asoid oasidio aosidhioasiodoiasdio oas d oasod aosd aosidoas doais doasj doiajsodjasodij asoidj aosidj oasijd oasidj oasidj oajd oasijd osa</h4>
-            <button><img src="./assets/heartempty.png" alt="">
-                <h5>Add to Wishlist</h5>
-            </button>
-            <button><img src="./assets/shopping-cart.png" alt="">
-                <h5>Add to Cart</h5>
-            </button>
-        </article>
-        <article class="iner-box-format">
-            <img src="./assets/noimg.png" alt="">
-            <h4 class="text-box-format">asiudaiosdiohasidi asoid oasidio aosidhioasiodoiasdio oas d oasod aosd aosidoas doais doasj doiajsodjasodij asoidj aosidj oasijd oasidj oasidj oajd oasijd osa</h4>
-            <button><img src="./assets/heartempty.png" alt="">
-                <h5>Add to Wishlist</h5>
-            </button>
-            <button><img src="./assets/shopping-cart.png" alt="">
-                <h5>Add to Cart</h5>
-            </button>
-        </article>
-        <article class="iner-box-format">
-            <img src="./assets/noimg.png" alt="">
-            <h4 class="text-box-format">asiudaiosdiohasidi asoid oasidio aosidhioasiodoiasdio oas d oasod aosd aosidoas doais doasj doiajsodjasodij asoidj aosidj oasijd oasidj oasidj oajd oasijd osa</h4>
-            <button><img src="./assets/heartempty.png" alt="">
-                <h5>Add to Wishlist</h5>
-            </button>
-            <button><img src="./assets/shopping-cart.png" alt="">
-                <h5>Add to Cart</h5>
-            </button>
-        </article>
-        <article class="iner-box-format">
-            <img src="./assets/noimg.png" alt="">
-            <h4 class="text-box-format">asiudaiosdiohasidi asoid oasidio aosidhioasiodoiasdio oas d oasod aosd aosidoas doais doasj doiajsodjasodij asoidj aosidj oasijd oasidj oasidj oajd oasijd osa</h4>
-            <button><img src="./assets/heartempty.png" alt="">
-                <h5>Add to Wishlist</h5>
-            </button>
-            <button><img src="./assets/shopping-cart.png" alt="">
-                <h5>Add to Cart</h5>
-            </button>
-        </article>
-        <article class="iner-box-format">
-            <img src="./assets/noimg.png" alt="">
-            <h4 class="text-box-format">asiudaiosdiohasidi asoid oasidio aosidhioasiodoiasdio oas d oasod aosd aosidoas doais doasj doiajsodjasodij asoidj aosidj oasijd oasidj oasidj oajd oasijd osa</h4>
-            <button><img src="./assets/heartempty.png" alt="">
-                <h5>Add to Wishlist</h5>
-            </button>
-            <button><img src="./assets/shopping-cart.png" alt="">
-                <h5>Add to Cart</h5>
-            </button>
-        </article>
-        <article class="iner-box-format">
-            <img src="./assets/noimg.png" alt="">
-            <h4 class="text-box-format">asiudaiosdiohasidi asoid oasidio aosidhioasiodoiasdio oas d oasod aosd aosidoas doais doasj doiajsodjasodij asoidj aosidj oasijd oasidj oasidj oajd oasijd osa</h4>
-            <button><img src="./assets/heartempty.png" alt="">
-                <h5>Add to Wishlist</h5>
-            </button>
-            <button><img src="./assets/shopping-cart.png" alt="">
-                <h5>Add to Cart</h5>
-            </button>
-        </article>
-        
         
     </section>
     <div id="page-number">

@@ -109,9 +109,10 @@ label {
     align-items: center;
     justify-items: center;
     display: grid;
-    grid-template-rows: 1.5fr 1fr 0.25fr;
+    grid-template-rows: auto 1.5fr 1fr 0.25fr;
     grid-template-columns: 1fr 1fr;
     grid-template-areas: 
+    "title title"
     "image image"
     "decription decription"
     "likebutton cartbutton";
@@ -135,6 +136,11 @@ label {
 #posts-section article button:nth-child(2) {
     grid-area: cartbutton;
 }
+#posts-section article h3 {
+    grid-area: title;
+    text-align: center;
+}
+    
 #post-page #navbar{
     grid-area: header;
 }
@@ -153,7 +159,12 @@ label {
     grid-area: filter;
     display: block;
 }
-
+#filters article{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
 #sort-bar {
     grid-area: sort-bar;
     display: flex;

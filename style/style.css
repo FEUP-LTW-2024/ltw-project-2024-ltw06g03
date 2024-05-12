@@ -280,7 +280,21 @@ label[for="buyer"], label[for="seller"] {
     margin: 0 5px; 
 }
 
-#filters {
+#filters header {
+    padding: 0.05em 0;
+}
+.slider {
+    -webkit-appearance: none;
+    background-color: var(--beige);
+    border-radius: 25px;
+}
+.slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    background-color: var(--bright_green);
+    border-radius: 50%;
+    width: 15px;
+    height: 15px;
+
 }
 
 #sort-bar {
