@@ -353,6 +353,36 @@ footer {
     color:var(--beige);
     position: fixed;
     inset: 0 0 0 auto;
-    display:grid;
-    grid-template-rows: 70px 1fr 70px;
+    display: grid;
+    grid-template-rows: 90% 1fr;
+}
+
+
+.cartTab .cartTabContent {
+    height: 100%;
+    width: 100%;
+}
+
+.cartTab h1 {
+    background-color: var(--very_dark_green);
+    padding: 20px;
+    margin: 0;
+    font-weight: 300;   
+    height: 60.5px;  
+}
+
+.cartTab .checkout button {
+    background-color: var(--beige);
+    height: 100%;
+    width: 100%;
+    border: none;
+    color: var(--very_dark_green);
+    font-size: small;
+    transition: background-color 0.3s ease;
+    font-weight: 700;
+}
+
+.cartTab .checkout button:hover {
+    background-color: black;
+    color: var(--beige);
 }
