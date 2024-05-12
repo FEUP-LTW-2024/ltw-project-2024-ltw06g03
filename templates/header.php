@@ -9,5 +9,19 @@
                 <li><a href=""><img src="./assets/shopping-cart.png" alt="shopping cart"></a></li>
             </ul>
         </nav>
+
+        <div class = "cartTab">
+            <div class = "cartTabContent">
+                <h1>Shopping Cart</h1>
+                <ul>
+                    <li>Item 1</li>
+                    <li>Item 2</li>
+                    <li>Item 3</li>
+                    <li>Item 4</li>
+                    <li>Item 5</li>
+                </ul>
+                <button>Checkout</button>
+            </div>
+        </div>
     <?php }
 ?>

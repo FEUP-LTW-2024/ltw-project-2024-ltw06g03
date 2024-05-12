@@ -343,3 +343,16 @@ footer {
 .label {
     margin-bottom: 5px;
 }
+
+
+/* shopping cart */
+
+.cartTab{
+    width: 400px;
+    background-color: var(--green);
+    color:var(--beige);
+    position: fixed;
+    inset: 0 0 0 auto;
+    display:grid;
+    grid-template-rows: 70px 1fr 70px;
+}
