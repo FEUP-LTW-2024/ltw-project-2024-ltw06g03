@@ -37,5 +37,11 @@
                 <button class = "check">Checkout</button>
             </div>
         </div>
+        
+        <script>
+            document.querySelector('.close').addEventListener('click', function() {
+                document.querySelector('.cartTab').style.display = 'none';
+            });
+        </script>
     <?php }
 ?>

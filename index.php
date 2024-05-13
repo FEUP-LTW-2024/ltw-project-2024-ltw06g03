@@ -24,13 +24,7 @@ output_head("Smooth As Silk");
             <li><a href="">Category</a></li>
             <li><a href="">Category</a></li>
             <li><a href="">Category</a></li>
-            <li><a href="">Category</a></li>
-            <li><a href="">Category</a></li>
-            <li><a href="">Category</a></li>
-            <li><a href="">Category</a></li>
-            <li><a href="">Category</a></li>
-            <li><a href="">Category</a></li>
-            <li><a href="">Category</a></li>
+            
 
         </ul>
     </section>
