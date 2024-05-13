@@ -14,6 +14,7 @@
             <ul>
                 <li id="logo-li"><a href="index.php"><h1 id="logo-txt" class="barcode">SAS</h1></a></li>
                 <li id="search-bar"><img src="./assets/search.png" alt="search icon"><input type="text" ></li>
+                <li id="new-post"><a href="new_post.php"><h1 id="new-post-text">+</h1></a></li>
                 <li><a id="user-profile" href="profile.php"><img src="./assets/usericon.png" alt="profile picture"></a></li> <!-- profile page not implemented -->
                 <li><a href=""><img src="./assets/shopping-cart.png" alt="shopping cart"></a></li>
                 <li><a href="../actions/logout.php">Logout</a></li>
