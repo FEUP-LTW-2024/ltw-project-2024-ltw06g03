@@ -20,15 +20,6 @@ INSERT INTO users (username, password, email, location) VALUES
 ('buyer2', 'buyer2pass', 'buyer2@example.com', 'Location D'),
 ('admin1', 'admin1pass', 'admin1@example.com', 'Location E');
 
--- Insert sample seller records
-INSERT INTO seller (user_id) VALUES (1), (2);
-
--- Insert sample buyer records
-INSERT INTO buyer (user_id) VALUES (3), (4);
-
--- Insert sample admin records
-INSERT INTO admin (user_id) VALUES (5);
-
 -- Insert sample categories
 INSERT INTO categories (name) VALUES 
 ('Electronics'), 

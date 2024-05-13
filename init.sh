@@ -8,6 +8,7 @@ sleep 2
 
 # Create the database using sqlite3
 sqlite3 database/database.db < database/ProjectDataBase.sql
+sqlite3 database/database.db < database/ProjectDataBase_Pop.sql
 
 # Print a message indicating that the initialization is complete
 echo "Initialization complete."
