@@ -13,11 +13,28 @@
         <div class = "cartTab">
             <div class = "cartTabContent">
                 <h1>Shopping Cart</h1>
-                
+                <div class = "cartItems">
+                    <div class = "cartItem">
+                        <div class = "cartItemImg">
+                            <img class src = "./assets/madeirense.jpg" alt = "item">
+                        </div>
+                        <div class = "cartItemName">
+                            Product Name
+                        </div>
+                        <div class = "cartItemPrice">
+                            0.00
+                        </div>
+                        <div class = "cartItemQuantity">
+                            <span class = "less">-</span>
+                            <span>1</span>
+                            <span class = "more">+</span>
+                        </div>
+                    </div>
+                </div>           
             </div>
-            <div class = "checkout">
-                
-                <button>Checkout</button>
+            <div class = "btn">
+                <button class = "close">Close</button>
+                <button class = "check">Checkout</button>
             </div>
         </div>
     <?php }
