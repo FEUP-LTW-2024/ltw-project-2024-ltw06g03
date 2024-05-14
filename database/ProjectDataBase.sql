@@ -59,10 +59,8 @@ CREATE TABLE items (
     category_id INTEGER,
     brand VARCHAR NOT NULL,
     model VARCHAR NOT NULL,
-    size VARCHAR NOT NULL,
     condition VARCHAR NOT NULL,
     price INTEGER NOT NULL,
-    image BLOB,
     FOREIGN KEY(seller_id) REFERENCES seller(id),
     FOREIGN KEY(category_id) REFERENCES categories(id)
 );

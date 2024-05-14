@@ -21,7 +21,7 @@ session_start();
     <section id="login-sec" class="login-container">
         <div id="login-div">
             <h1>New Post</h1>
-            <form action="actions/login.php" method="post">
+            <form action="actions/new_post.php" method="post" enctype="multipart/form-data">
                 <label for="category">Category:</label>
                 <select name="category" id="category-sel">
                     <?php
@@ -58,6 +58,7 @@ session_start();
                 <input type="number" name="price">
                 <label for="image">Item Image:</label>
                 <input type="file">
+                <input type="submit" value="Create Post">
             </form>
         </div>
     </section>
