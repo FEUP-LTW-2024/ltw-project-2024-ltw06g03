@@ -36,6 +36,6 @@ session_start();
         </div>
     </section>
     
-    <?php output_footer(); ?>
+    <?php output_footer("EDU"); ?>
 </body>
 </html>

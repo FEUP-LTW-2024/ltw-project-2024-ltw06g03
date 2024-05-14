@@ -13,6 +13,7 @@ body
 #navbar {
     background-color: var(--very_dark_green);
     padding: 1em; 
+    margin: 0;
 }
 #navbar > ul li a
 {
@@ -358,7 +359,7 @@ label[for="buyer"], label[for="seller"] {
     align-items: center;
     margin-left: 2em;
     margin-top: 2em;
-    background-color: var(--green);
+    background-color: var(--dark_green);
     border-radius: 30px;
     margin-bottom: 2em;
     box-shadow: 4px 4px 8px 0 rgba(0, 0, 0, 0.2);
@@ -399,6 +400,8 @@ label[for="buyer"], label[for="seller"] {
     display: flex;
     flex-direction: column;
     align-items: center;
+    background-color: var(--dark_green);
+
 }
 
 .profile-settings {
@@ -431,8 +434,12 @@ label[for="buyer"], label[for="seller"] {
     width:70%;
     padding: 10px;
     border-radius: 20px;
-    background-color: var(--beige);
+    background-color: var(--green);
     border-color: none;
+}
+
+.form-control::placeholder {
+    color: var(--bright_green);
 }
 
 .labels {
@@ -441,6 +448,7 @@ label[for="buyer"], label[for="seller"] {
 }
 
 .label {
+    color: var(--beige);    
     margin-bottom: 5px;
 }
 
@@ -534,7 +542,176 @@ label[for="buyer"], label[for="seller"] {
 
 /* cartTab open/close animation */
 
-
 .cartTab.open {
     transform: translateX(0);
 }
+
+/* checkout page */
+.checkout-page {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2em;
+    padding: 2em;
+}
+
+/* Checkout Information */
+.checkout-information {
+    background-color: var(--bright_green); /* Green background */
+    color: white;
+    padding: 30px;
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    text-align: center;
+}
+
+.checkout-information h1 {
+    font-size: 24px;
+    font-weight: 400;
+    margin-bottom: 20px;
+}
+
+.checkout-information p {
+    font-weight: 300;
+    margin-bottom: 20px;
+}
+
+.checkout-item {
+    display: grid;
+    grid-template-columns: 10% 20% 5% 1fr;
+    align-items: center;
+    gap: 30px;
+    margin-bottom: 50px;
+    font-weight: 100;
+}
+
+.checkout-item-img {
+    width: 40px; 
+}
+
+.checkout-item-img img {
+    width: 100%; 
+    filter: invert(100%); 
+}
+
+
+.checkout-item-quantity span {
+    padding: 5px 10px;
+    border: none; /* No border */
+    background-color: rgba(255, 255, 255, 0.2); 
+    cursor: pointer;
+    font-weight: bold;
+    margin: 0 5px;
+}
+
+.checkout-total {
+    font-size: 20px;
+}
+
+.checkout-actions button {
+    background-color: var(--green); 
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s; 
+}
+
+.checkout-actions button:hover {
+    background-color: var(--very_dark_green); 
+}
+
+
+/* Shipping Address */
+
+.shipping {
+    text-align: center;
+    background-color: var(--bright_green); 
+    padding: 2em;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    flex: 1;
+}
+
+.shipping h1 {
+    color: white;
+    margin-bottom: 10px;
+    font-size: 24px;
+    font-weight: 400;
+}
+
+.shipping input[type="text"] {
+    background-color: var(--green);
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 15px;
+    border: 1px solid var(--beige); 
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+.shipping input[type="text"]::placeholder {
+    color: var(--beige);
+    
+}
+
+.shipping input[type="text"]:focus {
+    outline: none;
+    border-color: var(--very_dark_green); /* Highlight on focus */
+}
+
+/* Payment */
+.modal {
+    display: none;/* Hidden by default */
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.4);
+}
+
+.modal h1 {
+    color: white;
+    margin-bottom: 10px;
+    font-size: 24px;
+    font-weight: 400;
+}
+
+.modal input[type="text"] {
+    background-color: var(--green);
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 15px;
+    border: 1px solid var(--beige); 
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+.modal input[type="text"]::placeholder {
+    color: var(--beige);
+    
+}
+
+.modal-content {
+    background-color: var(--green);
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 30%;
+    border-radius: 10px; /* Rounded corners */
+}
+
+.close-checkout-btn {
+    color: var(--beige);
+    margin-top: 10px;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+}
+

@@ -26,7 +26,7 @@
                 <div class = "cartItems">
                     <div class = "cartItem">
                         <div class = "cartItemImg">
-                            <img class src = "./assets/madeirense.jpg" alt = "item">
+                            <img class src = "./assets/shopping-cart.png" alt = "item">
                         </div>
                         <div class = "cartItemName">
                             Product Name
@@ -44,7 +44,7 @@
             </div>
             <div class = "btn">
                 <button class = "close">Close</button>
-                <button class = "check">Checkout</button>
+                <a href="checkout.php"><button>Checkout</button></a>
             </div>
         </div>
         
@@ -52,6 +52,7 @@
             document.querySelector('.close').addEventListener('click', function() {
                 document.querySelector('.cartTab').style.display = 'none';
             });
+
         </script>
     <?php }
 ?>

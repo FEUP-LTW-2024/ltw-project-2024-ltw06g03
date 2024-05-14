@@ -3,6 +3,7 @@ include_once("templates/head.php");
 include_once("templates/header.php");
 include_once("templates/footer.php");
 include_once("templates/register_errors.php");
+session_start();
 
 output_head("Smooth As Silk");
 ?>
@@ -54,7 +55,7 @@ output_head("Smooth As Silk");
         
         </div>
     </div>
-    <?php output_footer(); ?>
+    <?php output_footer("EDU"); ?>
     <script>
         // Função para lidar com a mudança de foto do perfil
         document.getElementById('choose-btn').addEventListener('click', function() {
