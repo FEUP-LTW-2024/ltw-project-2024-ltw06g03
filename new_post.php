@@ -54,6 +54,10 @@ session_start();
                     <option value="new">New</option>
                     <option value="used">Used</option>
                 </select>
+                <label for="price">Price:</label>
+                <input type="number" name="price">
+                <label for="image">Item Image:</label>
+                <input type="file">
             </form>
         </div>
     </section>
