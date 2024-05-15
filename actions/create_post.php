@@ -30,6 +30,7 @@ function create_post(string $category, string $brand, string $model, string $con
         return $item_id;
     } catch (PDOException $e) {
         echo "Error: " . $e->getMessage();
+        return false;
     }
 }
 ?>

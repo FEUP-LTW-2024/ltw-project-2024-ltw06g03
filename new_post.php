@@ -3,11 +3,22 @@ include_once ("templates/head.php");
 include_once ("templates/header.php");
 include_once ("templates/footer.php");
 include_once ("database/connect.php");
+include_once("actions/utils.php");
 $db= getDatabaseConnection("database.db");
 
 output_head("Smooth As Silk");
 
 session_start();
+
+if ($_SESSION['logged_in'] != true) {
+    header("Location: http://localhost:9000/index.php");
+    exit;
+}
+
+if (!is_seller($_SESSION['user_email'])) {
+    header("Location: http://localhost:9000/index.php");
+    exit;
+}
 
 ?>
 <body id="new-post-body">
