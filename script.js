@@ -47,8 +47,14 @@ document.addEventListener('DOMContentLoaded', function() {
             category.style.transform = `translateX(${offset}px)`;
         });
     }
+
+    
+
 });
 
-/*Payment*/
-
+document.addEventListener('DOMContentLoaded', function() {
+    document.querySelector('.cart-icon').addEventListener('click', function() {
+        document.querySelector('.cartTab').style.display = 'grid';
+    });
+});
 

@@ -57,7 +57,6 @@ output_head("Smooth As Silk");
     </div>
     <?php output_footer("EDU"); ?>
     <script>
-        // Função para lidar com a mudança de foto do perfil
         document.getElementById('choose-btn').addEventListener('click', function() {
             document.getElementById('profile-photo').click();
         });
@@ -72,6 +71,11 @@ output_head("Smooth As Silk");
             };
 
             reader.readAsDataURL(file);
+        });
+
+        document.getElementById('save-btn').addEventListener('click', function() {
+            window.location.href = 'profile.php';
+            alert('Profile successfully updated!');
         });
     </script>
 </body>
