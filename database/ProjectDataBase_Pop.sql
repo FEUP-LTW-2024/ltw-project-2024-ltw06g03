@@ -3,7 +3,6 @@ DELETE FROM wishlist;
 DELETE FROM shipping_forms;
 DELETE FROM inquiries;
 DELETE FROM post_categories;
-DELETE FROM posts;
 DELETE FROM items;
 DELETE FROM categories;
 DELETE FROM admin;
@@ -13,12 +12,12 @@ DELETE FROM users;
 
 
 -- Insert sample users
-INSERT INTO users (username, password, email, location) VALUES 
-('seller1', 'seller1pass', 'seller1@example.com', 'Location A'),
-('seller2', 'seller2pass', 'seller2@example.com', 'Location B'),
-('buyer1', 'buyer1pass', 'buyer1@example.com', 'Location C'),
-('buyer2', 'buyer2pass', 'buyer2@example.com', 'Location D'),
-('admin1', 'admin1pass', 'admin1@example.com', 'Location E');
+INSERT INTO users (username, password, email, location, name) VALUES 
+('seller1', 'seller1pass', 'seller1@example.com', 'Location A', 'Seller One'),
+('seller2', 'seller2pass', 'seller2@example.com', 'Location B', 'Seller Two'),
+('buyer1', 'buyer1pass', 'buyer1@example.com', 'Location C', 'Buyer One'),
+('buyer2', 'buyer2pass', 'buyer2@example.com', 'Location D', 'Buyer Two'),
+('admin1', 'admin1pass', 'admin1@example.com', 'Location E', 'Admin One');
 
 -- Insert sample seller records
 INSERT INTO seller (user_id) VALUES (1), (2);
@@ -45,22 +44,17 @@ INSERT INTO categories (name) VALUES
 ('Pet Supplies');
 
 -- Insert sample items
-INSERT INTO items (seller_id, category_id, brand, model, size, condition, price) VALUES 
-(1, 1, 'Apple', 'iPhone X', 'N/A', 'Used', 500),
-(2, 2, 'Nike', 'Air Max 270', 'US 10', 'New', 150),
-(1, 3, 'IKEA', 'Billy Bookcase', 'N/A', 'Used', 50),
-(2, 4, 'Penguin Books', '1984 by George Orwell', 'N/A', 'New', 10);
-
--- Insert sample posts
-INSERT INTO posts (item_id, description) VALUES 
-(1, 'Used iPhone X in good condition, unlocked, with charger and box.'),
-(2, 'New Nike Air Max 270, size US 10, available in multiple colors.'),
-(3, 'IKEA Billy Bookcase in oak finish, lightly used, assembly required.'),
-(4, 'Brand new copy of 1984 by George Orwell, paperback edition.');
-
--- Insert sample post categories
-INSERT INTO post_categories (post_id, category_id) VALUES 
-(1, 1), (2, 2), (3, 3), (4, 4);
+INSERT INTO items (seller_id, category_id, brand, model, condition, price, description) VALUES 
+(1, 1, 'Apple', 'iPhone X', 'Used', 500, 'Used iPhone X in good condition, unlocked, with charger and box.'),
+(2, 2, 'Nike', 'Air Max 270', 'New', 150, 'New Nike Air Max 270, size US 10, available in multiple colors.'),
+(1, 3, 'IKEA', 'Billy Bookcase', 'Used', 50, 'IKEA Billy Bookcase in oak finish, lightly used, assembly required.'),
+(2, 4, 'Penguin Books', '1984 by George Orwell', 'New', 10, 'Brand new copy of 1984 by George Orwell, paperback edition.');
+-- Insert sample post_categories
+INSERT INTO post_categories (item_id, category_id) VALUES 
+(1, 1), 
+(2, 2), 
+(3, 3), 
+(4, 4);
 
 -- Insert sample inquiries
 INSERT INTO inquiries (item_id, buyer_id, message, response) VALUES 

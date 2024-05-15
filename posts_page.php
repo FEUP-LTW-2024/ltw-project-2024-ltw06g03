@@ -3,12 +3,23 @@ include_once ("database/connect.php");
 include_once ("templates/head.php");
 include_once ("templates/header.php");
 include_once ("templates/footer.php");
+$db = getDatabaseConnection('../database/database.db');
 
-$db= getDatabaseConnection("database.db");
-$stmt = $db->prepare('SELECT * FROM categories') ;
-$stmt->execute();
-$categories = $stmt->fetchAll();
+// Check if 'id' is set in the URL parameter
+if (isset($_GET['id'])) {
 
+    // Fetch posts by category
+
+    $stmt = $db->prepare('SELECT * FROM items JOIN post_categories ON items.id = post_categories.item_id WHERE post_categories.category_id = :id');
+    $stmt->bindParam(':id', $_GET['id']);
+    $stmt->execute();
+    //$stmt->execute(array($category_id));
+    $posts = $stmt->fetchAll();
+} else {
+    // Handle the case when 'id' is not set in the URL
+    // For example, you can set a default category id or fetch all posts
+    $posts = $items;
+}
 
 
 output_head("Smooth As Silk", "scripts/post-page-script.js");
@@ -18,9 +29,26 @@ output_head("Smooth As Silk", "scripts/post-page-script.js");
     <?php output_header(); ?>
     <nav id="link-tree">
         <ul>
-            <li><a href="">HOME</a></li>
-            <li><a href="">POSTS</a></li>
-            <li><a href="">CENAS</a></li>
+            <li><a href="index.php">HOME</a></li>
+            <li><a href="post_page.php">POSTS</a></li>
+            <?php
+            // Check if 'id' is set in the URL parameter
+            if (isset($_GET['id'])) {
+                // Fetch the category name from the database
+                $stmt = $db->prepare('SELECT * FROM categories WHERE id = ?');
+                $stmt->execute(array($_GET['id']));
+                $category = $stmt->fetch();
+
+                // Add a link to the category
+                echo '<li><a href="posts_page.php?id=' . $category['id'] . '">' . strtoupper(htmlspecialchars($category['name'])) . '</a></li>';
+            }
+
+            // Check if 'sr' is set in the URL parameter
+            if (isset($_GET['sr'])) {
+                // Add a link to the search results
+                echo '<li>' . strtoupper(htmlspecialchars($_GET['sr'])) . '</li>';
+            }
+            ?>
         </ul>
     </nav>
     <section id="sort-bar" class="outer-box-format background-color-very-dark-green">
@@ -49,7 +77,9 @@ output_head("Smooth As Silk", "scripts/post-page-script.js");
     </section>
     <aside id="filters" class="outer-box-format background-color-very-dark-green">
         <header class="iner-box-format background-color-dark-green">
-            <h2>Filtros</h2>
+            <button>
+                <h2>Filter</h2>
+            </button>
         </header>
         <article class="iner-box-format background-color-dark-green">
             <h3>Price</h3>
@@ -84,8 +114,8 @@ output_head("Smooth As Silk", "scripts/post-page-script.js");
         </article>
     </aside>
     <section id="posts-section" class="outer-box-format background-color-very-dark-green">
-        <article class="iner-box-format background-color-dark-green" >
-            <h3 ><a href="index.php"> Post Name</a></h3>
+        <article class="iner-box-format background-color-dark-green">
+            <h3><a href="index.php"> Post Name</a></h3>
             <img src="./assets/noimg.png" alt="">
             <h4 class="text-box-format">asiudaiosdiohasidi asoid oasidio aosidhioasiodoiasdio oas d oasod aosd aosidoas
                 doais doasj doiajsodjasodij asoidj aosidj oasijd oasidj oasidj oajd oasijd osa</h4>
@@ -96,7 +126,7 @@ output_head("Smooth As Silk", "scripts/post-page-script.js");
                 <h5>Add to Cart</h5>
             </button>
         </article>
-        
+
     </section>
     <div id="page-number">
         <button><img src="" alt=""></button>

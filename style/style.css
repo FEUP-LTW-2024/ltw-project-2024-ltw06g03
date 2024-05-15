@@ -27,9 +27,6 @@ button {
     outline: none;
     padding: 0;
 }
-.barcode {
-    font-family: 'Libre Barcode 39 Text', 'Arial';
-}
 h1 {
     font-size: 3em;
     margin: 0.5em;
@@ -60,6 +57,10 @@ h5 {
     color: var(--beige);
     font-weight: normal;
 }
+a {
+    color: var(--beige);
+    text-decoration: none;
+}
 .background-color-green {
     background-color: var(--green);
 }
@@ -72,9 +73,8 @@ h5 {
 .background-color-bright-green {
     background-color: var(--bright_green);
 }
-a {
-    color: var(--beige);
-    text-decoration: none;
+.barcode {
+    font-family: 'Libre Barcode 39 Text', 'Arial';
 }
 /* Navbar */
 #navbar {
