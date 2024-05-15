@@ -22,4 +22,12 @@ function is_seller(string $email) : bool {
     }
     return true;
 }
+
+function get_seller_name(int $seller_id) {
+    //make use of foreign key
+}
+
+function get_category(int $category) {
+
+}
 ?>
