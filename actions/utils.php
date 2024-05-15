@@ -24,10 +24,17 @@ function is_seller(string $email) : bool {
 }
 
 function get_seller_name(int $seller_id) {
-    //make use of foreign key
+    return "Name Placeholder";
 }
 
 function get_category(int $category) {
-
+    return "Category Placeholder";
 }
+
+function get_photo_path(int $item_id) {
+    $base_path = "user_images";
+    $files = glob($base_path . '/' . $item_id . '*');
+    return $files[0];
+}
+
 ?>

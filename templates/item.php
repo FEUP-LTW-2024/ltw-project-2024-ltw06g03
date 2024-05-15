@@ -3,7 +3,7 @@ include_once("actions/utils.php");
 function output_item(array $info) { ?>
     <main>
         <div id="image">
-            <img src="user_images/1.jpeg" alt="Item Photograph">
+            <img src="<?php echo get_photo_path($info['id']) ?>" alt="Item Photograph">
         </div>
         <div id="item-info">
             <div id="seller_info">
