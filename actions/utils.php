@@ -24,7 +24,15 @@ function is_seller(string $email) : bool {
 }
 
 function get_seller_name(int $seller_id) {
-    return "Name Placeholder";
+    $db = getDatabaseConnection('database/database.db');
+    $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+    $stmt = $db->prepare('SELECT name FROM users WHERE id = :id');
+    $stmt->bindParam(':id', $seller_id);
+    $stmt->execute();
+
+    $name = $stmt->fetch(PDO::FETCH_ASSOC)['name'];
+
+    return $name;
 }
 
 function get_category(int $category) {
@@ -35,6 +43,18 @@ function get_photo_path(int $item_id) {
     $base_path = "user_images";
     $files = glob($base_path . '/' . $item_id . '*');
     return $files[0];
+}
+
+function get_seller_username(string $id) {
+    $db = getDatabaseConnection('database/database.db');
+    $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+    $stmt = $db->prepare('SELECT username FROM users WHERE id = :id');
+    $stmt->bindParam(':id', $seller_id);
+    $stmt->execute();
+
+    $name = $stmt->fetch(PDO::FETCH_ASSOC)['username'];
+
+    return $name;
 }
 
 ?>

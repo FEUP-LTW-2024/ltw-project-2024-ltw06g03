@@ -12,6 +12,11 @@ function output_item(array $info) { ?>
                     echo get_seller_name($info['seller_id']);
                     ?>
                 </h1>
+                <h2 id="seller-username">
+                    <?php
+                    echo get_seller_username($info['seller_id']);
+                    ?>
+                </h2>
             </div>
             <h1 id="item-category">
                 <?php

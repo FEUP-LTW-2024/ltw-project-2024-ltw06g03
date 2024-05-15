@@ -56,6 +56,8 @@ if (!is_seller($_SESSION['user_email'])) {
                     }
                     ?>
                 </select>
+                <label for="title">Title:</label>
+                <input type="text" name="title">
                 <label for="brand">Brand:</label>
                 <input type="text" name="brand" id="brand-inp">
                 <label for="model">Model:</label>

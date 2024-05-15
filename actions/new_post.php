@@ -11,9 +11,10 @@ if(strtoupper($_SERVER['REQUEST_METHOD']) === 'POST') {
     $condition = $_POST['condition'];
     $price = $_POST['price'];
     $description = $_POST['description'];
+    $title = $_POST['title'];
 
     try {
-        $item_id = create_post($category, $brand, $model, $condition, $price, $description);
+        $item_id = create_post($category, $brand, $model, $condition, $price, $description, $title);
 
         if ($_FILES['image']['size'] > 500000) {
             header("Location: https://localhost:9000/new_post.php?tooLarge");
