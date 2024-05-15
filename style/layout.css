@@ -41,7 +41,6 @@ footer {
     flex-direction: row;
     align-items: center;
     justify-content: center;
-    overflow: hidden;
 }
 
 #main-page > ul > li {
@@ -96,7 +95,7 @@ label {
 #post-page {
     display: grid;
     grid-template-columns: 0.25fr 1fr;
-    grid-template-rows:auto 0.5fr 0.5fr 638px auto;
+    grid-template-rows:auto 0.5fr 0.5fr 680px auto;
     grid-template-areas: 
     "header header"
     "link-tree link-tree"
@@ -163,7 +162,6 @@ label {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    align-items: center;
 }
 #sort-bar {
     grid-area: sort-bar;

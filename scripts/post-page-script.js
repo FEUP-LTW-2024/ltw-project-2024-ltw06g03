@@ -1,3 +1,4 @@
+
 document.addEventListener("DOMContentLoaded", function () {
   const filterButton = document.querySelector("#sort-bar div button");
   const filtersBar = document.querySelector("#filters");
@@ -19,4 +20,19 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   filterButton.addEventListener("click", toggleFiltersBar);
+  const slider = document.getElementById('slider');
+  noUiSlider.create(slider, {
+      start: [20, 80],
+      tooltips: [true, true],
+      connect: [false, true, false],
+      range: {
+          'min': 0,
+          'max': 100
+      }
+  });
+  const squares = slider.querySelectorAll('.noUi-tooltip');
+  const connect = slider.querySelectorAll('.noUi-connect');
+  connect[0].classList.add('conect_color');
+  squares[0].classList.add('tooltip_color');
+  squares[1].classList.add('tooltip_color');
 });
