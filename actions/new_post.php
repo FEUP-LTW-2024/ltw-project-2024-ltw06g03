@@ -19,8 +19,16 @@ if(strtoupper($_SERVER['REQUEST_METHOD']) === 'POST') {
             header("Location: https://localhost:9000/new_post.php?tooLarge");
             exit;
         }
+        $target_file = $target_dir . basename($_FILES["image"]["name"]);
+        $imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
 
-        $target_file = $target_dir . $item_id;
+        if($imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "jpeg"
+            && $imageFileType != "gif" ) {
+                header("Location: https://localhost:9000/new_post.php?wrongType");
+                exit;
+        }
+
+        $target_file = $target_dir . $item_id . "." . $imageFileType;
 
         if (move_uploaded_file($_FILES['image']['tmp_name'], $target_file)) {
             header("Location: http://localhost:9000/new_post.php?sucess");
