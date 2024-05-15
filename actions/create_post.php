@@ -3,7 +3,7 @@ include_once('../database/connect.php');
 
 session_start();
 
-function create_post(string $category, string $brand, string $model, string $condition, int $price) : int {
+function create_post(string $category, string $brand, string $model, string $condition, int $price, string $description) : int {
     try {
         $db = getDatabaseConnection('../database/database.db');
         $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
@@ -23,8 +23,8 @@ function create_post(string $category, string $brand, string $model, string $con
         $stmt->execute();
         $category_id = $stmt->fetch(PDO::FETCH_ASSOC)['id'];
 
-        $stmt = $db->prepare('INSERT INTO items (seller_id, category_id, brand, model, condition, price) VALUES (?,?,?,?,?,?)');
-        $stmt->execute([$seller_id, $category_id, $brand, $model, $condition, $price]);
+        $stmt = $db->prepare('INSERT INTO items (seller_id, category_id, brand, model, condition, price, description) VALUES (?,?,?,?,?,?, ?)');
+        $stmt->execute([$seller_id, $category_id, $brand, $model, $condition, $price, $description]);
         $item_id = $db->lastInsertId();
 
         return $item_id;

@@ -10,11 +10,12 @@ if(strtoupper($_SERVER['REQUEST_METHOD']) === 'POST') {
     $model = $_POST['model'];
     $condition = $_POST['condition'];
     $price = $_POST['price'];
+    $description = $_POST['description'];
 
     try {
-        $item_id = create_post($category, $brand, $model, $condition, $price);
+        $item_id = create_post($category, $brand, $model, $condition, $price, $description);
 
-        if ($_FILES['image']['size'] > 100000000) {
+        if ($_FILES['image']['size'] > 500000) {
             header("Location: https://localhost:9000/new_post.php?tooLarge");
             exit;
         }
@@ -22,7 +23,10 @@ if(strtoupper($_SERVER['REQUEST_METHOD']) === 'POST') {
         $target_file = $target_dir . $item_id;
 
         if (move_uploaded_file($_FILES['image']['tmp_name'], $target_file)) {
-            header("Location: https://localhost:9000/new_post.php?sucess");
+            header("Location: http://localhost:9000/new_post.php?sucess");
+            exit;
+        } else {
+            header("Location: http://localhost:9000/new_post.php?fail");
             exit;
         }
     } catch (PDOException $e) {

@@ -61,6 +61,7 @@ CREATE TABLE items (
     model VARCHAR NOT NULL,
     condition VARCHAR NOT NULL,
     price INTEGER NOT NULL,
+    description VARCHAR NOT NULL,
     FOREIGN KEY(seller_id) REFERENCES seller(id),
     FOREIGN KEY(category_id) REFERENCES categories(id)
 );

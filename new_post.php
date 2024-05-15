@@ -56,8 +56,10 @@ session_start();
                 </select>
                 <label for="price">Price:</label>
                 <input type="number" name="price">
+                <label for="description">Description:</label>
+                <textarea name="description" id="description"></textarea>
                 <label for="image">Item Image:</label>
-                <input type="file">
+                <input type="file" name="image">
                 <input type="submit" value="Create Post">
             </form>
         </div>
