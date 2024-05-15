@@ -64,8 +64,8 @@ if (!is_seller($_SESSION['user_email'])) {
                 <input type="text" id="model-inp" name="model">
                 <label for="condition">Condition:</label>
                 <select name="condition" id="condition-sel">
-                    <option value="new">New</option>
-                    <option value="used">Used</option>
+                    <option value="New">New</option>
+                    <option value="Used">Used</option>
                 </select>
                 <label for="price">Price:</label>
                 <input type="number" name="price">

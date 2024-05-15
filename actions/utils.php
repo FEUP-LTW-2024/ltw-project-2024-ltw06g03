@@ -57,7 +57,7 @@ function get_seller_username(string $id) {
     $db = getDatabaseConnection('database/database.db');
     $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
     $stmt = $db->prepare('SELECT username FROM users WHERE id = :id');
-    $stmt->bindParam(':id', $seller_id);
+    $stmt->bindParam(':id', $id);
     $stmt->execute();
 
     $name = $stmt->fetch(PDO::FETCH_ASSOC)['username'];

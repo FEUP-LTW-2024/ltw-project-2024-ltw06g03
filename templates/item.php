@@ -1,12 +1,12 @@
 <?php
 include_once("actions/utils.php");
 function output_item(array $info) { ?>
-    <main>
-        <div id="image">
+    <main id="item-main">
+        <div id="item-image">
             <img src="<?php echo get_photo_path($info['id']) ?>" alt="Item Photograph">
         </div>
         <div id="item-info">
-            <div id="seller_info">
+            <div id="seller-info">
                 <h1 id="seller-name">
                     <?php
                     echo get_seller_name($info['seller_id']);
@@ -23,37 +23,38 @@ function output_item(array $info) { ?>
                 echo $info['title'];
                 ?>
             </h1>
-            <h1 id="item-category">
+            <h2 id="item-category">
                 <?php
                 echo get_category($info['category_id']);
                 ?>
-            </h1>
-            <h1 id="item-brand">
+            </h2>
+            
+            <h2 id="item-brand">
                 <?php
                 echo $info['brand'];
                 ?>
-            </h1>
-            <h1 id="item-model">
+            </h2>
+            <h3 id="item-model">
                 <?php
                 echo $info['model'];
                 ?>
-            </h1>
-            <h1 id="item-condition">
+            </h3>
+            <h3 id="item-condition">
                 <?php
                 echo $info['condition'];
                 ?>
-            </h1>
-            <h1 id="price">
+            </h3>
+            <h2 id="price">
                 <?php
                 echo (string)$info['price'] . '€';
                 ?>
-            </h1>
+            </h2>
+            <p id="description">
+                <?php
+                echo $info['description'];
+                ?>
+            </p>
         </div>
-        <p id="description">
-            <?php
-            echo $info['description'];
-            ?>
-        </p>
     </main>
 <?php }
 ?>
