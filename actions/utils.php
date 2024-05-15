@@ -36,7 +36,15 @@ function get_seller_name(int $seller_id) {
 }
 
 function get_category(int $category) {
-    return "Category Placeholder";
+    $db = getDatabaseConnection('database/database.db');
+    $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+    $stmt = $db->prepare('SELECT name FROM categories WHERE id = :id');
+    $stmt->bindParam(':id', $category);
+    $stmt->execute();
+
+    $name = $stmt->fetch(PDO::FETCH_ASSOC)['name'];
+
+    return $name;
 }
 
 function get_photo_path(int $item_id) {

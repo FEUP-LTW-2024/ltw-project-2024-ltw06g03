@@ -18,6 +18,11 @@ function output_item(array $info) { ?>
                     ?>
                 </h2>
             </div>
+            <h1 id="item-name">
+                <?php
+                echo $info['title'];
+                ?>
+            </h1>
             <h1 id="item-category">
                 <?php
                 echo get_category($info['category_id']);
@@ -44,11 +49,11 @@ function output_item(array $info) { ?>
                 ?>
             </h1>
         </div>
-        <div id="description">
+        <p id="description">
             <?php
             echo $info['description'];
             ?>
-        </div>
+        </p>
     </main>
 <?php }
 ?>
