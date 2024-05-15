@@ -1,5 +1,7 @@
 #!/bin/bash
 
+find ./user_images ! -name '.gitignore' -type f -exec rm -f {} +
+
 # Start PHP server on port 9000
 php -S localhost:9000 &
 

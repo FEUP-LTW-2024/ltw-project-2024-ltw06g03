@@ -1,5 +1,8 @@
 #!/bin/bash
 
+find ./user_images ! -name '.gitignore' -type f -exec rm -f {} +
+
+
 # Find the PID of the PHP server process
 pid=$(lsof -t -i:9000)
 
