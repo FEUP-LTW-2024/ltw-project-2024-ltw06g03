@@ -91,6 +91,7 @@ label {
     justify-content: space-between;
 }
 
+
 #item-main {
     display: grid;
 }
@@ -109,3 +110,18 @@ label {
     flex-direction: column;
     justify-content: space-evenly;
 }
+
+.profile-picture-container{
+    display: flex;
+    justify-content: center;
+    margin-top: 50px;
+    width: 100%;
+}
+
+#profile-page{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 50px;
+}
+
