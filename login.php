@@ -52,11 +52,11 @@ output_header();
                 </label>
                 <div id="buyer-seller">
                     <label for="buyer">
-                        Buyer
+                        Seller
                         <input type="checkbox" name ="buyer" class="align-center" value="buyer">
                     </label>
                     <label for="seller">
-                        Seller
+                        Buyer
                         <input type="checkbox" name="seller" class="align-center" value="seller">
                     </label>
                 </div>

@@ -11,24 +11,6 @@ DELETE FROM buyer;
 DELETE FROM seller;
 DELETE FROM users;
 
-
--- Insert sample users
-INSERT INTO users (username, password, email, location) VALUES 
-('seller1', 'seller1pass', 'seller1@example.com', 'Location A'),
-('seller2', 'seller2pass', 'seller2@example.com', 'Location B'),
-('buyer1', 'buyer1pass', 'buyer1@example.com', 'Location C'),
-('buyer2', 'buyer2pass', 'buyer2@example.com', 'Location D'),
-('admin1', 'admin1pass', 'admin1@example.com', 'Location E');
-
--- Insert sample seller records
-INSERT INTO seller (user_id) VALUES (1), (2);
-
--- Insert sample buyer records
-INSERT INTO buyer (user_id) VALUES (3), (4);
-
--- Insert sample admin records
-INSERT INTO admin (user_id) VALUES (5);
-
 -- Insert sample categories
 INSERT INTO categories (name) VALUES 
 ('Electronics'), 
@@ -43,20 +25,6 @@ INSERT INTO categories (name) VALUES
 ('Toys'), 
 ('Art Supplies'), 
 ('Pet Supplies');
-
--- Insert sample items
-INSERT INTO items (seller_id, category_id, brand, model, size, condition, price) VALUES 
-(1, 1, 'Apple', 'iPhone X', 'N/A', 'Used', 500),
-(2, 2, 'Nike', 'Air Max 270', 'US 10', 'New', 150),
-(1, 3, 'IKEA', 'Billy Bookcase', 'N/A', 'Used', 50),
-(2, 4, 'Penguin Books', '1984 by George Orwell', 'N/A', 'New', 10);
-
--- Insert sample posts
-INSERT INTO posts (item_id, description) VALUES 
-(1, 'Used iPhone X in good condition, unlocked, with charger and box.'),
-(2, 'New Nike Air Max 270, size US 10, available in multiple colors.'),
-(3, 'IKEA Billy Bookcase in oak finish, lightly used, assembly required.'),
-(4, 'Brand new copy of 1984 by George Orwell, paperback edition.');
 
 -- Insert sample post categories
 INSERT INTO post_categories (post_id, category_id) VALUES 

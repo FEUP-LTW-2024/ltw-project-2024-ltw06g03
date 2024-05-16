@@ -46,23 +46,16 @@ CREATE TABLE categories (
     name VARCHAR NOT NULL
 );
 
-CREATE TABLE posts (
-    id INTEGER PRIMARY KEY AUTOINCREMENT,
-    item_id INTEGER NOT NULL,
-    description TEXT,
-    FOREIGN KEY(item_id) REFERENCES items(id)
-);
-
 CREATE TABLE items (
     id INTEGER PRIMARY KEY AUTOINCREMENT,
     seller_id INTEGER,
     category_id INTEGER,
     brand VARCHAR NOT NULL,
     model VARCHAR NOT NULL,
-    size VARCHAR NOT NULL,
     condition VARCHAR NOT NULL,
     price INTEGER NOT NULL,
-    image BLOB,
+    description VARCHAR NOT NULL,
+    title VARCHAR NOT NULL,
     FOREIGN KEY(seller_id) REFERENCES seller(id),
     FOREIGN KEY(category_id) REFERENCES categories(id)
 );

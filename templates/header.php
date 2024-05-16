@@ -1,26 +1,44 @@
 <?php
-    function output_header(string $username = "Login") {?>
-        <header id="navbar">
-            <ul>
-                <li id="logo-li"><a href="index.php"><h1 id="logo-txt" class="barcode">SAS</h1></a></li>
-                <li id="search-bar"><img src="./assets/search.png" alt="search icon"><input type="text" ></li>
-                <li><a href="login.php"><h1 id="login-btn">Login</h1></a></li> <!-- login page not implemented -->
-            </ul>
-        </header>
-    <?php }
+include_once("../database/connect.php");
 
-    function output_logged_in_header() {?>
-        <header id="navbar">
-            <ul>
-                <li id="logo-li"><a href="index.php"><h1 id="logo-txt" class="barcode">SAS</h1></a></li>
-                <li id="search-bar"><img src="./assets/search.png" alt="search icon"><input type="text" ></li>
-                <li><a id="user-profile" href="profile.php"><img src="./assets/usericon.png" alt="profile picture"></a></li> <!-- profile page not implemented -->
-                <li><a href=""><img id="cart-icon" src="./assets/shopping-cart.png" alt="shopping cart"></a></li>
-                <li><a href="../actions/logout.php">Logout</a></li>
-            </ul>
-        </header>
+function output_header(string $username = "Login") {
+?>
+    <header id="navbar">
+        <ul>
+            <li id="logo-li"><a href="index.php"><h1 id="logo-txt" class="barcode">SAS</h1></a></li>
+            <li id="search-bar"><img src="./assets/search.png" alt="search icon"><input type="text"></li>
+            <li><a href="login.php"><h1 id="login-btn">Login</h1></a></li> <!-- login page not implemented -->
+        </ul>
+    </header>
+<?php
+}
 
-        <div class = "cartTab">
+function output_logged_in_header() {
+    $db = getDatabaseConnection("database/database.db");
+    $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+    
+    $user_email = $_SESSION['user_email'];
+    $stmt = $db->prepare('SELECT COUNT(*) AS is_seller FROM users JOIN seller ON users.id = seller.user_id WHERE users.email = :email');
+    $stmt->bindParam(':email', $user_email);
+    $stmt->execute();
+    $result = $stmt->fetch(PDO::FETCH_ASSOC);
+?>
+    <header id="navbar">
+        <ul>
+            <li id="logo-li"><a href="index.php"><h1 id="logo-txt" class="barcode">SAS</h1></a></li>
+            <li id="search-bar"><img src="./assets/search.png" alt="search icon"><input type="text"></li>
+            <?php
+            if ($result['is_seller'] > 0) {
+                echo '<li id="new-post"><a href="new_post.php"><h1 id="new-post-text">+</h1></a></li>';
+            }
+            ?>
+            <li><a id="user-profile" href="profile.php"><img src="./assets/usericon.png" alt="profile picture"></a></li> <!-- profile page not implemented -->
+            <li><a href=""><img id="cart-icon" src="./assets/shopping-cart.png" alt="shopping cart"></a></li>
+            <li><a href="../actions/logout.php">Logout</a></li>
+        </ul>
+    </header>
+
+    <div class = "cartTab">
             <div class = "cartTabContent">
                 <h1>Shopping Cart</h1>
                 <div class = "cartItems">
@@ -79,6 +97,5 @@
                 }
             });
         </script>
-
-    <?php }
-?>
+<?php
+}

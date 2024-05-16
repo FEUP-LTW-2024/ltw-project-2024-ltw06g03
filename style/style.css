@@ -4,9 +4,12 @@ body
 {
     margin: 0;
     background: linear-gradient(to bottom, var( --very_dark_green),var(--dark_green), var(--green), var(--green) ,var(--dark_green),var( --very_dark_green));
-
     font-family: 'Roboto', 'Arial';
 
+}
+
+textarea {
+    resize: none;
 }
 
 /* Navbar */
@@ -60,12 +63,6 @@ footer {
     padding: 1em;
 }
 
-/* Main Page */
-
-#main-page-body
-{
-    overflow-y: hidden;
-}
 #main-page > ul
 {
     color: white;
@@ -203,6 +200,68 @@ label[for="buyer"], label[for="seller"] {
     font-family: 'Libre Barcode 39 Text', 'Arial';
 }
 
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
+#item-main {
+    background-color: var(--dark_green);
+    width: 70em;
+    margin: 5em auto;
+    border-radius: 4em;
+    color: var(--beige);
+    padding: 1em;
+}
+
+#item-image > img {
+    width: 80%;
+    margin: 0 auto;
+}
+
+#item-image {
+    width: 38em;
+    height: 100%;
+}
+
+#seller-info {
+    background-color: var(--beige);
+    color: var(--very_dark_green);
+    width: 70%;
+    margin: 0 auto;
+    border-radius: 2em;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#seller-info > * {
+    margin: 0.5rem auto;
+}
+
+#seller-username {
+    margin-top: 0;
+}
+
+#item-info {
+    padding: 1em;
+}
+
+#item-info > * {
+    margin: 0.5em auto;
+}
+
+#description {
+    margin-left: 2em;
+    margin-right: 2em;
+}
 
 /* Profile Page */
 
