@@ -55,7 +55,7 @@ output_head("Smooth As Silk", "scripts/post-page-script.js");
     <nav id="link-tree">
         <ul>
             <li><a href="index.php">HOME</a></li>
-            <li><a href="post_page.php">POSTS</a></li>
+            <li><a href="posts_page.php">POSTS</a></li>
             <?php
             // Check if 'id' is set in the URL parameter
             if (isset($_GET['id'])) {
@@ -86,9 +86,9 @@ output_head("Smooth As Silk", "scripts/post-page-script.js");
         <div>
             <h4>sort options</h4>
             <select name="sort-option" id="sort-option" class="box-input background-color-dark-green">
+                <option value="recent-post">Recent Posts</option>
                 <option value="high-prices">Higher Prices</option>
                 <option value="lower-prices">Lower Prices</option>
-                <option value="recent-post">Recent Posts</option>
                 <option value="older-post">Older Posts</option>
             </select>
         </div>
@@ -126,7 +126,7 @@ output_head("Smooth As Silk", "scripts/post-page-script.js");
             $htmlPosts .= '<button><img src="./assets/shopping-cart.png" alt=""><h5>Add to Cart</h5></button>';
             $htmlPosts .= '</article>';
         }
-        
+
         // Echo the HTML markup for articles
         echo $htmlPosts;
 

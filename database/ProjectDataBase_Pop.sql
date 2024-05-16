@@ -41,7 +41,8 @@ INSERT INTO categories (name) VALUES
 ('Musical Instruments'), 
 ('Toys'), 
 ('Art Supplies'), 
-('Pet Supplies');
+('Pet Supplies'),
+('Other');
 
 -- Insert sample items
 -- Insert sample items
