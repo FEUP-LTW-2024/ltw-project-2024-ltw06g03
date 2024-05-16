@@ -65,4 +65,16 @@ function get_seller_username(string $id) {
     return $name;
 }
 
+function get_id_from_email(string $email) {
+    $db = getDatabaseConnection('database/database.db');
+    $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+    $stmt = $db->prepare('SELECT id FROM users WHERE email = :email');
+    $stmt->bindParam(':email', $email);
+    $stmt->execute();
+
+    $id = $stmt->fetch(PDO::FETCH_ASSOC)['id'];
+
+    return $id;
+}
+
 ?>

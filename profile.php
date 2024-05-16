@@ -4,6 +4,7 @@ include_once("templates/header.php");
 include_once("templates/footer.php");
 include_once("templates/register_errors.php");
 include_once("database/connect.php");
+include_once("actions/utils.php");
 
 output_head("Smooth As Silk");
 session_start();
@@ -20,16 +21,28 @@ session_start();
     </div>
     <section id="profile-page">
         <div class="profile-item-username">
-                <p><strong>Username</strong> <!-- TODO: Get username from database --></p>
+                <p><strong>
+                    <?php
+                    echo get_seller_username(get_id_from_email($_SESSION['user_email']));
+                    ?>
+                </strong></p>
         </div>
         
         <div class="profile-info">
             
             <div class="profile-item">
-                <p><strong>Name</strong> <!-- TODO: Get name from database --></p>
+                <p><strong>
+                    <?php
+                    echo get_seller_name(get_id_from_email($_SESSION['user_email']));
+                    ?>
+                </strong></p>
             </div>
             <div class="profile-item">
-                <p><strong>Email</strong> <!-- TODO: Get email from database --></p>
+                <p><strong>
+                    <?php
+                    echo $_SESSION['user_email'];
+                    ?>
+                </strong></p>
             </div>
         </div>
         <div class="profile-actions">
