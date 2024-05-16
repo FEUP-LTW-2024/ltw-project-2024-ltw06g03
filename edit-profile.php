@@ -4,6 +4,7 @@ include_once("templates/header.php");
 include_once("templates/footer.php");
 include_once("templates/register_errors.php");
 include_once("database/connect.php");
+include_once("actions/utils.php");
 
 session_start();
 
@@ -27,18 +28,24 @@ output_head("Smooth As Silk");
                 <div class="profile-basic-info">
                     <div class="username-edit">
                         <label class="labels">Username</label>
-                        <input type="text" class="form-control" placeholder="username" value="">
+                        <input type="text" class="form-control" placeholder="<?php
+                        echo get_seller_username(get_id_from_email($_SESSION['user_email']));
+                        ?>" value="">
                     </div>
                     <div class="name-edit">
                         <label class="labels">Name</label>
-                        <input type="text" class="form-control" value="" placeholder="name"></div>
+                        <input type="text" class="form-control" value="" placeholder="<?php
+                        echo get_seller_name(get_id_from_email($_SESSION['user_email']));
+                        ?>"></div>
                 </div>
             </div>
             <div class="card-2">                    
                 <div class="profile-settings">
                     <div class="email-edit">
                         <label class="label">Email</label>
-                        <input type="text" class="form-control" placeholder="example@example.com" value="">
+                        <input type="email" class="form-control" placeholder="<?php
+                        echo $_SESSION['user_email'];
+                        ?>" value="">
                     </div>
                     <div class="password-edit">
                         <label class="label">Password</label>
