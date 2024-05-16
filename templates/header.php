@@ -44,7 +44,7 @@
             </div>
             <div class = "btn">
                 <button class = "close">Close</button>
-                <a href="checkout.php"><button>Checkout</button></a>
+                <a href="checkout.php"><button class = "checkout-btn">Checkout</button></a>
             </div>
         </div>
         
@@ -56,20 +56,26 @@
             }
 
             document.querySelector('#cart-icon').addEventListener('click', function(event) {
-                event.stopPropagation();
+                event.stopPropagation(); 
                 document.querySelector('.cartTab').style.display = 'grid';
-                localStorage.setItem('cartTabVisible', 'true'); // Armazena o estado da aba do carrinho no localStorage
+                localStorage.setItem('cartTabVisible', 'true'); 
             });
 
+            // Event listener for the close button
             document.querySelector('.close').addEventListener('click', function() {
                 document.querySelector('.cartTab').style.display = 'none';
-                localStorage.setItem('cartTabVisible', 'false'); // Armazena o estado da aba do carrinho no localStorage
+                localStorage.setItem('cartTabVisible', 'false'); 
+            });
+
+            document.querySelector('.checkout-btn').addEventListener('click', function() {
+                document.querySelector('.cartTab').style.display = 'none';
+                localStorage.setItem('cartTabVisible', 'false'); 
             });
 
             document.addEventListener('click', function(event) {
                 if (!event.target.closest('.cartTab') && !event.target.closest('#cart-icon')) {
                     document.querySelector('.cartTab').style.display = 'none';
-                    localStorage.setItem('cartTabVisible', 'false'); // Armazena o estado da aba do carrinho no localStorage
+                    localStorage.setItem('cartTabVisible', 'false'); 
                 }
             });
         </script>

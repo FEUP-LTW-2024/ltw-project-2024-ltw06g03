@@ -465,6 +465,10 @@ label[for="buyer"], label[for="seller"] {
     grid-template-rows: 90% 1fr;
 }
 
+.cartTab-hidden {
+    display: none;
+}
+
 
 .cartTab .cartTabContent {
     height: 100%;
