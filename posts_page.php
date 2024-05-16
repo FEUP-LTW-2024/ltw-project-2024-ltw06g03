@@ -5,6 +5,9 @@ include_once ("templates/header.php");
 include_once ("templates/footer.php");
 $db = getDatabaseConnection('database/database.db');
 
+$stmt = $db->prepare("SELECT * FROM categories");
+$stmt->execute();
+$categories = $stmt->fetchAll();
 
 $numbersPerPage = isset($_POST['numbers-per-page']) ? $_POST['numbers-per-page'] : 10; // Default to 10 if not set
 $sortOption = isset($_POST['sort-option']) ? $_POST['sort-option'] : 'recent-post'; // Default to 'recent-post' if not set
@@ -110,7 +113,22 @@ output_head("Smooth As Silk", "scripts/post-page-script.js");
                 <option value="new">New</option>
             </select>
         </article>
-
+        <article class="iner-box-format background-color-dark-green">
+            <h3>Category</h3>
+            <select name="category" id="category" class="box-input background-color-bright-green">
+                <?php foreach ($categories as $category): ?>
+                    <option value="<?php echo $category['id']; ?>"><?php echo htmlspecialchars($category['name']); ?>
+                    </option>
+                <?php endforeach; ?>
+            </select>
+        </article>
+        <article class="iner-box-format background-color-dark-green">
+            <h3>Brand/Model</h3>
+            <select name="brand-model" id="brand-model" class="box-input background-color-bright-green">
+                <option value="1">Brand/Model 1</option>
+                <option value="2">Brand/Model 2</option>
+            </select>
+        </article>
     </aside>
     <section id="posts-section" class="outer-box-format background-color-very-dark-green">
         <?php

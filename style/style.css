@@ -300,7 +300,10 @@ label[for="buyer"], label[for="seller"] {
     content: "/";
     margin: 0 5px; 
 }
-
+#filters
+{
+    padding-top: 1.5em;
+}
 #filters header {
     padding: 0.05em 0;
 }
@@ -366,7 +369,9 @@ label[for="buyer"], label[for="seller"] {
     margin-right: 0.5em;
     margin-left: 0.5em;
 }
-
+#posts-section article h4 {
+    text-overflow: ellipsis;
+}
 #page-number
 {
 }
