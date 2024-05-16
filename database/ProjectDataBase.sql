@@ -54,6 +54,8 @@ CREATE TABLE items (
     condition VARCHAR NOT NULL,
     price INTEGER NOT NULL,
     description VARCHAR NOT NULL,
+    title VARCHAR NOT NULL,
+    date TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     FOREIGN KEY(seller_id) REFERENCES seller(id),
     FOREIGN KEY(category_id) REFERENCES categories(id)
 );
