@@ -1,5 +1,3 @@
-
-
 document.addEventListener('DOMContentLoaded', function() {
     const cycle_left = document.querySelector('.arrow-left');
     const cycle_right = document.querySelector('.arrow-right');
@@ -42,10 +40,16 @@ document.addEventListener('DOMContentLoaded', function() {
             category.style.transition = 'transform 1s';            
         });
     });
+    
     function updateCategories(offset) {
         categories.forEach((category, index) => {
             category.style.transform = `translateX(${offset}px)`;
         });
     }
+
+
 });
+
+
+
 
