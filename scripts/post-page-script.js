@@ -50,9 +50,14 @@ function getsortnumber() {
       const parser = new DOMParser();
       const newPosts = parser.parseFromString(this.responseText, "text/html");
 
-      // Replace the existing posts section with the new one
+      // Get the new posts section from the parsed HTML
+      const newPostsSection = newPosts.getElementById("posts-section");
+
+      // Get the existing posts section
       const postsSection = document.getElementById("posts-section");
-      postsSection.innerHTML = newPosts.body.innerHTML;
+
+      // Replace the content of the existing posts section with the content of the new one
+      postsSection.innerHTML = newPostsSection.innerHTML;
     }
   };
   xhr.send(

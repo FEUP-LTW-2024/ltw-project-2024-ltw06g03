@@ -114,17 +114,20 @@ output_head("Smooth As Silk", "scripts/post-page-script.js");
     </aside>
     <section id="posts-section" class="outer-box-format background-color-very-dark-green">
         <?php
+        $htmlPosts = '';
         foreach ($posts as $post) {
-            // Display the post
-            echo '<article class="iner-box-format background-color-dark-green">';
-            echo '<h3><a href=""> ' . htmlspecialchars($post['title']) . '</a></h3>';
-            echo '<img src="./assets/noimg.png" alt="">';//open post image
-            echo '<h4 class="text-box-format" id="price">' . htmlspecialchars($post['price']) . '</h4>';
-            echo '<h4 class="text-box-format">' . htmlspecialchars($post['description']) . '</h4>';
-            echo '<button><img src="./assets/heartempty.png" alt=""><h5>Add to Wishlist</h5></button>';
-            echo '<button><img src="./assets/shopping-cart.png" alt=""><h5>Add to Cart</h5></button>';
-            echo '</article>';
+            // Generate HTML markup for each article
+            $htmlPosts .= '<article class="iner-box-format background-color-dark-green">';
+            $htmlPosts .= '<h3><a href=""> ' . htmlspecialchars($post['title']) . '</a></h3>';
+            $htmlPosts .= '<img src="./assets/noimg.png" alt="">';//open post image
+            $htmlPosts .= '<h4 class="text-box-format" id="price">' . htmlspecialchars($post['price']) . '</h4>';
+            $htmlPosts .= '<h4 class="text-box-format">' . htmlspecialchars($post['description']) . '</h4>';
+            $htmlPosts .= '<button><img src="./assets/heartempty.png" alt=""><h5>Add to Wishlist</h5></button>';
+            $htmlPosts .= '<button><img src="./assets/shopping-cart.png" alt=""><h5>Add to Cart</h5></button>';
+            $htmlPosts .= '</article>';
         }
+        
+        // Echo the HTML markup for articles
         echo $htmlPosts;
 
         ?>
