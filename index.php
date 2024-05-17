@@ -9,8 +9,7 @@ $stmt = $db->prepare('SELECT * FROM categories') ;
 $stmt->execute();
 $categories = $stmt->fetchAll();
 
-output_head("Smooth As Silk");
-
+output_head("Smooth As Silk","scripts/index-script.js");
 session_start();
 ?>
 <body id="main-page-body">
@@ -28,7 +27,7 @@ session_start();
         <ul>
             <?php
                 foreach ($categories as $category) {
-                    echo "<li><a href=''>" . $category['name'] . "</a></li>";
+                    echo '<li><a href="posts_page.php?category=' . $category['id'] . '">' . htmlspecialchars($category['name']) . '</a></li>';
                 }
             ?>
         </ul>

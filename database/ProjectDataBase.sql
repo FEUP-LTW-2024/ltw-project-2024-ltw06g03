@@ -4,7 +4,6 @@ DROP TABLE IF EXISTS users;
 DROP TABLE IF EXISTS seller;
 DROP TABLE IF EXISTS buyer;
 DROP TABLE IF EXISTS admin;
-DROP TABLE IF EXISTS posts;
 DROP TABLE IF EXISTS categories;
 DROP TABLE IF EXISTS post_categories;
 DROP TABLE IF EXISTS items;
@@ -56,15 +55,16 @@ CREATE TABLE items (
     price INTEGER NOT NULL,
     description VARCHAR NOT NULL,
     title VARCHAR NOT NULL,
+    date TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     FOREIGN KEY(seller_id) REFERENCES seller(id),
     FOREIGN KEY(category_id) REFERENCES categories(id)
 );
 
 CREATE TABLE post_categories (
     id INTEGER PRIMARY KEY AUTOINCREMENT,
-    post_id INTEGER,
+    item_id INTEGER,
     category_id INTEGER,
-    FOREIGN KEY(post_id) REFERENCES posts(id),
+    FOREIGN KEY(item_id) REFERENCES items(id),
     FOREIGN KEY(category_id) REFERENCES categories(id)
 );
 

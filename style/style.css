@@ -1,5 +1,6 @@
 @import url('colors.css');
 @import url('https://fonts.googleapis.com/css2?family=Libre+Barcode+39+Text&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+/* General */
 body
 {
     margin: 0;
@@ -7,7 +8,74 @@ body
     font-family: 'Roboto', 'Arial';
 
 }
+body::-webkit-scrollbar {
+    width: 10px;
+}
 
+body::-webkit-scrollbar-track {
+    background: linear-gradient(to bottom, var( --very_dark_green),var(--dark_green), var(--green), var(--green) ,var(--dark_green),var( --very_dark_green)); 
+}
+
+body::-webkit-scrollbar-thumb {
+    background: var(--dark_green); 
+}
+button {
+    background-color: transparent;
+    background-repeat: no-repeat;
+    border: none;
+    cursor: pointer;
+    outline: none;
+    padding: 0;
+}
+h1 {
+    font-size: 3em;
+    margin: 0.5em;
+    color: var(--beige);
+    font-weight: normal;
+}
+h2 {
+    font-size: 2em;
+    margin: 0.5em;
+    color: var(--beige);
+    font-weight: normal;
+}
+h3 {
+    font-size: 1.5em;
+    margin: 0.5em;
+    color: var(--beige);
+    font-weight: normal;
+}
+h4 {
+    font-size: 1em;
+    margin: 0.5em;
+    color: var(--beige);
+    font-weight: normal;
+}
+h5 {
+    font-size: 0.7em;
+    margin: 0.5em;
+    color: var(--beige);
+    font-weight: normal;
+}
+a {
+    color: var(--beige);
+    text-decoration: none;
+}
+.background-color-green {
+    background-color: var(--green);
+}
+.background-color-very-dark-green {
+    background-color: var(--very_dark_green);
+}
+.background-color-dark-green {
+    background-color: var(--dark_green);
+}
+.background-color-bright-green {
+    background-color: var(--bright_green);
+}
+.barcode {
+    font-family: 'Libre Barcode 39 Text', 'Arial';
+}
 textarea {
     resize: none;
 }
@@ -71,6 +139,7 @@ footer {
     padding: 0;
     list-style-type: none;
     border-radius: 50px;
+    overflow: hidden;
 }
 
 #main-page > ul > li > a
@@ -109,21 +178,16 @@ footer {
 }
 
 #main-page button {
-    background-color: transparent;
-    background-repeat: no-repeat;
-    border: none;
-    cursor: pointer;
-    overflow: hidden;
-    outline: none;
     margin-left: 4em;
     margin-right: 4em;
-    padding: 0;
 }
+
 #main-page button img{
     height: 40px;
     width: auto;
 }
 
+/* Login/Register Page */
 #login-sec {
     background-color: var(--dark_green);
     width: 50em;
@@ -196,10 +260,132 @@ label[for="buyer"], label[for="seller"] {
     margin: 0 1em;
 }
 
-.barcode {
-    font-family: 'Libre Barcode 39 Text', 'Arial';
+/* Post-page */
+.outer-box-format {
+    border: none;
+    border-radius: 25px;
+    margin: 1em;
+    padding: 1em;
 }
 
+.iner-box-format {
+    border: none;
+    border-radius: 15px;
+    margin: 1em;
+    padding: 1em;
+}
+.text-box-format {
+    border: none;
+    border-radius: 15px;
+    margin: 1em;
+    padding: 1em;
+}
+
+
+#link-tree{
+    margin-top: 1em;
+    padding: 0em;
+}
+
+#link-tree ul {
+    list-style: none;
+    margin: 0;
+}
+#link-tree ul li a{
+    text-decoration: none;
+    font-weight: bold;
+}
+#link-tree ul li:not(:last-child)::after {
+    content: "/";
+    margin: 0 5px; 
+}
+#filters
+{
+    padding-top: 1.5em;
+}
+#filters header {
+    padding: 0.05em 0;
+}
+
+#sort-bar {
+    padding: 0 0.3em 0 0.1em;
+}
+#sort-bar *, #filters *, #link-tree * {
+    border: none;
+    color: var(--beige);
+    font-weight: normal;
+    text-align: center;
+}
+.box-input {
+    border-radius: 15px;
+    padding: 0.5em;
+    margin: 0.7em;
+}
+#sort-bar > div > button{
+    cursor: pointer;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+}
+#sort-bar > div > button > img {
+    height: 70%;
+    width: auto;
+}
+
+#posts-section {
+    overflow-y: scroll;
+    padding-bottom: 3em;
+    overflow-x: hidden;
+}
+
+#posts-section::-webkit-scrollbar {
+    width: 10px;
+}
+
+#posts-section::-webkit-scrollbar-track {
+    background: transparent; 
+}
+
+#posts-section::-webkit-scrollbar-thumb {
+    background: var(--dark_green); 
+    border-radius: 5px; 
+}
+#posts-section article{
+    width: 290px;
+    height: 500px;
+}
+#posts-section article > img {
+    width: 100%;
+    height: auto;
+    max-width: 270px;
+    max-height: 200px;
+    object-fit: contain;
+    border-radius: 15px;
+}
+#posts-section article button > img {
+    height: 20px;
+    width: auto;
+    margin-right: 0.5em;
+    margin-left: 0.5em;
+}
+#posts-section article h4 {
+    text-overflow: ellipsis;
+}
+#page-number
+{
+}
+
+.conect_color {
+	background: var(--bright_green) !important;
+}
+.tooltip_color {
+    background: transparent !important;
+}
+#slider
+{
+    margin: 1em;
+    margin-top: 1.2em;
+}
 /* Chrome, Safari, Edge, Opera */
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
@@ -781,5 +967,3 @@ input[type=number] {
     border-radius: 2em;
     
 }
-
-

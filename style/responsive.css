@@ -1,10 +1,18 @@
 /* Main Page*/
-#main-page > ul  {
-}
 #main-page > ul > li
 {
     transition: transform 1s ;
 }
+/* Post Page */
+#filters {
+    transition: opacity 1s, max-height 1s;
+    overflow: hidden;
+}
 
-
+#post-page {
+    transition: grid-template-columns 1s;
+}
+#posts-section{
+    transition: grid-template-columns 1s;
+}
 
