@@ -21,7 +21,14 @@ output_head("Smooth As Silk");
         <div class="row">
             <div class="card-1">
                 <div class="photo-edit">
-                    <img id="profile-picture" src="./assets/user_profile.png" alt="profile picture">
+                    <img id="profile-picture" src="<?php
+                    $v = pfp_exists($_SESSION['user_email']);
+                    if ($v) {
+                        echo $v;
+                    } else{
+                        echo './assets/user_profile.png';
+                    }
+                    ?>" alt="profile picture">
                     <input type="file" id="profile-photo" class="form-control-file" accept="image/*" style="display: none;">
                     <button class="button-edit" id="choose-btn">Choose File</button>
                 </div>
