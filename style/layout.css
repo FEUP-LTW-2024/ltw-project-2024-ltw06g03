@@ -125,3 +125,21 @@ label {
     margin-top: 50px;
 }
 
+#seller-info {
+    display: grid;
+}
+
+#seller-info > img {
+    grid-column-start: 1;
+    grid-column-end: 2;
+    align-self: center;
+}
+
+#seller-info > div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    grid-column-start: 2;
+    grid-column-end: 3;
+
+}

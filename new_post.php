@@ -57,22 +57,22 @@ if (!is_seller($_SESSION['user_email'])) {
                     ?>
                 </select>
                 <label for="title">Title:</label>
-                <input type="text" name="title">
+                <input type="text" name="title" required>
                 <label for="brand">Brand:</label>
-                <input type="text" name="brand" id="brand-inp">
+                <input type="text" name="brand" id="brand-inp" required>
                 <label for="model">Model:</label>
-                <input type="text" id="model-inp" name="model">
+                <input type="text" id="model-inp" name="model" required>
                 <label for="condition">Condition:</label>
                 <select name="condition" id="condition-sel">
                     <option value="New">New</option>
                     <option value="Used">Used</option>
                 </select>
                 <label for="price">Price:</label>
-                <input type="number" name="price">
+                <input type="number" name="price" required>
                 <label for="description">Description:</label>
                 <textarea name="description" id="description"></textarea>
                 <label for="image">Item Image:</label>
-                <input type="file" name="image">
+                <input type="file" name="image" required>
                 <input type="submit" value="Create Post">
             </form>
         </div>

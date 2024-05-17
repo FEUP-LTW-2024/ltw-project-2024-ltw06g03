@@ -231,16 +231,6 @@ input[type=number] {
     height: 100%;
 }
 
-#seller-info {
-    background-color: var(--beige);
-    color: var(--very_dark_green);
-    width: 70%;
-    margin: 0 auto;
-    border-radius: 2em;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
 
 #seller-info > * {
     margin: 0.5rem auto;
@@ -777,4 +767,19 @@ input[type=number] {
     font-weight: bold;
     cursor: pointer;
 }
+
+#seller-info > img {
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;
+}
+
+#seller-info {
+    background-color: var(--beige);
+    color: var(--very_dark_green);
+    margin: 1em;
+    border-radius: 2em;
+    
+}
+
 
