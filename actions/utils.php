@@ -99,4 +99,15 @@ function get_id_from_email(string $email) {
     return $id;
 }
 
+function pfp_exists(string $email) {
+    $id = get_id_from_email($email);
+    $pattern = 'user_images/' . $id . '.*';
+    $files = glob($pattern, GLOB_NOSORT);
+
+    if (!empty($files)) {
+        return $files[0];
+    }
+    return NULL;
+}
+
 ?>

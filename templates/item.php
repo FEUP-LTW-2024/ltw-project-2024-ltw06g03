@@ -7,16 +7,26 @@ function output_item(array $info) { ?>
         </div>
         <div id="item-info">
             <div id="seller-info">
-                <h1 id="seller-name">
-                    <?php
-                    echo get_seller_name($info['seller_id']);
-                    ?>
-                </h1>
-                <h2 id="seller-username">
-                    <?php
-                    echo get_seller_username($info['seller_id']);
-                    ?>
-                </h2>
+                <img src="<?php
+                $v = pfp_exists($_SESSION['user_email']);
+                if ($v) {
+                    echo $v;
+                } else{
+                    echo './assets/user_profile.png';
+                }
+                ?>" alt="" id="">
+                <div>
+                    <h1 id="seller-name">
+                        <?php
+                        echo get_seller_name($info['seller_id']);
+                        ?>
+                    </h1>
+                    <h2 id="seller-username">
+                        <?php
+                        echo get_seller_username($info['seller_id']);
+                        ?>
+                    </h2>
+                </div>
             </div>
             <h1 id="item-name">
                 <?php
