@@ -17,7 +17,14 @@ session_start();
         output_header(); 
     } ?>
     <div class="profile-picture-container">
-        <a id="profile-picture"><img src="./assets/user_profile.png" alt="profile picture"></a>    
+        <a id="profile-picture"><img src="<?php
+        $v = pfp_exists($_SESSION['user_email']);
+        if ($v) {
+            echo $v;
+        } else{
+            echo './assets/user_profile.png';
+        }
+        ?>" alt="profile picture"></a>    
     </div>
     <section id="profile-page">
         <div class="profile-item-username">
