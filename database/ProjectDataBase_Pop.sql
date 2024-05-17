@@ -10,24 +10,6 @@ DELETE FROM buyer;
 DELETE FROM seller;
 DELETE FROM users;
 
-
--- Insert sample users
-INSERT INTO users (username, password, email, location, name) VALUES 
-('seller1', 'seller1pass', 'seller1@example.com', 'Location A', 'Seller One'),
-('seller2', 'seller2pass', 'seller2@example.com', 'Location B', 'Seller Two'),
-('buyer1', 'buyer1pass', 'buyer1@example.com', 'Location C', 'Buyer One'),
-('buyer2', 'buyer2pass', 'buyer2@example.com', 'Location D', 'Buyer Two'),
-('admin1', 'admin1pass', 'admin1@example.com', 'Location E', 'Admin One');
-
--- Insert sample seller records
-INSERT INTO seller (user_id) VALUES (1), (2);
-
--- Insert sample buyer records
-INSERT INTO buyer (user_id) VALUES (3), (4);
-
--- Insert sample admin records
-INSERT INTO admin (user_id) VALUES (5);
-
 -- Insert sample categories
 INSERT INTO categories (name) VALUES 
 ('Electronics'), 
@@ -43,7 +25,6 @@ INSERT INTO categories (name) VALUES
 ('Art Supplies'), 
 ('Pet Supplies'),
 ('Other');
-
 -- Insert sample items
 -- Insert sample items
 INSERT INTO items (seller_id, category_id, brand, model, condition, price, description, title) VALUES 
