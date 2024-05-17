@@ -41,12 +41,6 @@ output_head("Smooth As Silk");
             </div>
             <div class="card-2">                    
                 <div class="profile-settings">
-                    <div class="email-edit">
-                        <label class="label">Email</label>
-                        <input type="email" class="form-control" placeholder="<?php
-                        echo $_SESSION['user_email'];
-                        ?>" value="">
-                    </div>
                     <div class="password-edit">
                         <label class="label">Password</label>
                         <input type="password" class="form-control" placeholder="password" value="">
@@ -83,8 +77,42 @@ output_head("Smooth As Silk");
         });
 
         document.getElementById('save-btn').addEventListener('click', function() {
-            window.location.href = 'profile.php';
-            alert('Profile successfully updated!');
+            const username = document.querySelector('.username-edit input').value;
+            const name = document.querySelector('.name-edit input').value;
+            const password = document.querySelector('.password-edit input').value;
+            const confirmPassword = document.querySelector('.confirm-password-edit input').value;
+            const profilePhoto = document.getElementById('profile-photo').files[0];
+
+            if (password !== confirmPassword) {
+                alert('Passwords do not match!');
+                return;
+            }
+
+            const formData = new FormData();
+            formData.append('username', username);
+            formData.append('name', name);
+            formData.append('password', password);
+            if (profilePhoto) {
+                formData.append('profile_photo', profilePhoto);
+            }
+
+            fetch('actions/update_profile.php', {
+                method: 'POST',
+                body: formData,
+            })
+            .then(response => response.text())
+            .then(data => {
+                if (data === 'success') {
+                    alert('Profile successfully updated!');
+                    window.location.href = 'profile.php';
+                } else {
+                    alert('Failed to update profile: ' + data);
+                }
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                alert('An error occurred while updating the profile.');
+            });
         });
     </script>
 </body>
