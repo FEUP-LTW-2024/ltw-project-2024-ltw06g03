@@ -384,6 +384,7 @@ label[for="buyer"], label[for="seller"] {
 }
 #slider
 {
-    margin-top: 2em;
+    margin: 1em;
+    margin-top: 1.2em;
 }
 

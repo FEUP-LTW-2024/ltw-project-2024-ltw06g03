@@ -20,12 +20,12 @@ document.addEventListener("DOMContentLoaded", function () {
 
   const slider = document.getElementById("slider");
   noUiSlider.create(slider, {
-    start: [20, 80],
-    tooltips: [true, true],
+    start: [0, 20000],
+    tooltips: [wNumb({decimals: 0}), wNumb({decimals: 0})],
     connect: [false, true, false],
     range: {
       min: 0,
-      max: 100,
+      max: 20000,
     },
   });
 
