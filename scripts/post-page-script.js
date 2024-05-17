@@ -56,6 +56,10 @@ document.addEventListener("DOMContentLoaded", function () {
         const newPostsSection = newPosts.getElementById("posts-section");
         const postsSection = document.getElementById("posts-section");
         postsSection.innerHTML = newPostsSection.innerHTML;
+
+        const newlink_tree = newPosts.getElementById("link-tree");
+        const link_tree = document.getElementById("link-tree");
+        link_tree.innerHTML = newlink_tree.innerHTML;
       }
     };
 

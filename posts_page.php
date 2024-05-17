@@ -47,6 +47,13 @@ $params = [
 if ($categoryFilter !== 'all') {
     $query .= " AND category_id = :categoryId";
     $params[':categoryId'] = $categoryFilter;
+    $categoryName = '';
+    foreach ($categories as $category) {
+        if ($category['id'] == $categoryFilter) {
+            $categoryName = $category['name'];
+            break;
+        }
+    }
 }
 
 if ($conditionFilter !== 'all') {
@@ -66,6 +73,7 @@ $stmt->execute($params);
 $posts = $stmt->fetchAll();
 
 
+
 output_head("Smooth As Silk", "scripts/post-page-script.js");
 ?>
 
@@ -75,13 +83,13 @@ output_head("Smooth As Silk", "scripts/post-page-script.js");
         <ul>
             <li><a href="index.php">HOME</a></li>
             <li><a href="posts_page.php">POSTS</a></li>
-            <?php if (isset($_GET['category'])): ?>
-                <li><a
-                        href="posts_page.php?category=<?php echo $category['id']; ?>"><?php echo strtoupper(htmlspecialchars($category['name'])); ?></a>
-                </li>
-            <?php else: ?>
-                <li><a href="posts_page.php?category=default_category_id">Default Category Name</a></li>
-            <?php endif; ?>
+            <li>
+                <?php if ($categoryFilter !== 'all') {
+                    echo '<a href="posts_page.php?category=' . $categoryFilter . '">' . strtoupper(htmlspecialchars($categoryName)) . '</a>';
+                }
+                ?>
+            </li>
+
         </ul>
     </nav>
     <section id="sort-bar" class="outer-box-format background-color-very-dark-green">
