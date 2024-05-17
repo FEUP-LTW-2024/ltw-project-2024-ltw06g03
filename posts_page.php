@@ -75,10 +75,17 @@ $posts = $stmt->fetchAll();
 
 
 output_head("Smooth As Silk", "scripts/post-page-script.js");
+session_start();
 ?>
 
 <body id="post-page">
-    <?php output_header(); ?>
+    <?php
+    if ($_SESSION['logged_in'] === true) {
+        output_logged_in_header();
+    } else {
+        output_header();
+    }
+    ?>
     <nav id="link-tree">
         <ul>
             <li><a href="index.php">HOME</a></li>

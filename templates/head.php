@@ -1,5 +1,5 @@
 <?php
-function output_head(string $name, string $scriptName)
+function output_head(string $name, string $scriptName = "")
 { ?>
     <!DOCTYPE html>
     <html lang="en">
@@ -24,7 +24,9 @@ function output_head(string $name, string $scriptName)
         <script src="https://cdnjs.cloudflare.com/ajax/libs/noUiSlider/15.7.1/nouislider.min.js"
             integrity="sha512-UOJe4paV6hYWBnS0c9GnIRH8PLm2nFK22uhfAvsTIqd3uwnWsVri1OPn5fJYdLtGY3wB11LGHJ4yPU1WFJeBYQ=="
             crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-        <script src="<?= $scriptName ?>" defer></script>
+        <?php if ($scriptName): ?>
+            <script src="<?= $scriptName ?>" defer></script>
+        <?php endif; ?>
     </head>
 <?php }
 ?>
