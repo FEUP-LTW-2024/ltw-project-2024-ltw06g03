@@ -9,9 +9,14 @@ $stmt = $db->prepare("SELECT * FROM categories");
 $stmt->execute();
 $categories = $stmt->fetchAll();
 
-$numbersPerPage = isset($_POST['numbers-per-page']) ? $_POST['numbers-per-page'] : 10; // Default to 10 if not set
-$sortOption = isset($_POST['sort-option']) ? $_POST['sort-option'] : 'recent-post'; // Default to 'recent-post' if not set
-$numbersPerPage = filter_var($numbersPerPage, FILTER_VALIDATE_INT);
+// Get parameters from POST request
+$numbersPerPage = isset($_POST['numbers-per-page']) ? $_POST['numbers-per-page'] : 15;
+$sortOption = isset($_POST['sort-option']) ? $_POST['sort-option'] : 'recent-post';
+$categoryFilter = isset($_POST['category']) ? $_POST['category'] : 'all';
+$conditionFilter = isset($_POST['condition']) ? $_POST['condition'] : 'all';
+$priceMin = isset($_POST['price-min']) ? $_POST['price-min'] : 0;
+$priceMax = isset($_POST['price-max']) ? $_POST['price-max'] : 100000;
+$brandModel = isset($_POST['brand-model']) ? $_POST['brand-model'] : 'all';
 
 // Dynamically build SQL query based on parameters
 switch ($sortOption) {
@@ -31,24 +36,35 @@ switch ($sortOption) {
         $orderBy = 'date DESC';
 }
 
-if (isset($_GET['id'])) {
-    // If category ID is set, filter by category
-    $stmt = $db->prepare('SELECT * FROM categories WHERE id = ?');
-    $stmt->execute(array($_GET['id']));
-    $category = $stmt->fetch();
+// Build the SQL query dynamically based on filters
+$query = "SELECT * FROM items WHERE price BETWEEN :priceMin AND :priceMax";
+$params = [
+    ':priceMin' => $priceMin,
+    ':priceMax' => $priceMax,
+    ':numbersPerPage' => $numbersPerPage
+];
 
-    $stmt = $db->prepare("SELECT * FROM items JOIN post_categories ON items.id = post_categories.item_id WHERE post_categories.category_id = :id ORDER BY $orderBy LIMIT :numbersPerPage");
-    $stmt->bindParam(':id', $_GET['id']);
-    $stmt->bindParam(':numbersPerPage', $numbersPerPage, PDO::PARAM_INT);
-    $stmt->execute();
-    $posts = $stmt->fetchAll();
-} else {
-    // If no category ID, fetch all posts
-    $stmt = $db->prepare("SELECT * FROM items ORDER BY $orderBy LIMIT :numbersPerPage");
-    $stmt->bindParam(':numbersPerPage', $numbersPerPage, PDO::PARAM_INT);
-    $stmt->execute();
-    $posts = $stmt->fetchAll();
+if ($categoryFilter !== 'all') {
+    $query .= " AND category_id = :categoryId";
+    $params[':categoryId'] = $categoryFilter;
 }
+
+if ($conditionFilter !== 'all') {
+    $query .= " AND condition = :condition";
+    $params[':condition'] = $conditionFilter;
+}
+
+if ($brandModel !== 'all') {
+    $query .= " AND brand = :brandModel";
+    $params[':brandModel'] = $brandModel;
+}
+
+$query .= " ORDER BY $orderBy LIMIT :numbersPerPage";
+
+$stmt = $db->prepare($query);
+$stmt->execute($params);
+$posts = $stmt->fetchAll();
+
 
 output_head("Smooth As Silk", "scripts/post-page-script.js");
 ?>
@@ -59,17 +75,13 @@ output_head("Smooth As Silk", "scripts/post-page-script.js");
         <ul>
             <li><a href="index.php">HOME</a></li>
             <li><a href="posts_page.php">POSTS</a></li>
-            <?php
-            // Check if 'id' is set in the URL parameter
-            if (isset($_GET['id'])) {
-                echo '<li><a href="posts_page.php?id=' . $category['id'] . '">' . strtoupper(htmlspecialchars($category['name'])) . '</a></li>';
-            }
-
-            // Check if 'sr' is set in the URL parameter
-            if (isset($_GET['sr'])) {
-                echo '<li>' . strtoupper(htmlspecialchars($_GET['sr'])) . '</li>';
-            }
-            ?>
+            <?php if (isset($_GET['category'])): ?>
+                <li><a
+                        href="posts_page.php?category=<?php echo $category['id']; ?>"><?php echo strtoupper(htmlspecialchars($category['name'])); ?></a>
+                </li>
+            <?php else: ?>
+                <li><a href="posts_page.php?category=default_category_id">Default Category Name</a></li>
+            <?php endif; ?>
         </ul>
     </nav>
     <section id="sort-bar" class="outer-box-format background-color-very-dark-green">
@@ -98,9 +110,7 @@ output_head("Smooth As Silk", "scripts/post-page-script.js");
     </section>
     <aside id="filters" class="outer-box-format background-color-very-dark-green">
         <header class="iner-box-format background-color-dark-green">
-            <button>
-                <h2>Filter</h2>
-            </button>
+            <h2>Filters</h2>
         </header>
         <article class="iner-box-format background-color-dark-green">
             <h3>Price</h3>
@@ -108,14 +118,16 @@ output_head("Smooth As Silk", "scripts/post-page-script.js");
         </article>
         <article class="iner-box-format background-color-dark-green">
             <h3>Condition</h3>
-            <select name="Condition" id="" class="box-input background-color-bright-green">
-                <option value="used">Used</option>
-                <option value="new">New</option>
+            <select name="Condition" id="condition" class="box-input background-color-bright-green">
+                <option value="all"></option>
+                <option value="Used">Used</option>
+                <option value="New">New</option>
             </select>
         </article>
         <article class="iner-box-format background-color-dark-green">
             <h3>Category</h3>
             <select name="category" id="category" class="box-input background-color-bright-green">
+                <option value="all"></option>
                 <?php foreach ($categories as $category): ?>
                     <option value="<?php echo $category['id']; ?>"><?php echo htmlspecialchars($category['name']); ?>
                     </option>
@@ -125,6 +137,7 @@ output_head("Smooth As Silk", "scripts/post-page-script.js");
         <article class="iner-box-format background-color-dark-green">
             <h3>Brand/Model</h3>
             <select name="brand-model" id="brand-model" class="box-input background-color-bright-green">
+                <option value="all"></option>
                 <option value="1">Brand/Model 1</option>
                 <option value="2">Brand/Model 2</option>
             </select>
@@ -133,6 +146,7 @@ output_head("Smooth As Silk", "scripts/post-page-script.js");
     <section id="posts-section" class="outer-box-format background-color-very-dark-green">
         <?php
         $htmlPosts = '';
+
         foreach ($posts as $post) {
             // Generate HTML markup for each article
             $htmlPosts .= '<article class="iner-box-format background-color-dark-green">';

@@ -26,7 +26,7 @@ session_start();
         <ul>
             <?php
                 foreach ($categories as $category) {
-                    echo '<li><a href="posts_page.php?id=' . $category['id'] . '">' . htmlspecialchars($category['name']) . '</a></li>';
+                    echo '<li><a href="posts_page.php?category=' . $category['id'] . '">' . htmlspecialchars($category['name']) . '</a></li>';
                 }
             ?>
         </ul>

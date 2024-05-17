@@ -16,9 +16,8 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   }
 
-  getsortnumber();
-
   filterButton.addEventListener("click", toggleFiltersBar);
+
   const slider = document.getElementById("slider");
   noUiSlider.create(slider, {
     start: [20, 80],
@@ -29,49 +28,87 @@ document.addEventListener("DOMContentLoaded", function () {
       max: 100,
     },
   });
+
   const squares = slider.querySelectorAll(".noUi-tooltip");
   const connect = slider.querySelectorAll(".noUi-connect");
   connect[0].classList.add("conect_color");
   squares[0].classList.add("tooltip_color");
   squares[1].classList.add("tooltip_color");
-});
 
-// Function to trigger when sort option or numbers per page changes
-function getsortnumber() {
-  const numbersPerPage = document.getElementById("numbers-per-page").value;
-  const sortOption = document.getElementById("sort-option").value;
+  function applyFilters() {
+    const numbersPerPage = document.getElementById("numbers-per-page").value;
+    const sortOption = document.getElementById("sort-option").value;
+    const category = document.getElementById("category").value;
+    const condition = document.getElementById("condition").value;
+    const brandModel = document.getElementById("brand-model").value;
+    const priceRange = slider.noUiSlider.get();
+    const priceMin = priceRange[0];
+    const priceMax = priceRange[1];
 
-  const xhr = new XMLHttpRequest();
-  xhr.open("POST", "posts_page.php", true); // Make sure to send the request to the correct PHP file
-  xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
-  xhr.onload = function () {
-    if (this.status == 200) {
-      // Parse the response as HTML
-      const parser = new DOMParser();
-      const newPosts = parser.parseFromString(this.responseText, "text/html");
+    const xhr = new XMLHttpRequest();
+    xhr.open("POST", window.location.href, true);
+    xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
 
-      // Get the new posts section from the parsed HTML
-      const newPostsSection = newPosts.getElementById("posts-section");
+    xhr.onload = function () {
+      if (this.status == 200) {
+        const parser = new DOMParser();
+        const newPosts = parser.parseFromString(this.responseText, "text/html");
+        const newPostsSection = newPosts.getElementById("posts-section");
+        const postsSection = document.getElementById("posts-section");
+        postsSection.innerHTML = newPostsSection.innerHTML;
+      }
+    };
 
-      // Get the existing posts section
-      const postsSection = document.getElementById("posts-section");
+    xhr.send(
+      "numbers-per-page=" +
+        encodeURIComponent(numbersPerPage) +
+        "&sort-option=" +
+        encodeURIComponent(sortOption) +
+        "&category=" +
+        encodeURIComponent(category) +
+        "&condition=" +
+        encodeURIComponent(condition) +
+        "&brand-model=" +
+        encodeURIComponent(brandModel) +
+        "&price-min=" +
+        encodeURIComponent(priceMin) +
+        "&price-max=" +
+        encodeURIComponent(priceMax)
+    );
+  }
 
-      // Replace the content of the existing posts section with the content of the new one
-      postsSection.innerHTML = newPostsSection.innerHTML;
+  document
+    .getElementById("sort-option")
+    .addEventListener("change", applyFilters);
+  document
+    .getElementById("numbers-per-page")
+    .addEventListener("change", applyFilters);
+  document.getElementById("category").addEventListener("change", applyFilters);
+  document.getElementById("condition").addEventListener("change", applyFilters);
+  document
+    .getElementById("brand-model")
+    .addEventListener("change", applyFilters);
+  slider.noUiSlider.on("change", applyFilters);
+
+  // Function to update the category select element based on the URL parameter
+  function updateCategory() {
+    const urlParams = new URLSearchParams(window.location.search);
+    const categoryId = urlParams.get("category");
+
+    if (categoryId) {
+      const categorySelect = document.getElementById("category");
+      if (categorySelect) {
+        for (let i = 0; i < categorySelect.options.length; i++) {
+          if (categorySelect.options[i].value == categoryId) {
+            categorySelect.selectedIndex = i;
+            break;
+          }
+        }
+      }
     }
-  };
-  xhr.send(
-    "numbers-per-page=" +
-      encodeURIComponent(numbersPerPage) +
-      "&sort-option=" +
-      encodeURIComponent(sortOption)
-  );
-}
+  }
 
-// Event listeners for changes in sort option and numbers per page
-document
-  .getElementById("sort-option")
-  .addEventListener("change", getsortnumber);
-document
-  .getElementById("numbers-per-page")
-  .addEventListener("change", getsortnumber);
+  // Call the function to update the category select element
+  updateCategory();
+  applyFilters();
+});
