@@ -17,7 +17,7 @@ CREATE TABLE users (
     username VARCHAR NOT NULL,
     password VARCHAR NOT NULL,
     email VARCHAR NOT NULL,
-    location VARCHAR NOT NULL,
+    location VARCHAR,
     register_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     name VARCHAR NOT NULL
 );

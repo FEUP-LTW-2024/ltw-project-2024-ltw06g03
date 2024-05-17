@@ -165,7 +165,7 @@ session_start();
         foreach ($posts as $post) {
             // Generate HTML markup for each article
             $htmlPosts .= '<article class="iner-box-format background-color-dark-green">';
-            $htmlPosts .= '<h3><a href=""> ' . htmlspecialchars($post['title']) . '</a></h3>';
+            $htmlPosts .= '<h3><a href="item.php?id=' . $post['id'] . '"> ' . htmlspecialchars($post['title']) . '</a></h3>';
             $htmlPosts .= '<img src="./assets/noimg.png" alt="">';//open post image
             $htmlPosts .= '<h4 class="text-box-format" id="price">' . htmlspecialchars($post['price']) . '</h4>';
             $htmlPosts .= '<h4 class="text-box-format">' . htmlspecialchars($post['description']) . '</h4>';
