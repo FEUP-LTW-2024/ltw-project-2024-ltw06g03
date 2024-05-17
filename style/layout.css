@@ -266,3 +266,17 @@ label {
     grid-column-start: 2;
     grid-column-end: 3;
 }
+
+/* New Post Page */
+
+
+#new-post-body #login-div form {
+    display: grid;
+    grid-template-columns: 0.25fr 400px;
+    align-items: center;
+    justify-content: center;
+}
+#create-post-button
+{
+    grid-column: 1 / 3;
+}

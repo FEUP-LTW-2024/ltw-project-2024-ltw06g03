@@ -76,6 +76,9 @@ a {
 .barcode {
     font-family: 'Libre Barcode 39 Text', 'Arial';
 }
+.text-beige {
+    color: var(--beige);
+}
 textarea {
     resize: none;
 }
@@ -191,7 +194,7 @@ footer {
 #login-sec {
     background-color: var(--dark_green);
     width: 50em;
-    margin: 5em auto 8em auto;
+    margin: 2em auto ;
     padding: 2em;
     text-align: center;
     color: var(--beige);
@@ -320,6 +323,8 @@ label[for="buyer"], label[for="seller"] {
     border-radius: 15px;
     padding: 0.5em;
     margin: 0.7em;
+    border: none;
+    outline: none;
 }
 #sort-bar > div > button{
     cursor: pointer;
@@ -965,5 +970,15 @@ input[type=number] {
     color: var(--very_dark_green);
     margin: 1em;
     border-radius: 2em;
-    
+}
+
+/* New Post Page */
+#login-div form *{
+    margin: 10px;
+    width: auto;
+    height: auto;
+}
+#login-div form input{
+    padding-left: 1em;
+    padding-right: 1em;
 }
