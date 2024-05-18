@@ -76,6 +76,9 @@ a {
 .barcode {
     font-family: 'Libre Barcode 39 Text', 'Arial';
 }
+.text-beige {
+    color: var(--beige);
+}
 textarea {
     resize: none;
 }
@@ -191,7 +194,7 @@ footer {
 #login-sec {
     background-color: var(--dark_green);
     width: 50em;
-    margin: 5em auto 8em auto;
+    margin: 2em auto ;
     padding: 2em;
     text-align: center;
     color: var(--beige);
@@ -320,6 +323,8 @@ label[for="buyer"], label[for="seller"] {
     border-radius: 15px;
     padding: 0.5em;
     margin: 0.7em;
+    border: none;
+    outline: none;
 }
 #sort-bar > div > button{
     cursor: pointer;
@@ -399,29 +404,44 @@ input[type=number] {
 }
 
 #item-main {
-    background-color: var(--dark_green);
-    width: 70em;
-    margin: 5em auto;
-    border-radius: 4em;
-    color: var(--beige);
+    width: 80%;
+    margin:auto;
     padding: 1em;
 }
 
-#item-image > img {
-    width: 80%;
-    margin: 0 auto;
+#item-image div > img {
+    width: 100%;
+    height: auto;
+    margin: 0;
 }
 
 #item-image {
-    width: 38em;
-    height: 100%;
+    padding: 1em;
 }
 
-
-#seller-info > * {
-    margin: 0.5rem auto;
+#seller-info{
+    width: 100%;
+    height: auto;
 }
-
+#item-image button img {
+    height: 20px;
+    width: auto;
+    margin-right: 0.5em;
+    margin-left: 0.5em;
+}
+#item-specifics
+{
+    width: 100%;
+    height: auto;
+}
+#item-specifics * {
+    margin: 0.5em;
+    padding: 0.5em;
+}
+#item-specifics p {
+    margin: 0.5em;
+    padding: 0.5em;
+}
 #seller-username {
     margin-top: 0;
 }
@@ -960,10 +980,20 @@ input[type=number] {
     height: 100px;
 }
 
-#seller-info {
-    background-color: var(--beige);
-    color: var(--very_dark_green);
-    margin: 1em;
-    border-radius: 2em;
-    
+/* New Post Page */
+
+#new-post-body #login-div form *{
+    margin: 10px;
+    width: auto;
+    height: auto;
 }
+#new-post-body #login-div form label input{
+    padding-left: 1em;
+    padding-right: 1em;
+}
+#new-post-body #login-div form input{
+    padding-left: 1em;
+    padding-right: 1em;
+}
+
+/* page items */
