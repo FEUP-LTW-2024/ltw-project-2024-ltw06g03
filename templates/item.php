@@ -11,7 +11,7 @@ function output_item(array $info)
         <div id="item-info">
             <div id="seller-info" class="outer-box-format background-color-very-dark-green text-beige">
                 <img class="iner-box-format background-color-dark-green" src="<?php
-                $v = pfp_exists($_SESSION['user_email']);
+                $v = pfp_exists_with_id($info['seller_id']);
                 if ($v) {
                     echo $v;
                 } else {
