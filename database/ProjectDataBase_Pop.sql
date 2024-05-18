@@ -13,6 +13,9 @@ DELETE FROM users;
 INSERT INTO users (username,password,email,name) VALUES
 ('admin', 'd033e22ae348aeb5660fc2140aec35850c4da997', 'admin@admin.com', 'Mr. Admin');
 
+INSERT INTO seller (user_id) VALUES (1);
+INSERT INTO buyer (user_id) VALUES (1);
+
 -- Insert sample categories
 INSERT INTO categories (name) VALUES 
 ('Electronics'), 

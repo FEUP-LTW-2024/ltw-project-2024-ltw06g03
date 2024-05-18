@@ -788,7 +788,7 @@ input[type=number] {
     gap: 10px;    
 }
 
-.cartItem .cartItemQuantity span{
+.cartItem .cartItemQuantity button{
     display: inline-block;
     background-color: var(--very_dark_green);
     color: var(--beige);
