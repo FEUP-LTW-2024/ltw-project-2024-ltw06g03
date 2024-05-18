@@ -19,50 +19,50 @@ function output_item(array $info)
                 }
                 ?>" alt="" id="">
                 <div class="iner-box-format background-color-dark-green">
-                    <h1 id="seller-name">
+                    <h2 id="seller-name">
                         <?php
                         echo get_seller_name($info['seller_id']);
                         ?>
-                    </h1>
-                    <h2 id="seller-username">
+                    </h2>
+                    <h3 id="seller-username">
                         <?php
                         echo get_seller_username($info['seller_id']);
                         ?>
-                    </h2>
+                    </h3>
                 </div>
             </div>
             <div id="item-specifics" class="outer-box-format background-color-very-dark-green">
-                <h1 id="item-name" class="iner-box-format background-color-dark-green">
+                <h2 id="item-name" class="iner-box-format background-color-dark-green">
                     <?php
                     echo $info['title'];
                     ?>
-                </h1>
-                <h2 id="item-category" class="iner-box-format background-color-dark-green">
+                </h2>
+                <h3 id="item-category" class="iner-box-format background-color-dark-green">
                     <?php
                     echo get_category($info['category_id']);
                     ?>
-                </h2>
+                </h3>
 
-                <h2 id="item-brand" class="iner-box-format background-color-dark-green">
+                <h3 id="item-brand" class="iner-box-format background-color-dark-green">
                     <?php
                     echo $info['brand'];
                     ?>
-                </h2>
-                <h3 id="item-model" class="iner-box-format background-color-dark-green">
+                </h3>
+                <h4 id="item-model" class="iner-box-format background-color-dark-green">
                     <?php
                     echo $info['model'];
                     ?>
-                </h3>
-                <h3 id="item-condition" class="iner-box-format background-color-dark-green">
+                </h4>
+                <h4 id="item-condition" class="iner-box-format background-color-dark-green">
                     <?php
                     echo $info['condition'];
                     ?>
-                </h3>
-                <h2 id="price" class="iner-box-format background-color-dark-green">
+                </h4>
+                <h3 id="price" class="iner-box-format background-color-dark-green">
                     <?php
                     echo (string) $info['price'] . '€';
                     ?>
-                </h2>
+                </h3>
                 <p id="description" class="iner-box-format background-color-dark-green">
                     <?php
                     echo $info['description'];
