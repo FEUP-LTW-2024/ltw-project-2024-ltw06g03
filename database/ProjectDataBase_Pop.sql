@@ -65,7 +65,7 @@ INSERT INTO items (seller_id, category_id, brand, model, condition, price, descr
 (1, 11, 'Winsor & Newton', 'Watercolor Set', 'Used', 50, 'Used Winsor & Newton Watercolor Set, 24 half pans, with brushes.', 'Used Winsor & Newton Watercolor Set'),
 (1, 12, 'Purina', 'Dog Food', 'New', 20, 'New Purina Dog Food, Pro Plan Savor, Shredded Blend Adult Chicken & Rice, 35 lb bag.', 'New Purina Dog Food'),
 (1, 1, 'Samsung', 'Galaxy S10', 'Used', 400, 'Used Samsung Galaxy S10 in good condition, unlocked, with charger and box.', 'Used Samsung Galaxy S10'),
-(1, 2, 'Adidas', 'Ultra Boost', 'New', 180, 'New Adidas Ultra Boost, size US 10, available in multiple colors.', 'New Adidas Ultra Boost');1
+(1, 2, 'Adidas', 'Ultra Boost', 'New', 180, 'New Adidas Ultra Boost, size US 10, available in multiple colors.', 'New Adidas Ultra Boost');
 
 --Insert sample post_categories
 INSERT INTO post_categories (item_id, category_id) VALUES 

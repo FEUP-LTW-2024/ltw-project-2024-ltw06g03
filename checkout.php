@@ -3,6 +3,7 @@ include_once("templates/head.php");
 include_once("templates/header.php");
 include_once("templates/footer.php");
 include_once("templates/register_errors.php");
+include_once("database/connect.php");
 
 output_head("Smooth As Silk");
 session_start();
