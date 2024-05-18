@@ -167,8 +167,8 @@ session_start();
             $htmlPosts .= '<article class="iner-box-format background-color-dark-green">';
             $htmlPosts .= '<h3><a href="item.php?id=' . $post['id'] . '"> ' . htmlspecialchars($post['title']) . '</a></h3>';
             $htmlPosts .= '<img src="./assets/noimg.png" alt="">';//open post image
-            $htmlPosts .= '<h4 class="text-box-format" id="price">' . htmlspecialchars($post['price']) . '</h4>';
-            $htmlPosts .= '<h4 class="text-box-format">' . htmlspecialchars($post['description']) . '</h4>';
+            $htmlPosts .= '<h4 class="iner-box-format" id="price">' . htmlspecialchars($post['price']) . '</h4>';
+            $htmlPosts .= '<h4 class="iner-box-format">' . htmlspecialchars($post['description']) . '</h4>';
             $htmlPosts .= '<button><img src="./assets/heartempty.png" alt=""><h5>Add to Wishlist</h5></button>';
             $htmlPosts .= '<button><img src="./assets/shopping-cart.png" alt=""><h5>Add to Cart</h5></button>';
             $htmlPosts .= '</article>';
