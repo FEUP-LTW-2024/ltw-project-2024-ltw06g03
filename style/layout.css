@@ -219,14 +219,26 @@ label {
 #item-main {
     display: grid;
 }
+#item-image button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+}
 
 #item-image {
     grid-column-start: 1;
     grid-column-end: 2;
-    display: flex;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows:1fr 0.25fr;
     align-items: center;
+    justify-items: center;
 }
 
+#item-image div {
+    grid-column: 1/3;
+}
 #item-info {
     grid-column-start: 2;
     grid-column-end: 3;
@@ -250,8 +262,11 @@ label {
 }
 
 #seller-info {
-    display: grid;
+    display: flex;
+    flex-direction: row;
+    justify-content: left;
 }
+
 
 #seller-info > img {
     grid-column-start: 1;
@@ -263,8 +278,7 @@ label {
     display: flex;
     flex-direction: column;
     align-items: center;
-    grid-column-start: 2;
-    grid-column-end: 3;
+    width: 100%;
 }
 
 /* New Post Page */
@@ -277,6 +291,19 @@ label {
     justify-content: center;
 }
 #create-post-button
+{
+    grid-column: 1 / 3;
+}
+
+/* page item */
+#item-specifics 
+{
+    text-align: center;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+#item-name
 {
     grid-column: 1 / 3;
 }
