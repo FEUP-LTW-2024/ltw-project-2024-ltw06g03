@@ -8,7 +8,7 @@ function output_item(array $info) { ?>
         <div id="item-info">
             <div id="seller-info">
                 <img src="<?php
-                $v = pfp_exists($_SESSION['user_email']);
+                $v = pfp_exists_with_id($info['seller_id']);
                 if ($v) {
                     echo $v;
                 } else{

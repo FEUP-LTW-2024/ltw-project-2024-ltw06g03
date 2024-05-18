@@ -109,5 +109,14 @@ function pfp_exists(string $email) {
     }
     return NULL;
 }
+function pfp_exists_with_id(int $id) {
+    $pattern = 'user_images/' . $id . '.*';
+    $files = glob($pattern, GLOB_NOSORT);
+
+    if (!empty($files)) {
+        return $files[0];
+    }
+    return NULL;
+}
 
 ?>
