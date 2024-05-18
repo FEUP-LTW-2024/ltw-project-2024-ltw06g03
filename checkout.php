@@ -4,6 +4,7 @@ include_once("templates/header.php");
 include_once("templates/footer.php");
 include_once("templates/register_errors.php");
 include_once("database/connect.php");
+include_once("templates/checkout_item.php");
 
 output_head("Smooth As Silk");
 session_start();
@@ -19,22 +20,11 @@ session_start();
 
         <div class="checkout-information">
             <h1>CHECKOUT</h1>
-            <div class="checkout-item">
-                <div class="checkout-item-img">
-                    <img src="./assets/shopping-cart.png" alt="item">
-                </div>
-                <div class="checkout-item-name">
-                    Product Name
-                </div>
-                <div class="checkout-item-price">
-                    0.00
-                </div>
-                <div class="checkout-item-quantity">
-                    <span class="less">-</span>
-                    <span>1</span>
-                    <span class="more">+</span>
-                </div>
-            </div>
+            <?php
+            foreach ($_SESSION['cart'] as $item) {
+                output_checkout_item($item['id'], $item['quantity']);
+            }
+            ?>
             <div class="checkout-total">
                 <p>Total: 0.00</p>
             </div>
