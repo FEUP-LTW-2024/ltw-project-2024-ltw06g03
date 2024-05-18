@@ -1,5 +1,6 @@
 <?php
 include_once("../database/connect.php");
+include_once("cart_item.php");
 
 function output_header(string $username = "Login") {
 ?>
@@ -58,22 +59,12 @@ function output_logged_in_header() {
             <div class = "cartTabContent">
                 <h1>Shopping Cart</h1>
                 <div class = "cartItems">
-                    <div class = "cartItem">
-                        <div class = "cartItemImg">
-                            <img class src = "./assets/shopping-cart.png" alt = "item">
-                        </div>
-                        <div class = "cartItemName">
-                            Product Name
-                        </div>
-                        <div class = "cartItemPrice">
-                            0.00
-                        </div>
-                        <div class = "cartItemQuantity">
-                            <span class = "less">-</span>
-                            <span>1</span>
-                            <span class = "more">+</span>
-                        </div>
-                    </div>
+                    <?php
+                    $items = $_SESSION['cart'];
+                    foreach ($items as $item) {
+                        output_cart_item($item['id'], $item['quantity']);
+                    }
+                    ?>
                 </div>           
             </div>
             <div class = "btn">
@@ -81,6 +72,66 @@ function output_logged_in_header() {
                 <a href="checkout.php"><button class = "checkout-btn">Checkout</button></a>
             </div>
         </div>
+
+        <script>
+            document.querySelectorAll('.less').forEach(button => {
+                button.addEventListener('click', function() {
+                    const itemId = this.dataset.itemId;
+
+                    const item = {
+                        id: itemId
+                    };
+
+                    fetch('actions/less.php', {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json'
+                        },
+                        body: JSON.stringify(item)
+                    })
+                    .then(response => response.json())
+                    .then(data => {
+                        if (data.success) {
+                            location.reload();
+                        } else {
+                            console.log('Failed to decrement quantity');
+                        }
+                    })
+                    .catch(error => {
+                        console.error('Error:', error);
+                    });
+                });
+            });
+
+            document.querySelectorAll('.more').forEach(button => {
+                button.addEventListener('click', function() {
+                    const itemId = this.dataset.itemId;
+
+                    const item = {
+                        id: itemId
+                    };
+
+                    fetch('actions/more.php', {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json'
+                        },
+                        body: JSON.stringify(item)
+                    })
+                    .then(response => response.json())
+                    .then(data => {
+                        if (data.success) {
+                            location.reload();
+                        } else {
+                            console.log('Failed to increment quantity');
+                        }
+                    })
+                    .catch(error => {
+                        console.error('Error:', error);
+                    });
+                });
+            });
+        </script>
         
         <script>
             document.getElementById('search-button').addEventListener('click', function() {

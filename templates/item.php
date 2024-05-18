@@ -6,7 +6,7 @@ function output_item(array $info)
         <div id="item-image" class="outer-box-format background-color-very-dark-green">
             <div class="iner-box-format background-color-dark-green"><img src="<?php echo get_photo_path($info['id']) ?>" alt="Item Photograph"></div>
             <button class="iner-box-format background-color-dark-green"><img src="./assets/heartempty.png" alt=""><h5>Add to Wishlist</h5></button>
-            <button class="iner-box-format background-color-dark-green"><img src="./assets/shopping-cart.png" alt=""><h5>Add to Cart</h5></button>
+            <button class="iner-box-format background-color-dark-green" id="add-to-cart" item-id="<?php echo $info['id'] ?>"><img src="./assets/shopping-cart.png" alt=""><h5>Add to Cart</h5></button>
         </div>
         <div id="item-info">
             <div id="seller-info" class="outer-box-format background-color-very-dark-green text-beige">
@@ -71,5 +71,34 @@ function output_item(array $info)
             </div>
         </div>
     </main>
+
+    <script>
+        document.getElementById('add-to-cart').addEventListener('click', function() {
+            const itemId = this.getAttribute('item-id');
+
+            const item = {
+                id: itemId
+            };
+
+            fetch('actions/add_to_cart.php', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(item)
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.success) {
+                    alert('Item added to cart!');
+                } else {
+                    alert('Failed to add item to cart.');
+                }
+            })
+            .catch(error => {
+                console.error('Error:', error);
+            });
+        })
+    </script>
 <?php }
 ?>

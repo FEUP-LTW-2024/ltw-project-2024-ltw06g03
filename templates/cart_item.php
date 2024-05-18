@@ -1,19 +1,36 @@
 <?php
-function output_cart_item(string $item_id) {?>
-     <div class = "cartItem">
+include_once('../actions/utils.php');
+
+function get_item_info_(int $id) : array {
+    $db = getDatabaseConnection("database/database.db");
+    $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+
+    $stmt = $db->prepare('SELECT * FROM items WHERE id = :id');
+    $stmt->bindParam(':id', $id);
+    $stmt->execute();
+
+    $res = $stmt->fetch(PDO::FETCH_ASSOC);
+
+    return $res;
+}
+
+function output_cart_item(int $item_id, int $quantity) {
+    $info = get_item_info_($item_id);
+    ?>
+    <div class = "cartItem">
         <div class = "cartItemImg">
-            <img class src = "./assets/shopping-cart.png" alt = "item">
+            <img src="" alt = "item">
         </div>
         <div class = "cartItemName">
-            Product Name
+            <?php echo $info['title']; ?>
         </div>
         <div class = "cartItemPrice">
-            0.00
+        <?php echo $info['price']; ?>
         </div>
         <div class = "cartItemQuantity">
-            <span class = "less">-</span>
-            <span>1</span>
-            <span class = "more">+</span>
+            <button class="less" data-item-id="<?php echo $item_id ?>">-</button>
+            <span><?php echo $quantity ?></span>
+            <button class="more" data-item-id="<?php echo $item_id ?>">+</button>
         </div>
     </div>
 <?php }
