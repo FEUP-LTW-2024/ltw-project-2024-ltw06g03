@@ -973,12 +973,17 @@ input[type=number] {
 }
 
 /* New Post Page */
-#login-div form *{
+
+#new-post-body #login-div form *{
     margin: 10px;
     width: auto;
     height: auto;
 }
-#login-div form input{
+#new-post-body #login-div form label input{
+    padding-left: 1em;
+    padding-right: 1em;
+}
+#new-post-body #login-div form input{
     padding-left: 1em;
     padding-right: 1em;
 }

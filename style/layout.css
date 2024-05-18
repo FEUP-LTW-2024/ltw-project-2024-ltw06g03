@@ -56,12 +56,12 @@ footer {
 }
 
 /*login/register page*/
-#login-sec {
+#login-body #login-sec {
     display: grid;
     justify-items: center;
 }
 
-#login-div {
+#login-body #login-div {
     grid-column-start: 1;
     grid-column-end: 2;
 }
