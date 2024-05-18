@@ -32,38 +32,38 @@ function output_item(array $info)
                 </div>
             </div>
             <div id="item-specifics" class="outer-box-format background-color-very-dark-green">
-                <h1 id="item-name">
+                <h1 id="item-name" class="iner-box-format background-color-dark-green">
                     <?php
                     echo $info['title'];
                     ?>
                 </h1>
-                <h2 id="item-category">
+                <h2 id="item-category" class="iner-box-format background-color-dark-green">
                     <?php
                     echo get_category($info['category_id']);
                     ?>
                 </h2>
 
-                <h2 id="item-brand">
+                <h2 id="item-brand" class="iner-box-format background-color-dark-green">
                     <?php
                     echo $info['brand'];
                     ?>
                 </h2>
-                <h3 id="item-model">
+                <h3 id="item-model" class="iner-box-format background-color-dark-green">
                     <?php
                     echo $info['model'];
                     ?>
                 </h3>
-                <h3 id="item-condition">
+                <h3 id="item-condition" class="iner-box-format background-color-dark-green">
                     <?php
                     echo $info['condition'];
                     ?>
                 </h3>
-                <h2 id="price">
+                <h2 id="price" class="iner-box-format background-color-dark-green">
                     <?php
                     echo (string) $info['price'] . '€';
                     ?>
                 </h2>
-                <p id="description">
+                <p id="description" class="iner-box-format background-color-dark-green">
                     <?php
                     echo $info['description'];
                     ?>
