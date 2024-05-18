@@ -63,7 +63,7 @@ function output_item(array $info)
                     echo (string) $info['price'] . '€';
                     ?>
                 </h3>
-                <p id="description" class="iner-box-format background-color-dark-green">
+                <p id="description" class="iner-box-format background-color-dark-green text-beige">
                     <?php
                     echo $info['description'];
                     ?>

@@ -18,10 +18,7 @@ function output_header(string $username = "Login") {
     <script>
          document.getElementById('search-button').addEventListener('click', function() {
             const search = document.querySelector('#search-bar input').value;
-
             window.location.href = `posts_page.php?name=${search}`;
-            
-
          })
     </script>
 <?php
@@ -40,7 +37,12 @@ function output_logged_in_header() {
     <header id="navbar">
         <ul>
             <li id="logo-li"><a href="index.php"><h1 id="logo-txt" class="barcode">SAS</h1></a></li>
-            <li id="search-bar"><img src="./assets/search.png" alt="search icon"><input type="text"></li>
+            <li id="search-bar">
+                <button type="submit" id="search-button">
+                    <img src="./assets/search.png" alt="search icon">
+                </button>
+                <input type="text">
+            </li>
             <?php
             if ($result['is_seller'] > 0) {
                 echo '<li id="new-post"><a href="new_post.php"><h1 id="new-post-text">+</h1></a></li>';
@@ -81,6 +83,11 @@ function output_logged_in_header() {
         </div>
         
         <script>
+            document.getElementById('search-button').addEventListener('click', function() {
+                const search = document.querySelector('#search-bar input').value;
+                window.location.href = `posts_page.php?name=${search}`;
+            })
+
             if (localStorage.getItem('cartTabVisible') === 'true') {
                 document.querySelector('.cartTab').style.display = 'grid';
             } else {

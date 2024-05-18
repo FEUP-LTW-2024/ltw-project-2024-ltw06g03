@@ -23,6 +23,8 @@ function create_post(string $category, string $brand, string $model, string $con
         $stmt->execute();
         $category_id = $stmt->fetch(PDO::FETCH_ASSOC)['id'];
 
+        error_log($category . ' cat');
+
         $stmt = $db->prepare('INSERT INTO items (seller_id, category_id, brand, model, condition, price, description, title) VALUES (?,?,?,?,?,?,?,?)');
         $stmt->execute([$seller_id, $category_id, $brand, $model, $condition, $price, $description, $title]);
         $item_id = $db->lastInsertId();

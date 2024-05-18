@@ -41,7 +41,7 @@ if (!is_seller($_SESSION['user_email'])) {
                 <select name="category" id="category-sel" class="box-input background-color-green text-beige">
                     <?php
                     foreach($categories as $category) {
-                        echo "<option value='" . $category['id'] . "'>" . $category['name'] . "</option>";
+                        echo "<option value='" . $category['name'] . "'>" . $category['name'] . "</option>";
                     }
                     ?>
                 </select>

@@ -71,7 +71,7 @@ function get_category(int $category) {
 
 function get_photo_path(int $item_id) {
     $base_path = "user_images";
-    $files = glob($base_path . '/' . $item_id . '*');
+    $files = glob($base_path . '/' . 'item_' . $item_id . '*');
     return $files[0];
 }
 
