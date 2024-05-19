@@ -33,4 +33,17 @@ function output_user_info($info) {
         </div>
     </div>
     <?php } 
+
+function output_category($info) { 
+    ?>
+    <div class="category-delete">
+        <div class="user-info">
+            <p>Name: <?php echo $info['name']; ?></p>
+        </div>
+        <!-- Delete icon -->
+        <div class="delete-icon">
+            <button data-id="<?php echo $info['id'] ?>" class="cat-btn"><img src="./assets/delete.png" alt="Delete"></button>
+        </div>
+    </div>
+    <?php } 
 ?>

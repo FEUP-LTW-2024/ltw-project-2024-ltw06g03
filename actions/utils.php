@@ -211,5 +211,13 @@ function get_users_admin(string $expr) {
     return $stmt->fetchAll();
 }
 
+function get_categories(string $expr) {
+    $query = 'SELECT * FROM categories WHERE name LIKE "%' . $expr . '%"'; 
+    $db = getDatabaseConnection('database/database.db');
+    $stmt = $db->prepare($query);
+    $stmt->execute();
+    return $stmt->fetchAll();
+}
+
 
 ?>
