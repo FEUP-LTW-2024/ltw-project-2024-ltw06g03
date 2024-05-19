@@ -1,5 +1,6 @@
 <?php
 include_once('../database/connect.php');
+include_once('actions/item.php');
 
 function is_seller(string $email) : bool {
     $db = getDatabaseConnection('database/database.db');
@@ -72,7 +73,7 @@ function get_category(int $category) {
 function get_photo_path(int $item_id) {
     $base_path = "user_images";
     $files = glob($base_path . '/' . 'item_' . $item_id . '*');
-    return $files[0];
+    return isset($files[0]) ? $files[0] : NULL;
 }
 
 function get_seller_username(string $id) {
@@ -235,4 +236,20 @@ function get_categories(string $expr) {
     $stmt->execute();
     return $stmt->fetchAll();
 }
+
+function get_wishlist_items(int $id) {
+    $db = getDatabaseConnection('database/database.db');
+    $stmt = $db->prepare('SELECT * FROM wishlist WHERE user_id = :id');
+    $stmt->bindParam(':id', $id);
+    $stmt->execute();
+    $wishlist = $stmt->fetchAll();
+    $items = [];
+
+    foreach ($wishlist as $li) {
+        $items[] = get_item_info($li['item_id']);
+    }
+
+    return $items;
+}
+
 ?>
