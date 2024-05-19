@@ -16,3 +16,389 @@
     transition: grid-template-columns 1s;
 }
 
+ 
+@media (min-width: 1800px){
+    #posts-section {
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+    }
+}
+ @media (max-width: 1800px){
+    #posts-section {
+        grid-template-columns: 1fr 1fr 1fr ;
+    }
+}
+ @media (max-width: 1380px){
+    #posts-section {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media (max-width: 950px){
+    #navbar ul{
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        align-items: center;
+        justify-items: center;
+    }
+    #big-logo {
+        font-size: 15em;
+    }
+    #search-bar{
+        grid-column: 2/4;
+    }
+    
+    h1 {
+        font-size: 2em;
+        margin: 0.5em;
+        color: var(--beige);
+        font-weight: normal;
+    }
+    h2 {
+        font-size: 1em;
+        margin: 0.5em;
+        color: var(--beige);
+        font-weight: normal;
+    }
+    h3 {
+        font-size: 1em;
+        margin: 0.5em;
+        color: var(--beige);
+        font-weight: normal;
+    }
+    h4 {
+        font-size: 0.5em;
+        margin: 0.5em;
+        color: var(--beige);
+        font-weight: normal;
+    }
+    h5 {
+        font-size: 0.2em;
+        margin: 0.5em;
+        color: var(--beige);
+        font-weight: normal;
+    }
+    /*post page*/
+    #posts-section {
+        grid-template-columns: 1fr;
+    }
+    
+    
+    #post-page {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows:auto 0.5fr 0.5fr auto 680px auto;
+        grid-template-areas: 
+        "header"
+        "link-tree"
+        "sort-bar"
+        "filter"
+        "post-section"
+        "footer";
+    }
+    
+    #posts-section article {
+        align-items: center;
+        justify-items: center;
+        display: grid;
+        grid-template-rows: 80px 1.5fr 120px 80px 0.25fr;
+        grid-template-columns: 1fr 1fr;
+        grid-template-areas: 
+        "title title"
+        "image image"
+        "decription decription"
+        "price price"
+        "likebutton cartbutton";
+    }
+    /* chat page */
+    
+    #chat-page-body
+    {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-areas: 
+        "header"
+        "users "
+        "chat"
+        "footer";
+        overflow: hidden;
+    }
+    #chats
+    {
+        display : grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+        height: 8em;
+    }
+    #chats h2
+    {
+        grid-column: 1/6;
+    }
+    #chat-box
+    {
+        height: 15em;
+    }
+}
+
+@media (max-width: 620px)
+{
+    #navbar ul{
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr ;
+        align-items: center;
+        justify-items: center;
+    }
+    #search-bar{
+        grid-column: 2/4;
+    }
+    #big-logo {
+        font-size: 10em;
+    }
+    h1 {
+        font-size: 1.5em;
+        margin: 0.2em;
+        color: var(--beige);
+        font-weight: normal;
+    }
+    h2 {
+        font-size: 1em;
+        margin: 0.2em;
+        color: var(--beige);
+        font-weight: normal;
+    }
+    h3 {
+        font-size: 0.5em;
+        margin: 0.2em;
+        color: var(--beige);
+        font-weight: normal;
+    }
+    h4 {
+        font-size: 0.3em;
+        margin: 0.2em;
+        color: var(--beige);
+        font-weight: normal;
+    }
+    h5 {
+        font-size: 0.1em;
+        margin: 0.2em;
+        color: var(--beige);
+        font-weight: normal;
+    }
+   /*post page*/
+   #posts-section {
+    grid-template-columns: 1fr;
+    }
+
+
+    #post-page {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows:auto 0.5fr 0.5fr auto 680px auto;
+        grid-template-areas: 
+        "header"
+        "link-tree"
+        "sort-bar"
+        "filter"
+        "post-section"
+        "footer";
+    }
+
+    #posts-section article {
+        align-items: center;
+        justify-items: center;
+        display: grid;
+        grid-template-rows: 80px 1.5fr 120px 80px 0.25fr;
+        grid-template-columns: 1fr 1fr;
+        grid-template-areas: 
+        "title title"
+        "image image"
+        "decription decription"
+        "price price"
+        "likebutton cartbutton";
+    }
+    /* chat page */
+    
+    #chat-page-body
+    {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-areas: 
+        "header"
+        "users "
+        "chat"
+        "footer";
+        overflow: hidden;
+    }
+    #chats
+    {
+        display : grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+        height: 8em;
+    }
+    #chats h2
+    {
+        grid-column: 1/6;
+    }
+    #chat-box
+    {
+        height: 15em;
+    }
+}
+
+@media (max-width: 420px)
+{
+    #navbar ul{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+    #navbar ul li {
+        height: 60px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    #big-logo {
+        font-size: 10em;
+    }
+    #main-page button {
+        margin-left: 2em;
+        margin-right: 2em;
+    }
+    /*post page*/
+    #posts-section {
+        grid-template-columns: 1fr;
+    }
+    
+    
+    #post-page {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows:auto 0.5fr 0.5fr auto 680px auto;
+        grid-template-areas: 
+        "header"
+        "link-tree"
+        "sort-bar"
+        "filter"
+        "post-section"
+        "footer";
+    }
+    
+    #posts-section article {
+        align-items: center;
+        justify-items: center;
+        display: grid;
+        grid-template-rows: 80px 1.5fr 120px 80px 0.25fr;
+        grid-template-columns: 1fr 1fr;
+        grid-template-areas: 
+        "title title"
+        "image image"
+        "decription decription"
+        "price price"
+        "likebutton cartbutton";
+    }
+    /* chat page */
+    
+    #chat-page-body
+    {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-areas: 
+        "header"
+        "users "
+        "chat"
+        "footer";
+        overflow: scroll;
+    }
+    #chats
+    {
+        display : grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+        height: 8em;
+    }
+    #chats h2
+    {
+        grid-column: 1/6;
+    }
+    #chat-box
+    {
+        height: 15em;
+    }
+}
+
+@media (max-width: 320px)
+{
+    #navbar ul{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+   
+    #big-logo {
+        font-size: 5em;
+    }
+    #main-page button {
+        margin-left: 0em;
+        margin-right: 0em;
+    }
+   /*post page*/
+   #posts-section {
+    grid-template-columns: 1fr;
+    }
+
+
+    #post-page {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows:auto 0.5fr 0.5fr auto 680px auto;
+        grid-template-areas: 
+        "header"
+        "link-tree"
+        "sort-bar"
+        "filter"
+        "post-section"
+        "footer";
+    }
+
+    #posts-section article {
+        align-items: center;
+        justify-items: center;
+        display: grid;
+        grid-template-rows: 80px 1.5fr 120px 80px 0.25fr;
+        grid-template-columns: 1fr 1fr;
+        grid-template-areas: 
+        "title title"
+        "image image"
+        "decription decription"
+        "price price"
+        "likebutton cartbutton";
+    }
+    /* chat page */
+    
+    #chat-page-body
+    {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-areas: 
+        "header"
+        "users "
+        "chat"
+        "footer";
+        overflow: scroll;
+    }
+    #chats
+    {
+        display : grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+        height: 8em;
+    }
+    #chats h2
+    {
+        grid-column: 1/6;
+    }
+    #chat-box
+    {
+        height: 15em;
+    }
+   
+}
