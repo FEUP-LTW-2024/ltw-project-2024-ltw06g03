@@ -24,7 +24,9 @@ session_start();
             <h2>My selling orders</h2>
             <?php
             $seller_id = get_buyer_id(get_id_from_email($_SESSION['user_email']));
-            $items = get_my_selling_orders($seller_id);
+            if ($seller_id) {
+                $items = get_my_selling_orders($seller_id);
+            }
             foreach ($items as $item) {
                 output_selling_order_info($item);
             }
@@ -34,8 +36,9 @@ session_start();
         <div class = "admin-box scroll bmargin">
             <h2>My buying orders</h2>
             <?php
-            $seller_id = get_buyer_id(get_id_from_email($_SESSION['user_email']));
-            $items = get_my_buying_orders($seller_id);
+            $buyer_id = get_buyer_id(get_id_from_email($_SESSION['user_email']));
+            if ($buyer_id)
+            {$items = get_my_buying_orders($buyer_id);}
             foreach ($items as $item) {
                 output_buying_order_info($item);
             }
