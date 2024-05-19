@@ -27,6 +27,11 @@ if (isset($_GET['chat_id'])) {
     $reciverid = $messages[0]['receiver_id'];
 }
 
+if (isset($_POST['chat_id'], $_POST['sender_id'], $_POST['receiver_id'], $_POST['message'])) {
+    // Call the addMessage function
+    addMessage($_POST['chat_id'], $_POST['sender_id'], $_POST['receiver_id'], $_POST['message']);
+    exit();  // End the script
+}
 
 output_head("Smooth As Silk", "scripts/chat-script.js");
 ?>
