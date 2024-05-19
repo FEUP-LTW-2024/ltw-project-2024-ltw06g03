@@ -49,7 +49,7 @@ function output_logged_in_header() {
                 echo '<li id="new-post"><a href="new_post.php"><h1 id="new-post-text">+</h1></a></li>';
             }
             ?>
-            <li><a href="chat.php"><img src="" alt="chat picture"></a></li>
+            <li><a href="chat.php"><img id="chaticon" src="./assets/chat-icon.png" alt="chat picture"></a></li>
             <li><a id="user-profile" href="profile.php"><img src="./assets/usericon.png" alt="profile picture"></a></li> <!-- profile page not implemented -->
             <li><a href=""><img id="cart-icon" src="./assets/shopping-cart.png" alt="shopping cart"></a></li>
             <li><a href="../actions/logout.php">Logout</a></li>

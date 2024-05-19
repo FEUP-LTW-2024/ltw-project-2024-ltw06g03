@@ -21,7 +21,7 @@ document.addEventListener("DOMContentLoaded", function () {
   const slider = document.getElementById("slider");
   noUiSlider.create(slider, {
     start: [0, 20000],
-    tooltips: [wNumb({decimals: 0}), wNumb({decimals: 0})],
+    tooltips: [wNumb({ decimals: 0 }), wNumb({ decimals: 0 })],
     connect: [false, true, false],
     range: {
       min: 0,
@@ -60,6 +60,7 @@ document.addEventListener("DOMContentLoaded", function () {
         const newlink_tree = newPosts.getElementById("link-tree");
         const link_tree = document.getElementById("link-tree");
         link_tree.innerHTML = newlink_tree.innerHTML;
+        attachAddToCartEventListeners();
       }
     };
 
@@ -111,8 +112,40 @@ document.addEventListener("DOMContentLoaded", function () {
       }
     }
   }
+  function attachAddToCartEventListeners() {
+    document.querySelectorAll(".add-to-cart").forEach(function (element) {
+      console.log(element);
+      element.addEventListener("click", function () {
+        console.log("Button clicked");
+        const itemId = this.getAttribute("item-id");
 
+        const item = {
+          id: itemId,
+        };
+
+        fetch("actions/add_to_cart.php", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(item),
+        })
+          .then((response) => response.json())
+          .then((data) => {
+            if (data.success) {
+              alert("Item added to cart!");
+            } else {
+              alert("Failed to add item to cart.");
+            }
+          })
+          .catch((error) => {
+            console.error("Error:", error);
+          });
+      });
+    });
+  }
   // Call the function to update the category select element
   updateCategory();
   applyFilters();
+  ;
 });

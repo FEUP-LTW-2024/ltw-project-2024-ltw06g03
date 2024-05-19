@@ -1144,3 +1144,7 @@ input[type=number] {
     margin-bottom: 1em;
 }
 
+#chaticon
+{
+    height: 50px;
+}
