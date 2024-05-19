@@ -15,7 +15,7 @@ function get_id_from_email(string $email) {
     return $id;
 }
 
-function get_buyer_id(int $id) {
+function get_buyer_id_(int $id) {
     $db = getDatabaseConnection('../database/database.db');
     $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
     $stmt = $db->prepare('SELECT id FROM buyer WHERE user_id = :id');
@@ -65,7 +65,7 @@ if ($data) {
     foreach ($_SESSION['cart'] as $item) {
         $item_id = $item['id'];
         $buyer_user_id = get_id_from_email($_SESSION['user_email']);
-        $buyer_id = get_buyer_id($buyer_user_id);
+        $buyer_id = get_buyer_id_($buyer_user_id);
         $item_info = get_item_info($item_id);
         $item_seller_user_id = $item_info['seller_id'];
         $seller_id = get_seller_id_($item_seller_user_id);

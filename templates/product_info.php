@@ -1,6 +1,6 @@
 <?php
 
-include_once('../actions/item.php');
+include_once('actions/item.php');
 
 function output_product_info($info) { 
 ?>
@@ -17,4 +17,40 @@ function output_product_info($info) {
 </div>
 
 <?php } 
+
+function output_selling_order_info($info) { 
+    $item_info = get_item_info($info['item_id']);
+    $buyer_user_id = get_user_id_from_buyer($info['buyer_id']);
+
+    ?>
+    <div class="product-delete">
+        <!-- Product information -->
+        <div class="product-info">
+            <p>Title: <?php echo $item_info['title'] ?></p>
+            <p>Quantity: <?php echo $info['quantity'] ?></p>
+            <p>Total Price: <?php echo $info['quantity'] * $item_info['price'] ?>€</p>
+            <p>Buyer: <?php echo get_seller_username($buyer_user_id) ?></p>
+        </div>
+        <div class="delete-icon">
+            <button data-id="<?php echo $info['id'] ?>">Print Form</button>
+        </div>
+    </div>
+    
+    <?php } 
+
+function output_buying_order_info($info) { 
+    $item_info = get_item_info($info['item_id']);    
+    ?>
+    <div class="product-delete">
+        <!-- Product information -->
+        <div class="product-info">
+            <p>Title: <?php echo $item_info['title'] ?></p>
+            <p>Quantity: <?php echo $info['quantity'] ?></p>
+            <p>Total Price: <?php echo $info['quantity'] * $item_info['price'] ?>€</p>
+            
+
+        </div>
+    </div>
+    
+<?php }
 ?>
