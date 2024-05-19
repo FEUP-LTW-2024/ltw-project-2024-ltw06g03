@@ -3,6 +3,7 @@ include_once ("database/connect.php");
 include_once ("templates/head.php");
 include_once ("templates/header.php");
 include_once ("templates/footer.php");
+include_once ("actions/utils.php");
 $db = getDatabaseConnection('database/database.db');
 
 $stmt = $db->prepare("SELECT * FROM categories");
@@ -168,9 +169,13 @@ session_start();
         $htmlPosts = '';
 
         foreach ($posts as $post) {
+            $photoPath = get_photo_path($post['id']);
+            if ($photoPath === null || $photoPath === '') {
+                $photoPath = './assets/noimg.png';
+            }
             $htmlPosts .= '<article class="iner-box-format background-color-dark-green">';
             $htmlPosts .= '<h3><a href="item.php?id=' . $post['id'] . '"> ' . htmlspecialchars($post['title']) . '</a></h3>';
-            $htmlPosts .= '<img src="./assets/noimg.png" alt="">';//open post image
+            $htmlPosts .= '<img src="' . $photoPath . '" alt="">'; // Use the photo path
             $htmlPosts .= '<h4 class="iner-box-format" id="price">' . htmlspecialchars($post['price']) . '</h4>';
             $htmlPosts .= '<h4 class="iner-box-format">' . htmlspecialchars($post['description']) . '</h4>';
             $htmlPosts .= '<button id="add-to-wish" item-id="'.$post['id'].'"><img src="./assets/heartempty.png" alt=""><h5>Add to Wishlist</h5></button>';
@@ -188,7 +193,7 @@ session_start();
         <button><img src="" alt=""></button>
     </div>
     <?php output_footer("posts-footer"); ?>
-    
+
 </body>
 
 </html>
