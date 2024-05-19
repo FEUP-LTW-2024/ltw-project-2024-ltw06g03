@@ -27,7 +27,7 @@ function get_buyer_id(int $id) {
     return $id;
 }
 
-function get_seller_id(int $id) {
+function get_seller_id_(int $id) {
     $db = getDatabaseConnection('../database/database.db');
     $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
     $stmt = $db->prepare('SELECT id FROM seller WHERE user_id = :id');
@@ -68,7 +68,7 @@ if ($data) {
         $buyer_id = get_buyer_id($buyer_user_id);
         $item_info = get_item_info($item_id);
         $item_seller_user_id = $item_info['seller_id'];
-        $seller_id = get_seller_id($item_seller_user_id);
+        $seller_id = get_seller_id_($item_seller_user_id);
         $quantity = $item['quantity'];
 
         $db = getDatabaseConnection('../database/database.db');

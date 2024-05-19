@@ -119,6 +119,22 @@ function pfp_exists_with_id(int $id) {
     return NULL;
 }
 
+function get_selling_items(int $seller_id) {
+    $db = getDatabaseConnection('database/database.db');
+    $stmt = $db->prepare('SELECT * FROM items WHERE seller_id = :id');
+    $stmt->bindParam(':id', $seller_id);
+    $stmt->execute();
 
+    return $stmt->fetchAll();
+}
+
+function get_seller_id(int $user_id) {
+    $db = getDatabaseConnection('database/database.db');
+    $stmt = $db->prepare('SELECT id FROM seller WHERE user_id = :id');
+    $stmt->bindParam(':id', $user_id);
+    $stmt->execute();
+
+    return $stmt->fetch(PDO::FETCH_ASSOC)['id'];
+}
 
 ?>

@@ -20,7 +20,7 @@ session_start();
         output_header(); 
     } ?>
 
-    <section id="admin-page">
+    <section id="admin-page" class="page">
         <div class = "admin-page-boxes">
             <div class="admin-box">
                 <h2>Search Products</h2>
