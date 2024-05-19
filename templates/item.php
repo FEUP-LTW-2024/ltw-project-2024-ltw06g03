@@ -3,6 +3,7 @@ include_once ("actions/utils.php");
 function output_item(array $info)
 { 
     $id = get_user_id_from_seller($info['seller_id']);
+    $my_id = get_id_from_email($_SESSION['user_email']);
     ?>
     <main id="item-main">
         <div id="item-image" class="outer-box-format background-color-very-dark-green">
@@ -70,7 +71,7 @@ function output_item(array $info)
                     echo $info['description'];
                     ?>
                 </p>
-                <a href="chat.php?user_id=<?php echo $id ?>"><p id="chat" class="iner-box-format background-color-dark-green text-beige">Send Message</p></a>
+                <a href="chat.php?user_id=<?php echo $my_id ?>&seller_id=<?php echo $id ?>"><p id="chat" class="iner-box-format background-color-dark-green text-beige">Send Message</p></a>
             </div>
         </div>
     </main>

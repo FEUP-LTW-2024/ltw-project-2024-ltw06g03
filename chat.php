@@ -73,7 +73,11 @@ output_head("Smooth As Silk", "scripts/chat-script.js");
         <ul>
             <?php
             foreach ($chats as $chat) {
-                $username = getUsernameFromId($chat['receiver_id']);
+                if ($chat['sender_id'] === $id) {
+                    $username = getUsernameFromId($chat['receiver_id']);
+                } else {
+                    $username = getUsernameFromId($chat['sender_id']);
+                }
                 echo '<li class="iner-box-format background-color-green"><a href="chat.php?chat_id=' . $chat['id'] . '">' . $username . '</a></li>';            }
             ?>
         </ul>
