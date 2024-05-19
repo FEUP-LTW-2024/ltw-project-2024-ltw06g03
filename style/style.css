@@ -228,7 +228,7 @@ form > * {
     padding: 0.5em 0;
 }
 
-form input {
+form input, div input {
     border-radius: 1em;
     height: 2.5em;
     margin-top: 1em;
@@ -1070,7 +1070,8 @@ input[type=number] {
 }
 
 .user-delete,
-.product-delete {
+.product-delete,
+.category-delete {
     display: grid;
     grid-template-columns: 1fr auto;
     padding: 10px;

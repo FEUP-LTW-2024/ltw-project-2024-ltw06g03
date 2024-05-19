@@ -60,8 +60,9 @@ session_start();
             if (is_buyer($_SESSION['user_email']) || is_seller($_SESSION['user_email'])) { ?>
             <a href="my_orders.php"><button>My Orders</button></a>
             <?php }
-            ?>
+            if (is_admin($_SESSION['user_email'])) { ?>
             <a href="admin.php"><button>Admin</button></a>
+            <?php } ?>
         </div>
     </section>
     

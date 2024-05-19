@@ -15,6 +15,7 @@ INSERT INTO users (username,password,email,name) VALUES
 
 INSERT INTO seller (user_id) VALUES (1);
 INSERT INTO buyer (user_id) VALUES (1);
+INSERT INTO admin (user_id) VALUES (1);
 
 -- Insert sample categories
 INSERT INTO categories (name) VALUES 
