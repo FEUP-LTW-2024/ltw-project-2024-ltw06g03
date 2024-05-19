@@ -1094,3 +1094,7 @@ input[type=number] {
 .scroll {
     overflow: scroll;
 }
+
+.bmargin {
+    margin-bottom: 1em;
+}

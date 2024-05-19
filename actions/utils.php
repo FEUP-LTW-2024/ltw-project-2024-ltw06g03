@@ -137,4 +137,41 @@ function get_seller_id(int $user_id) {
     return $stmt->fetch(PDO::FETCH_ASSOC)['id'];
 }
 
+function get_buyer_id(int $user_id) {
+    $db = getDatabaseConnection('database/database.db');
+    $stmt = $db->prepare('SELECT id FROM buyer WHERE user_id = :id');
+    $stmt->bindParam(':id', $user_id);
+    $stmt->execute();
+
+    return $stmt->fetch(PDO::FETCH_ASSOC)['id'];
+}
+
+function get_my_selling_orders(int $seller_id) {
+    $db = getDatabaseConnection('database/database.db');
+    $stmt = $db->prepare('SELECT * FROM shipping_forms WHERE seller_id = :id');
+    $stmt->bindParam(':id', $seller_id);
+    $stmt->execute();
+
+    return $stmt->fetchAll();
+}
+
+function get_my_buying_orders(int $buyer_id) {
+    $db = getDatabaseConnection('database/database.db');
+    $stmt = $db->prepare('SELECT * FROM shipping_forms WHERE buyer_id = :id');
+    $stmt->bindParam(':id', $buyer_id);
+    $stmt->execute();
+
+    return $stmt->fetchAll();
+}
+
+function get_user_id_from_buyer(int $buyer_id) {
+    $db = getDatabaseConnection('database/database.db');
+    $stmt = $db->prepare('SELECT user_id FROM buyer WHERE id = :id');
+    $stmt->bindParam(':id', $buyer_id);
+    $stmt->execute();
+
+    return $stmt->fetch(PDO::FETCH_ASSOC)['user_id'];
+}
+
+
 ?>
