@@ -6,7 +6,7 @@ body
     margin: 0;
     background: linear-gradient(to bottom, var( --very_dark_green),var(--dark_green), var(--green), var(--green) ,var(--dark_green),var( --very_dark_green));
     font-family: 'Roboto', 'Arial';
-    
+
 }
 body::-webkit-scrollbar {
     width: 0px;
@@ -1022,10 +1022,13 @@ input[type=number] {
     margin-bottom: 15px;
     
 }
-
+#message-bar input
+{
+    margin-top: 0;
+}
 
 #chat-box {
-    height: 38em;
+    height: 36em;
 }
 #chats {
     height: 695px;
