@@ -109,5 +109,14 @@ function pfp_exists(string $email) {
     }
     return NULL;
 }
+function getUsernameFromId($userId)
+{
+    $db = getDatabaseConnection('database/database.db');
+    $query = "SELECT username FROM users WHERE id = :userId";
+    $stmt = $db->prepare($query);
+    $stmt->execute([':userId' => $userId]);
+    $user = $stmt->fetch(PDO::FETCH_ASSOC);
 
+    return $user ? $user['username'] : null;
+}
 ?>

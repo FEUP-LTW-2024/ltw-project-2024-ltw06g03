@@ -11,8 +11,12 @@ DELETE FROM seller;
 DELETE FROM users;
 
 INSERT INTO users (username,password,email,name) VALUES
-('admin', 'd033e22ae348aeb5660fc2140aec35850c4da997', 'admin@admin.com', 'Mr. Admin');
-
+('admin', 'd033e22ae348aeb5660fc2140aec35850c4da997', 'admin@admin.com', 'Mr. Admin'),
+('teste', '1234', 'teste@teste.com', 'Teste'),
+('john', 'd4b19d9a378e2b257d2a921b6c7fe4f2', 'john@example.com', 'John Doe'),
+('jane', 'ee11cbb19052e40b07aac0ca060c23ee', 'jane@example.com', 'Jane Doe'),
+('bob', '878ef96e86145580c38c87f0410ad153', 'bob@example.com', 'Bob Smith'),
+('alice', 'f561aaf6ef0bf14d4208bb46a4ccb3ad', 'alice@example.com', 'Alice Johnson');
 -- Insert sample categories
 INSERT INTO categories (name) VALUES 
 ('Electronics'), 
@@ -28,7 +32,6 @@ INSERT INTO categories (name) VALUES
 ('Art Supplies'), 
 ('Pet Supplies'),
 ('Other');
--- Insert sample items
 -- Insert sample items
 INSERT INTO items (seller_id, category_id, brand, model, condition, price, description, title) VALUES 
 (1, 1, 'Apple', 'iPhone X', 'Used', 500, 'Used iPhone X in good condition, unlocked, with charger and box.', 'Used iPhone X'),
@@ -62,7 +65,7 @@ INSERT INTO items (seller_id, category_id, brand, model, condition, price, descr
 (1, 11, 'Winsor & Newton', 'Watercolor Set', 'Used', 50, 'Used Winsor & Newton Watercolor Set, 24 half pans, with brushes.', 'Used Winsor & Newton Watercolor Set'),
 (1, 12, 'Purina', 'Dog Food', 'New', 20, 'New Purina Dog Food, Pro Plan Savor, Shredded Blend Adult Chicken & Rice, 35 lb bag.', 'New Purina Dog Food'),
 (1, 1, 'Samsung', 'Galaxy S10', 'Used', 400, 'Used Samsung Galaxy S10 in good condition, unlocked, with charger and box.', 'Used Samsung Galaxy S10'),
-(1, 2, 'Adidas', 'Ultra Boost', 'New', 180, 'New Adidas Ultra Boost, size US 10, available in multiple colors.', 'New Adidas Ultra Boost');1
+(1, 2, 'Adidas', 'Ultra Boost', 'New', 180, 'New Adidas Ultra Boost, size US 10, available in multiple colors.', 'New Adidas Ultra Boost');
 
 --Insert sample post_categories
 INSERT INTO post_categories (item_id, category_id) VALUES 
@@ -90,3 +93,15 @@ INSERT INTO wishlist (user_id, item_id) VALUES (3, 2), (4, 3);
 
 -- Insert sample shopping cart items
 INSERT INTO shopping_cart (user_id, item_id) VALUES (3, 1), (4, 4);
+
+-- Insert sample chats
+INSERT INTO chat (sender_id, receiver_id) VALUES 
+(1, 2), 
+(2, 1);
+
+-- Insert sample messages
+INSERT INTO messages (chat_id, sender_id, receiver_id, message) VALUES 
+(1, 1, 2, 'Hello, how are you?'),
+(1, 2, 1, 'I am fine, thank you. How about you?'),
+(1, 2, 1, 'Hey, are you there?'),
+(1, 1, 2, 'Yes, I am here. What can I do for you?');

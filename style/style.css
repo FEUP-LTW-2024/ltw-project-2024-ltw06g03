@@ -9,9 +9,11 @@ body
 
 }
 body::-webkit-scrollbar {
-    width: 10px;
+    width: 0px;
 }
-
+ul {
+    list-style-type: none;
+}
 body::-webkit-scrollbar-track {
     background: linear-gradient(to bottom, var( --very_dark_green),var(--dark_green), var(--green), var(--green) ,var(--dark_green),var( --very_dark_green)); 
 }
@@ -341,7 +343,7 @@ label[for="buyer"], label[for="seller"] {
 }
 
 #posts-section::-webkit-scrollbar-thumb {
-    background: var(--dark_green); 
+    background: transparent; 
     border-radius: 5px; 
 }
 #posts-section article{
@@ -365,9 +367,7 @@ label[for="buyer"], label[for="seller"] {
 #posts-section article h4 {
     text-overflow: ellipsis;
 }
-#page-number
-{
-}
+
 
 .conect_color {
 	background: var(--bright_green) !important;
@@ -892,7 +892,7 @@ input[type=number] {
 
 .shipping input[type="text"]:focus {
     outline: none;
-    border-color: var(--very_dark_green); /* Highlight on focus */
+    border-color: var(--very_dark_green); 
 }
 
 /* Payment */
@@ -936,7 +936,7 @@ input[type=number] {
     padding: 20px;
     border: 1px solid #888;
     width: 30%;
-    border-radius: 10px; /* Rounded corners */
+    border-radius: 10px; 
 }
 
 .close-checkout-btn {
@@ -960,4 +960,50 @@ input[type=number] {
     margin: 1em;
     border-radius: 2em;
     
+}
+
+#chat-box {
+    height: 38em;
+}
+#chats {
+    height: 695px;
+}
+#message-bar button img {
+    height: 20px;
+    width: auto;
+    margin-right: 0.5em;
+    margin-left: 0.5em;
+}
+
+#chats::-webkit-scrollbar {
+    width: 10px;
+    
+}
+
+#chats::-webkit-scrollbar-track {
+    background: transparent; 
+    border-radius: 50px;
+}
+
+#chats::-webkit-scrollbar-thumb {
+    background: transparent; 
+}
+
+#chat-box::-webkit-scrollbar {
+    width: 10px;
+    
+}
+
+#chat-box::-webkit-scrollbar-track {
+    background: transparent; 
+    border-radius: 50px;
+}
+
+#chat-box::-webkit-scrollbar-thumb {
+    background: transparent; 
+}
+
+#chat-box article {
+    display: inline-block;
+    margin: 0.5em;
 }
