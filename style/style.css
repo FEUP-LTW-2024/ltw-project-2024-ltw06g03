@@ -995,8 +995,7 @@ input[type=number] {
     padding-left: 1em;
     padding-right: 1em;
 }
-/* admin */
-#admin-page {
+.page {
     padding: 2em;
 }
 .admin-page-boxes {
@@ -1091,3 +1090,8 @@ input[type=number] {
 .product-info {
     color: var(--beige);
 }
+
+.scroll {
+    overflow: scroll;
+}
+
