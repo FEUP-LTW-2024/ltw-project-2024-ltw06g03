@@ -6,7 +6,6 @@ session_start();
 if(strtoupper($_SERVER['REQUEST_METHOD']) === 'POST') {
     $email = $_POST['email'];
     $userPassword = $_POST['password'];
-    $userPassword = sha1($userPassword);
 
     try {
         $db = getDatabaseConnection('../database/database.db');
@@ -21,7 +20,7 @@ if(strtoupper($_SERVER['REQUEST_METHOD']) === 'POST') {
 
         if ($result) {
             $password = $result['password'];
-            if ($password === $userPassword) {
+            if (password_verify($userPassword, $password)) {
                 $_SESSION['user_email'] = $email;
                 $_SESSION['logged_in'] = true;
                 header("Location: http://localhost:9000/index.php");

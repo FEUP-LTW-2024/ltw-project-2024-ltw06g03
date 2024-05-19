@@ -5,9 +5,10 @@ include_once('./auth.php');
 session_start();
 
 if(strtoupper($_SERVER['REQUEST_METHOD']) === 'POST') {
+    $options = ['cost' => 12];
     $email = $_POST['email'];
     $password = $_POST['password'];
-    $password = sha1($password);    //encrypt password
+    $password = password_hash($password, PASSWORD_DEFAULT, $options);    //encrypt password
     $name = $_POST['name'];
     $username = $_POST['username'];
     $buyer = $_POST['buyer'];

@@ -61,7 +61,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     }
 
     if ($password) {
-        $password = sha1($password);
+        $options = ['cost' => 12];
+        $password = password_hash($password, PASSWORD_DEFAULT, $options);
         $stmt = $db->prepare('UPDATE users SET password = :p WHERE id = :i');
         $stmt->bindParam(':p', $password);
         $stmt->bindParam(':i', $user_id);

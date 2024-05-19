@@ -11,7 +11,7 @@ DELETE FROM seller;
 DELETE FROM users;
 
 INSERT INTO users (username,password,email,name) VALUES
-('admin', 'd033e22ae348aeb5660fc2140aec35850c4da997', 'admin@admin.com', 'Mr. Admin'),
+('admin', '$2y$12$2gP/a5EBDiqcqmfu23dQROifZUerWEuKLsxLmvw/DNW6HJytQCtcW', 'admin@admin.com', 'Mr. Admin'),
 ('teste', '1234', 'teste@teste.com', 'Teste');
 
 INSERT INTO seller (user_id) VALUES (1);
