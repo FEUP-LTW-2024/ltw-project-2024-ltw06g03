@@ -28,7 +28,7 @@ function output_checkout_item(int $id, int $quantity) {
             <?php echo $info['title']; ?>
         </div>
         <div class="checkout-item-price">
-        <?php echo $info['price1']; ?>
+        <?php echo $info['price']; ?>€
         </div>
         <div class="checkout-item-quantity">
             <span class="less">-</span>
@@ -41,7 +41,9 @@ function output_checkout_item(int $id, int $quantity) {
 function output_total_price() {
     $sum = 0;
     foreach ($_SESSION['cart'] as $item) {
-        $info = get_item_info()
+        $info = get_item_info_c($item['id']);
+        $sum += $info['price'] * $item['quantity'];
     }
+    echo $sum;
 }
 ?>

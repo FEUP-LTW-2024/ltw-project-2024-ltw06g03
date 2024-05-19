@@ -7,8 +7,6 @@ $data = json_decode(file_get_contents('php://input'), true);
 if ($data) {
     $id = $data['id'];
     
-    error_log('Val: ' . $id);
-
     // Initialize the cart if it doesn't exist
     if (!isset($_SESSION['cart'])) {
         $_SESSION['cart'] = [];

@@ -81,13 +81,6 @@ INSERT INTO inquiries (item_id, buyer_id, message, response) VALUES
 (3, 3, 'Is assembly difficult?', 'Assembly is fairly straightforward with provided instructions.'),
 (4, 4, 'Is this a hardcover or paperback edition?', 'It is a paperback edition.');
 
--- Insert sample shipping forms
-INSERT INTO shipping_forms (item_id, seller_id, buyer_id, shipping_details) VALUES 
-(1, 1, 3, 'Item will be shipped within 2 business days via USPS Priority Mail.'),
-(2, 2, 4, 'Item will be shipped within 1 business day via FedEx Ground.'),
-(3, 1, 3, 'Local pickup available. Contact for details.'),
-(4, 2, 4, 'Item will be shipped within 1 business day via USPS Media Mail.');
-
 -- Insert sample wishlist items
 INSERT INTO wishlist (user_id, item_id) VALUES (3, 2), (4, 3);
 
