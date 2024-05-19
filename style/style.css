@@ -709,6 +709,7 @@ input[type=number] {
     background-color: var(--green);
     color:var(--beige);
     position: fixed;
+    z-index: 9999;
     inset: 0 0 0 auto;
     display: grid;
     grid-template-rows: 90% 1fr;
@@ -806,6 +807,8 @@ input[type=number] {
     align-items: center;
     gap: 2em;
     padding: 2em;
+    padding-top: 10em;
+    padding-bottom: 10em;
 }
 
 /* Checkout Information */
