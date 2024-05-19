@@ -109,6 +109,12 @@ function pfp_exists(string $email) {
     }
     return NULL;
 }
+function addMessage($chat_id, $sender_id, $receiver_id, $message) {
+    $db = getDatabaseConnection('database/database.db');
+    $query = "INSERT INTO messages (chat_id, sender_id, receiver_id, message) VALUES (:chat_id, :sender_id, :receiver_id, :message)";
+    $stmt = $db->prepare($query);
+    $stmt->execute([':chat_id' => $chat_id, ':sender_id' => $sender_id, ':receiver_id' => $receiver_id, ':message' => $message]);
+}
 function getUsernameFromId($userId)
 {
     $db = getDatabaseConnection('database/database.db');
