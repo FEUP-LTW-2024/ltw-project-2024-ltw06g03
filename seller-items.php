@@ -34,4 +34,36 @@ session_start();
 
     <?php output_footer('seller-items'); ?>
 
+    <script>
+        const buttons = document.querySelectorAll('.delete-icon button');
+
+        buttons.forEach(button => {
+            button.addEventListener('click', (event) => {
+                const id = event.target.closest('button').dataset.id;
+
+                const formData = new FormData();
+
+                formData.append('id', id);
+
+                fetch('actions/delete_item.php', {
+                    method: 'POST',
+                    body: formData,
+                })
+                .then(response => response.text())
+                .then(data => {
+                    if (data === 'success') {
+                        alert('Item deleted!');
+                        window.location.href = 'seller-items.php';
+                    } else {
+                        alert('Failed to delete item: ' + data);
+                    }
+                })
+                .catch(error => {
+                    console.error('Error:', error);
+                    alert('An error occurred while updating the profile.');
+                });
+            })
+        });
+    </script>
+
 </body>

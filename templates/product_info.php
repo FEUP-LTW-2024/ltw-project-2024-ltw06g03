@@ -12,7 +12,7 @@ function output_product_info($info) {
     </div>
     <!-- Delete icon -->
     <div class="delete-icon">
-        <button product-id="<?php echo $info['id'] ?>"><img src="./assets/delete.png" alt="Delete"></button>
+        <button data-id="<?php echo $info['id'] ?>"><img src="./assets/delete.png" alt="Delete"></button>
     </div>
 </div>
 
