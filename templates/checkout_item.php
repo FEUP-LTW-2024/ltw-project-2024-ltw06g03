@@ -31,9 +31,9 @@ function output_checkout_item(int $id, int $quantity) {
         <?php echo $info['price']; ?>€
         </div>
         <div class="checkout-item-quantity">
-            <span class="less">-</span>
+        <button class="less" data-item-id="<?php echo $info['id'] ?>">-</button>
             <span><?php echo $quantity ?></span>
-            <span class="more">+</span>
+            <button class="more" data-item-id="<?php echo $info['id'] ?>">+</button>
         </div>
     </div>
 <?php }
