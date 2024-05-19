@@ -11,12 +11,12 @@ DELETE FROM seller;
 DELETE FROM users;
 
 INSERT INTO users (username,password,email,name) VALUES
-('admin', 'd033e22ae348aeb5660fc2140aec35850c4da997', 'admin@admin.com', 'Mr. Admin'),
-('teste', '1234', 'teste@teste.com', 'Teste'),
-('john', 'd4b19d9a378e2b257d2a921b6c7fe4f2', 'john@example.com', 'John Doe'),
-('jane', 'ee11cbb19052e40b07aac0ca060c23ee', 'jane@example.com', 'Jane Doe'),
-('bob', '878ef96e86145580c38c87f0410ad153', 'bob@example.com', 'Bob Smith'),
-('alice', 'f561aaf6ef0bf14d4208bb46a4ccb3ad', 'alice@example.com', 'Alice Johnson');
+('admin', 'd033e22ae348aeb5660fc2140aec35850c4da997', 'admin@admin.com', 'Mr. Admin');
+
+INSERT INTO seller (user_id) VALUES (1);
+INSERT INTO buyer (user_id) VALUES (1);
+INSERT INTO admin (user_id) VALUES (1);
+
 -- Insert sample categories
 INSERT INTO categories (name) VALUES 
 ('Electronics'), 
@@ -80,13 +80,6 @@ INSERT INTO inquiries (item_id, buyer_id, message, response) VALUES
 (2, 4, 'Do you have these in other sizes?', 'Yes, we have sizes 9 and 11 available.'),
 (3, 3, 'Is assembly difficult?', 'Assembly is fairly straightforward with provided instructions.'),
 (4, 4, 'Is this a hardcover or paperback edition?', 'It is a paperback edition.');
-
--- Insert sample shipping forms
-INSERT INTO shipping_forms (item_id, seller_id, buyer_id, shipping_details) VALUES 
-(1, 1, 3, 'Item will be shipped within 2 business days via USPS Priority Mail.'),
-(2, 2, 4, 'Item will be shipped within 1 business day via FedEx Ground.'),
-(3, 1, 3, 'Local pickup available. Contact for details.'),
-(4, 2, 4, 'Item will be shipped within 1 business day via USPS Media Mail.');
 
 -- Insert sample wishlist items
 INSERT INTO wishlist (user_id, item_id) VALUES (3, 2), (4, 3);

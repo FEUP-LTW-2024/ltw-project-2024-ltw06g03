@@ -4,7 +4,11 @@ include_once ("templates/header.php");
 include_once ("templates/footer.php");
 include_once ("database/connect.php");
 include_once("actions/utils.php");
-$db= getDatabaseConnection("database.db");
+$db = getDatabaseConnection('database/database.db');
+
+$stmt = $db->prepare("SELECT * FROM categories");
+$stmt->execute();
+$categories = $stmt->fetchAll();
 
 output_head("Smooth As Silk");
 
@@ -34,25 +38,10 @@ if (!is_seller($_SESSION['user_email'])) {
             <h1>New Post</h1>
             <form action="actions/new_post.php" method="post" enctype="multipart/form-data">
                 <label for="category">Category:</label>
-                <select name="category" id="category-sel">
+                <select name="category" id="category-sel" class="box-input background-color-green text-beige">
                     <?php
-                    $categories = array(
-                        'Electronics',
-                        'Clothing',
-                        'Furniture',
-                        'Books',
-                        'Automobiles',
-                        'Kitchen Appliances',
-                        'Gardening',
-                        'Sports Equipment',
-                        'Musical Instruments',
-                        'Toys',
-                        'Art Supplies',
-                        'Pet Supplies'
-                    );
-
                     foreach($categories as $category) {
-                        echo "<option value=\"$category\">$category</option>";
+                        echo "<option value='" . $category['name'] . "'>" . $category['name'] . "</option>";
                     }
                     ?>
                 </select>
@@ -63,17 +52,17 @@ if (!is_seller($_SESSION['user_email'])) {
                 <label for="model">Model:</label>
                 <input type="text" id="model-inp" name="model" required>
                 <label for="condition">Condition:</label>
-                <select name="condition" id="condition-sel">
+                <select name="condition" id="condition-sel" class="box-input background-color-green text-beige">
                     <option value="New">New</option>
                     <option value="Used">Used</option>
                 </select>
                 <label for="price">Price:</label>
                 <input type="number" name="price" required>
                 <label for="description">Description:</label>
-                <textarea name="description" id="description"></textarea>
+                <textarea name="description" id="description"  class="box-input background-color-green text-beige"></textarea>
                 <label for="image">Item Image:</label>
                 <input type="file" name="image" required>
-                <input type="submit" value="Create Post">
+                <input type="submit" value="Create Post" id="create-post-button">
             </form>
         </div>
     </section>

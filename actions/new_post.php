@@ -29,7 +29,7 @@ if(strtoupper($_SERVER['REQUEST_METHOD']) === 'POST') {
                 exit;
         }
 
-        $target_file = $target_dir . $item_id . "." . $imageFileType;
+        $target_file = $target_dir . 'item_' . $item_id . "." . $imageFileType;
 
         if (move_uploaded_file($_FILES['image']['tmp_name'], $target_file)) {
             header("Location: http://localhost:9000/new_post.php?sucess");

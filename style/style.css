@@ -78,6 +78,9 @@ a {
 .barcode {
     font-family: 'Libre Barcode 39 Text', 'Arial';
 }
+.text-beige {
+    color: var(--beige);
+}
 textarea {
     resize: none;
 }
@@ -106,7 +109,7 @@ textarea {
     padding-left: 0.5em;
     padding-right: 1.5em;
 }
-#navbar li:nth-child(2) > img {
+#navbar li:nth-child(2) img {
     margin-top: 0.5em;
     margin-bottom: 0.3em;
     margin-right: 0.5em;
@@ -193,7 +196,7 @@ footer {
 #login-sec {
     background-color: var(--dark_green);
     width: 50em;
-    margin: 5em auto 8em auto;
+    margin: 2em auto ;
     padding: 2em;
     text-align: center;
     color: var(--beige);
@@ -227,7 +230,7 @@ form > * {
     padding: 0.5em 0;
 }
 
-form input {
+form input, div input {
     border-radius: 1em;
     height: 2.5em;
     margin-top: 1em;
@@ -316,6 +319,8 @@ label[for="buyer"], label[for="seller"] {
     border-radius: 15px;
     padding: 0.5em;
     margin: 0.7em;
+    border: none;
+    outline: none;
 }
 #sort-bar > div > button{
     cursor: pointer;
@@ -393,29 +398,44 @@ input[type=number] {
 }
 
 #item-main {
-    background-color: var(--dark_green);
-    width: 70em;
-    margin: 5em auto;
-    border-radius: 4em;
-    color: var(--beige);
+    width: 80%;
+    margin:auto;
     padding: 1em;
 }
 
-#item-image > img {
-    width: 80%;
-    margin: 0 auto;
+#item-image div > img {
+    width: 100%;
+    height: auto;
+    margin: 0;
 }
 
 #item-image {
-    width: 38em;
-    height: 100%;
+    padding: 1em;
 }
 
-
-#seller-info > * {
-    margin: 0.5rem auto;
+#seller-info{
+    width: 100%;
+    height: auto;
 }
-
+#item-image button img {
+    height: 20px;
+    width: auto;
+    margin-right: 0.5em;
+    margin-left: 0.5em;
+}
+#item-specifics
+{
+    width: 100%;
+    height: auto;
+}
+#item-specifics * {
+    margin: 0.5em;
+    padding: 0.5em;
+}
+#item-specifics p {
+    margin: 0.5em;
+    padding: 0.5em;
+}
 #seller-username {
     margin-top: 0;
 }
@@ -560,7 +580,7 @@ input[type=number] {
     border-radius: 30px; 
 }
 
-#save-btn {
+#save-btn, #seller-btn, #buyer-btn {
     background-color: var(--green); 
     transition: background-color 0.3s ease;
 
@@ -762,7 +782,7 @@ input[type=number] {
     gap: 10px;    
 }
 
-.cartItem .cartItemQuantity span{
+.cartItem .cartItemQuantity button{
     display: inline-block;
     background-color: var(--very_dark_green);
     color: var(--beige);
@@ -954,13 +974,52 @@ input[type=number] {
     height: 100px;
 }
 
-#seller-info {
-    background-color: var(--beige);
-    color: var(--very_dark_green);
-    margin: 1em;
-    border-radius: 2em;
+/* New Post Page */
+
+#new-post-body #login-div form *{
+    margin: 10px;
+    width: auto;
+    height: auto;
+}
+#new-post-body #login-div form label input{
+    padding-left: 1em;
+    padding-right: 1em;
+}
+#new-post-body #login-div form input{
+    padding-left: 1em;
+    padding-right: 1em;
+}
+.page {
+    padding: 2em;
+}
+.admin-page-boxes {
+    display: grid; /* Use grid to arrange items */
+    grid-template-columns: repeat(2, 1fr); /* Two columns with equal width */
+    grid-gap: 20px; /* Gap between grid items */
+    padding: 2em;
+    margin: 2em;
+}
+  
+  /* Admin box styling */
+.admin-box {
+    background-color: var(--bright_green);
+    border: 1px solid var(--very_dark_green);
+    border-radius: 5px;
+    padding: 20px;
+}
+  
+.admin-box h2 {
+    margin-top: 0;
+    margin-bottom: 10px;
+    color: var(--dark_green);
+}
+  
+  /* Form styling */
+.admin-box form {
+    margin-bottom: 15px;
     
 }
+
 
 #chat-box {
     height: 38em;
@@ -1007,3 +1066,78 @@ input[type=number] {
     display: inline-block;
     margin: 0.5em;
 }
+
+.admin-box input[type="text"] {
+    width: calc(100% - 100px); /* Set the width of the input field */
+    padding: 8px;
+    margin-right: 10px;
+    margin-bottom: 2em;
+}
+
+.admin-box input::placeholder{
+    color: var(--beige);
+}
+.admin-box button {
+    padding: 8px 15px;
+    background-color: var(--dark_green);
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+  
+.admin-box button:hover {
+    color: var(--dark_green);
+    background-color: var(--beige);
+}
+
+.search-results-admin {
+    width: 80%; /* Adjust width as needed */
+    padding: 2em;
+    background-color: var(--bright_green);
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    margin: 2em auto; /* Center the search results */
+}
+.search-results-admin h2{
+    color: var(--dark_green);
+}
+
+.search-results-admin {
+    grid-gap: 20px; /* Adjust gap between grid items as needed */
+    padding: 20px;
+    background-color: var(--bright_green);
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.user-delete,
+.product-delete,
+.category-delete {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    padding: 10px;
+    background-color: var(--dark_green);
+    border-radius: 5px;
+    margin-bottom: 2em;
+}
+
+.delete-icon img {
+    width: 30px; 
+    height: 30px;
+    cursor: pointer;
+}
+
+
+.user-info,
+.product-info {
+    color: var(--beige);
+}
+
+.scroll {
+    overflow: scroll;
+}
+
+.bmargin {
+    margin-bottom: 1em;
+}
+

@@ -17,6 +17,7 @@ $conditionFilter = isset($_POST['condition']) ? $_POST['condition'] : 'all';
 $priceMin = isset($_POST['price-min']) ? $_POST['price-min'] : 0;
 $priceMax = isset($_POST['price-max']) ? $_POST['price-max'] : 100000;
 $brandModel = isset($_POST['brand-model']) ? $_POST['brand-model'] : 'all';
+$search_name = isset($_GET['name']) ? $_GET['name'] : NULL;
 
 switch ($sortOption) {
     case 'high-prices':
@@ -63,6 +64,11 @@ if ($conditionFilter !== 'all') {
 if ($brandModel !== 'all') {
     $query .= " AND brand = :brandModel";
     $params[':brandModel'] = $brandModel;
+}
+
+if ($search_name) {
+    $query .= ' AND title LIKE :n';
+    $params[':n'] = '%' . $search_name . '%';
 }
 
 $query .= " ORDER BY $orderBy LIMIT :numbersPerPage";

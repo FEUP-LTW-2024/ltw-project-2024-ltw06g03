@@ -59,6 +59,18 @@ output_head("Smooth As Silk");
                 </div>
                 <div class="save-changes">
                     <button class="button-edit" id="save-btn" type="button">Save Profile</button>
+                    <?php
+                    if (!is_seller($_SESSION['user_email'])) { 
+                        echo '<button class="button-edit" id="seller-btn" type="button">Become a Seller</button>';
+                    } else {
+                        echo '<button class="button-edit" id="seller-btn" type="button" style="display:none">Become a Seller</button>';
+                    }
+                    if (!is_buyer($_SESSION['user_email'])) {
+                        echo '<button class="button-edit" id="buyer-btn" type="button">Become a Buyer</button>';
+                    } else {
+                        echo '<button class="button-edit" id="buyer-btn" type="button" style="display:none">Become a Buyer</button>';
+                    }
+                    ?>
                 </div>
                 
             </div>
@@ -114,6 +126,44 @@ output_head("Smooth As Silk");
                     window.location.href = 'profile.php';
                 } else {
                     alert('Failed to update profile: ' + data);
+                }
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                alert('An error occurred while updating the profile.');
+            });
+        });
+
+        document.getElementById('seller-btn').addEventListener('click', function() {
+            fetch('actions/become_seller.php', {
+                method: 'POST',
+            })
+            .then(response => response.text())
+            .then(data => {
+                if (data === 'success') {
+                    alert('You are now a seller');
+                    window.location.href = 'profile.php';
+                } else {
+                    alert('Failed to become a seller');
+                }
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                alert('An error occurred while updating the profile.');
+            });
+        });
+
+        document.getElementById('buyer-btn').addEventListener('click', function() {
+            fetch('actions/become_buyer.php', {
+                method: 'POST',
+            })
+            .then(response => response.text())
+            .then(data => {
+                if (data === 'success') {
+                    alert('You are now a buyer');
+                    window.location.href = 'profile.php';
+                } else {
+                    alert('Failed to become a buyer');
                 }
             })
             .catch(error => {

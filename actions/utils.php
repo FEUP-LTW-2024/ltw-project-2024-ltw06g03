@@ -71,7 +71,7 @@ function get_category(int $category) {
 
 function get_photo_path(int $item_id) {
     $base_path = "user_images";
-    $files = glob($base_path . '/' . $item_id . '*');
+    $files = glob($base_path . '/' . 'item_' . $item_id . '*');
     return $files[0];
 }
 
@@ -109,6 +109,7 @@ function pfp_exists(string $email) {
     }
     return NULL;
 }
+
 function addMessage($chat_id, $sender_id, $receiver_id, $message) {
     $db = getDatabaseConnection('database/database.db');
     $query = "INSERT INTO messages (chat_id, sender_id, receiver_id, message) VALUES (:chat_id, :sender_id, :receiver_id, :message)";
@@ -122,7 +123,116 @@ function getUsernameFromId($userId)
     $stmt = $db->prepare($query);
     $stmt->execute([':userId' => $userId]);
     $user = $stmt->fetch(PDO::FETCH_ASSOC);
-
     return $user ? $user['username'] : null;
+}
+
+function pfp_exists_with_id(int $id) {
+    $pattern = 'user_images/' . $id . '.*';
+    $files = glob($pattern, GLOB_NOSORT);
+
+    if (!empty($files)) {
+        return $files[0];
+    }
+    return NULL;
+}
+
+function get_selling_items(int $seller_id) {
+    $db = getDatabaseConnection('database/database.db');
+    $stmt = $db->prepare('SELECT * FROM items WHERE seller_id = :id');
+    $stmt->bindParam(':id', $seller_id);
+    $stmt->execute();
+
+    return $stmt->fetchAll();
+}
+
+function get_seller_id(int $user_id) {
+    $db = getDatabaseConnection('database/database.db');
+    $stmt = $db->prepare('SELECT id FROM seller WHERE user_id = :id');
+    $stmt->bindParam(':id', $user_id);
+    $stmt->execute();
+
+    return $stmt->fetch(PDO::FETCH_ASSOC)['id'];
+}
+
+function get_buyer_id(int $user_id) {
+    $db = getDatabaseConnection('database/database.db');
+    $stmt = $db->prepare('SELECT id FROM buyer WHERE user_id = :id');
+    $stmt->bindParam(':id', $user_id);
+    $stmt->execute();
+
+    return $stmt->fetch(PDO::FETCH_ASSOC)['id'];
+}
+
+function get_my_selling_orders(int $seller_id) {
+    $db = getDatabaseConnection('database/database.db');
+    $stmt = $db->prepare('SELECT * FROM shipping_forms WHERE seller_id = :id');
+    $stmt->bindParam(':id', $seller_id);
+    $stmt->execute();
+
+    return $stmt->fetchAll();
+}
+
+function get_my_buying_orders(int $buyer_id) {
+    $db = getDatabaseConnection('database/database.db');
+    $stmt = $db->prepare('SELECT * FROM shipping_forms WHERE buyer_id = :id');
+    $stmt->bindParam(':id', $buyer_id);
+    $stmt->execute();
+
+    return $stmt->fetchAll();
+}
+
+function get_user_id_from_buyer(int $buyer_id) {
+    $db = getDatabaseConnection('database/database.db');
+    $stmt = $db->prepare('SELECT user_id FROM buyer WHERE id = :id');
+    $stmt->bindParam(':id', $buyer_id);
+    $stmt->execute();
+
+    return $stmt->fetch(PDO::FETCH_ASSOC)['user_id'];
+}
+
+function is_admin(string $email) : bool {
+    $db = getDatabaseConnection('database/database.db');
+    $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+
+    $stmt = $db->prepare('SELECT id FROM users WHERE email = :email');
+    $stmt->bindParam(':email', $email);
+
+    $stmt->execute();
+    $id = $stmt->fetch(PDO::FETCH_ASSOC)['id'];
+
+    $stmt = $db->prepare('SELECT COUNT(*) AS cnt FROM admin WHERE user_id = :id');
+    $stmt->bindParam(':id', $id);
+
+    $stmt->execute();
+    $result = $stmt->fetch(PDO::FETCH_ASSOC)['cnt'];
+
+    if ($result === 0) {
+        return false;
+    }
+    return true;
+}
+
+function get_products_admin(string $expr) {
+    $query = 'SELECT * FROM items WHERE title LIKE "%' . $expr . '%"'; 
+    $db = getDatabaseConnection('database/database.db');
+    $stmt = $db->prepare($query);
+    $stmt->execute();
+    return $stmt->fetchAll();
+}
+
+function get_users_admin(string $expr) {
+    $query = 'SELECT * FROM users WHERE username LIKE "%' . $expr . '%"'; 
+    $db = getDatabaseConnection('database/database.db');
+    $stmt = $db->prepare($query);
+    $stmt->execute();
+    return $stmt->fetchAll();
+}
+
+function get_categories(string $expr) {
+    $query = 'SELECT * FROM categories WHERE name LIKE "%' . $expr . '%"'; 
+    $db = getDatabaseConnection('database/database.db');
+    $stmt = $db->prepare($query);
+    $stmt->execute();
+    return $stmt->fetchAll();
 }
 ?>
