@@ -54,6 +54,7 @@ session_start();
         </div>
         <div class="profile-actions">
             <a href="edit-profile.php"><button>Edit Profile</button></a>
+            <a href="admin.php"><button>Admin</button></a>
         </div>
     </section>
     
