@@ -15,7 +15,6 @@ function output_product_info($info) {
         <button data-id="<?php echo $info['id'] ?>"><img src="./assets/delete.png" alt="Delete"></button>
     </div>
 </div>
-
 <?php } 
 
 function output_selling_order_info($info) { 

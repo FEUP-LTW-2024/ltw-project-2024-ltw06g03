@@ -173,5 +173,43 @@ function get_user_id_from_buyer(int $buyer_id) {
     return $stmt->fetch(PDO::FETCH_ASSOC)['user_id'];
 }
 
+function is_admin(string $email) : bool {
+    $db = getDatabaseConnection('database/database.db');
+    $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+
+    $stmt = $db->prepare('SELECT id FROM users WHERE email = :email');
+    $stmt->bindParam(':email', $email);
+
+    $stmt->execute();
+    $id = $stmt->fetch(PDO::FETCH_ASSOC)['id'];
+
+    $stmt = $db->prepare('SELECT COUNT(*) AS cnt FROM admin WHERE user_id = :id');
+    $stmt->bindParam(':id', $id);
+
+    $stmt->execute();
+    $result = $stmt->fetch(PDO::FETCH_ASSOC)['cnt'];
+
+    if ($result === 0) {
+        return false;
+    }
+    return true;
+}
+
+function get_products_admin(string $expr) {
+    $query = 'SELECT * FROM items WHERE title LIKE "%' . $expr . '%"'; 
+    $db = getDatabaseConnection('database/database.db');
+    $stmt = $db->prepare($query);
+    $stmt->execute();
+    return $stmt->fetchAll();
+}
+
+function get_users_admin(string $expr) {
+    $query = 'SELECT * FROM users WHERE username LIKE "%' . $expr . '%"'; 
+    $db = getDatabaseConnection('database/database.db');
+    $stmt = $db->prepare($query);
+    $stmt->execute();
+    return $stmt->fetchAll();
+}
+
 
 ?>

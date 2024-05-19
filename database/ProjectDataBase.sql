@@ -25,19 +25,19 @@ CREATE TABLE users (
 CREATE TABLE seller (
     id INTEGER PRIMARY KEY AUTOINCREMENT,
     user_id INTEGER,
-    FOREIGN KEY(user_id) REFERENCES users(id)
+    FOREIGN KEY(user_id) REFERENCES users(id) ON DELETE CASCADE
 );
 
 CREATE TABLE buyer (
     id INTEGER PRIMARY KEY AUTOINCREMENT,
     user_id INTEGER,
-    FOREIGN KEY(user_id) REFERENCES users(id)
+    FOREIGN KEY(user_id) REFERENCES users(id) ON DELETE CASCADE
 );
 
 CREATE TABLE admin (
     id INTEGER PRIMARY KEY AUTOINCREMENT,
     user_id INTEGER,
-    FOREIGN KEY(user_id) REFERENCES users(id)
+    FOREIGN KEY(user_id) REFERENCES users(id) ON DELETE CASCADE
 );
 
 CREATE TABLE categories (
@@ -56,16 +56,16 @@ CREATE TABLE items (
     description VARCHAR NOT NULL,
     title VARCHAR NOT NULL,
     date TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-    FOREIGN KEY(seller_id) REFERENCES seller(id),
-    FOREIGN KEY(category_id) REFERENCES categories(id)
+    FOREIGN KEY(seller_id) REFERENCES seller(id) ON DELETE CASCADE, 
+    FOREIGN KEY(category_id) REFERENCES categories(id) ON DELETE CASCADE
 );
 
 CREATE TABLE post_categories (
     id INTEGER PRIMARY KEY AUTOINCREMENT,
     item_id INTEGER,
     category_id INTEGER,
-    FOREIGN KEY(item_id) REFERENCES items(id),
-    FOREIGN KEY(category_id) REFERENCES categories(id)
+    FOREIGN KEY(item_id) REFERENCES items(id) ON DELETE CASCADE,
+    FOREIGN KEY(category_id) REFERENCES categories(id) ON DELETE CASCADE
 );
 
 CREATE TABLE inquiries (
@@ -74,8 +74,8 @@ CREATE TABLE inquiries (
     buyer_id INTEGER,
     message TEXT,
     response TEXT,
-    FOREIGN KEY(item_id) REFERENCES items(id),
-    FOREIGN KEY(buyer_id) REFERENCES buyer(id)
+    FOREIGN KEY(item_id) REFERENCES items(id) ON DELETE CASCADE,
+    FOREIGN KEY(buyer_id) REFERENCES buyer(id) ON DELETE CASCADE
 );
 
 CREATE TABLE shipping_forms (
@@ -86,22 +86,22 @@ CREATE TABLE shipping_forms (
     shipping_details VARCHAR NOT NULL,
     quantity INTEGER,
     FOREIGN KEY(item_id) REFERENCES items(id),
-    FOREIGN KEY(seller_id) REFERENCES seller(id),
-    FOREIGN KEY(buyer_id) REFERENCES buyer(id)
+    FOREIGN KEY(seller_id) REFERENCES seller(id) ON DELETE CASCADE,
+    FOREIGN KEY(buyer_id) REFERENCES buyer(id) ON DELETE CASCADE
 );
 
 CREATE TABLE wishlist (
     id INTEGER PRIMARY KEY AUTOINCREMENT,
     user_id INTEGER,
     item_id INTEGER,
-    FOREIGN KEY(user_id) REFERENCES buyer(id),
-    FOREIGN KEY(item_id) REFERENCES items(id)
+    FOREIGN KEY(user_id) REFERENCES buyer(id) ON DELETE CASCADE,
+    FOREIGN KEY(item_id) REFERENCES items(id) ON DELETE CASCADE
 );
 
 CREATE TABLE shopping_cart (
     id INTEGER PRIMARY KEY AUTOINCREMENT,
     user_id INTEGER,
     item_id INTEGER,
-    FOREIGN KEY(user_id) REFERENCES buyer(id),
-    FOREIGN KEY(item_id) REFERENCES items(id)
+    FOREIGN KEY(user_id) REFERENCES buyer(id) ON DELETE CASCADE,
+    FOREIGN KEY(item_id) REFERENCES items(id) ON DELETE CASCADE
 );
