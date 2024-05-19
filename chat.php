@@ -10,7 +10,7 @@ $db = getDatabaseConnection("database/database.db");
 
 
 $id = get_id_from_email($_SESSION['user_email']);
-$query = "SELECT * FROM chat WHERE sender_id = :id";
+$query = "SELECT * FROM chat WHERE sender_id = :id OR receiver_id = :id";
 $stmt = $db->prepare($query);
 $stmt->execute([':id' => $id]);
 $chats = $stmt->fetchAll(PDO::FETCH_ASSOC);
