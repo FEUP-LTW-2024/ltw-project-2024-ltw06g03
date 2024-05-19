@@ -33,7 +33,7 @@ function output_selling_order_info($info) {
             </a>
         </div>
         <div class="delete-icon">
-            <button data-id="<?php echo $info['id'] ?>">Print Form</button>
+            <a href="print_form.php?details=<?php echo $info['shipping_details']; ?>"><button data-id="<?php echo $info['id'] ?>">Print Form</button></a>
         </div>
     </div>
     
