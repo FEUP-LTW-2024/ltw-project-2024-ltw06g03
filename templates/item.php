@@ -1,7 +1,9 @@
 <?php
 include_once ("actions/utils.php");
 function output_item(array $info)
-{ ?>
+{ 
+    $id = get_user_id_from_seller($info['seller_id']);
+    ?>
     <main id="item-main">
         <div id="item-image" class="outer-box-format background-color-very-dark-green">
             <div class="iner-box-format background-color-dark-green"><img src="<?php echo get_photo_path($info['id']) ?>" alt="Item Photograph"></div>
@@ -11,7 +13,7 @@ function output_item(array $info)
         <div id="item-info">
             <div id="seller-info" class="outer-box-format background-color-very-dark-green text-beige">
                 <img class="iner-box-format background-color-dark-green" src="<?php
-                $v = pfp_exists_with_id($info['seller_id']);
+                $v = pfp_exists_with_id(get_user_id_from_seller($info['seller_id']));
                 if ($v) {
                     echo $v;
                 } else {
@@ -21,12 +23,12 @@ function output_item(array $info)
                 <div class="iner-box-format background-color-dark-green">
                     <h2 id="seller-name">
                         <?php
-                        echo get_seller_name($info['seller_id']);
+                        echo get_seller_name(get_user_id_from_seller($info['seller_id']));
                         ?>
                     </h2>
                     <h3 id="seller-username">
                         <?php
-                        echo get_seller_username($info['seller_id']);
+                        echo get_seller_username(get_user_id_from_seller($info['seller_id']));
                         ?>
                     </h3>
                 </div>
@@ -68,6 +70,7 @@ function output_item(array $info)
                     echo $info['description'];
                     ?>
                 </p>
+                <a href="chat.php?chat_id=<?php echo $id ?>"><p id="chat" class="iner-box-format background-color-dark-green text-beige">Send Message</p></a>
             </div>
         </div>
     </main>

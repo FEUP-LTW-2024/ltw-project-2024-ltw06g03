@@ -191,6 +191,15 @@ function get_user_id_from_buyer(int $buyer_id) {
     return $stmt->fetch(PDO::FETCH_ASSOC)['user_id'];
 }
 
+function get_user_id_from_seller(int $buyer_id) {
+    $db = getDatabaseConnection('database/database.db');
+    $stmt = $db->prepare('SELECT user_id FROM seller WHERE id = :id');
+    $stmt->bindParam(':id', $buyer_id);
+    $stmt->execute();
+
+    return $stmt->fetch(PDO::FETCH_ASSOC)['user_id'];
+}
+
 function is_admin(string $email) : bool {
     $db = getDatabaseConnection('database/database.db');
     $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
