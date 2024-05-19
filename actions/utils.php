@@ -72,7 +72,7 @@ function get_category(int $category) {
 function get_photo_path(int $item_id) {
     $base_path = "user_images";
     $files = glob($base_path . '/' . 'item_' . $item_id . '*');
-    return $files[0];
+    return isset($files[0]) ? $files[0] : NULL;
 }
 
 function get_seller_username(string $id) {
