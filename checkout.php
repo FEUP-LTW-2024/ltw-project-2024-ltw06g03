@@ -119,7 +119,65 @@ session_start();
                 console.error('Error:', error);
                 alert('An error ocurred while making an order');
             });
-        });    
+        });
+
+        document.querySelectorAll('.less').forEach(button => {
+                button.addEventListener('click', function() {
+                    const itemId = this.dataset.itemId;
+
+                    const item = {
+                        id: itemId
+                    };
+
+                    fetch('actions/less.php', {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json'
+                        },
+                        body: JSON.stringify(item)
+                    })
+                    .then(response => response.json())
+                    .then(data => {
+                        if (data.success) {
+                            location.reload();
+                        } else {
+                            console.log('Failed to decrement quantity');
+                        }
+                    })
+                    .catch(error => {
+                        console.error('Error:', error);
+                    });
+                });
+            });
+
+            document.querySelectorAll('.more').forEach(button => {
+                button.addEventListener('click', function() {
+                    const itemId = this.dataset.itemId;
+
+                    const item = {
+                        id: itemId
+                    };
+
+                    fetch('actions/more.php', {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json'
+                        },
+                        body: JSON.stringify(item)
+                    })
+                    .then(response => response.json())
+                    .then(data => {
+                        if (data.success) {
+                            location.reload();
+                        } else {
+                            console.log('Failed to increment quantity');
+                        }
+                    })
+                    .catch(error => {
+                        console.error('Error:', error);
+                    });
+                });
+            });
         </script>
 </body>
 </html>
