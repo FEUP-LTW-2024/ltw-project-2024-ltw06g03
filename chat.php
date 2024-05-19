@@ -15,10 +15,30 @@ $stmt = $db->prepare($query);
 $stmt->execute([':id' => $id]);
 $chats = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
+if (isset($_GET['user_id'])) {
+    $query = 'SELECT * FROM chat WHERE sender_id = :id OR receiver_id = :id';
+    $stmt = $db->prepare($query);
+    $stmt->execute([$_GET['user_id']]);
+    $results = $stmt->fetch(PDO::FETCH_ASSOC);
+    if (isset($results['id'])) {
+        header("Location: http://localhost:9000/chat.php?chat_id=".$results['id']);
+        exit;
+    } else {
+        $query = 'INSERT INTO chat (sender_id, receiver_id) VALUES (:current_id, :id)';
+        $stmt = $db->prepare($query);
+        $stmt->execute([$id, $_GET['user_id']]);
+        $chat_id = $db->lastInsertId();
+        $query = 'INSERT INTO messages (chat_id, sender_id, receiver_id, message) VALUES (?,?,?,?)';
+        $stmt = $db->prepare($query);
+        $stmt->execute([$chat_id, $id, $_GET['user_id'], 'I am interested in one of your items.']);
+        header("Location: http://localhost:9000/chat.php?chat_id=".$chat_id);
+        exit;
+    }
+}
+
 
 if (isset($_GET['chat_id'])) {
     $chat_id = intval($_GET['chat_id']);
-
     $query = "SELECT * FROM messages WHERE chat_id = :chat_id";
     $stmt = $db->prepare($query);
     $stmt->execute([':chat_id' => $chat_id]);

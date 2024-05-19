@@ -70,7 +70,7 @@ function output_item(array $info)
                     echo $info['description'];
                     ?>
                 </p>
-                <a href="chat.php?chat_id=<?php echo $id ?>"><p id="chat" class="iner-box-format background-color-dark-green text-beige">Send Message</p></a>
+                <a href="chat.php?user_id=<?php echo $id ?>"><p id="chat" class="iner-box-format background-color-dark-green text-beige">Send Message</p></a>
             </div>
         </div>
     </main>
