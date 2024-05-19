@@ -83,7 +83,8 @@ CREATE TABLE shipping_forms (
     item_id INTEGER,
     seller_id INTEGER,
     buyer_id INTEGER,
-    shipping_details TEXT,
+    shipping_details VARCHAR NOT NULL,
+    quantity INTEGER,
     FOREIGN KEY(item_id) REFERENCES items(id),
     FOREIGN KEY(seller_id) REFERENCES seller(id),
     FOREIGN KEY(buyer_id) REFERENCES buyer(id)
