@@ -21,7 +21,7 @@ function output_checkout_item(int $id, int $quantity) {
     ?>
 
     <div class="checkout-item">
-        <div class="checkout-item-img">
+        <div class="checkout-item-img ">
             <img src="./assets/shopping-cart.png" alt="item">
         </div>
         <div class="checkout-item-name">
