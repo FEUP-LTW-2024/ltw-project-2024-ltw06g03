@@ -33,7 +33,6 @@ INSERT INTO categories (name) VALUES
 ('Pet Supplies'),
 ('Other');
 -- Insert sample items
--- Insert sample items
 INSERT INTO items (seller_id, category_id, brand, model, condition, price, description, title) VALUES 
 (1, 1, 'Apple', 'iPhone X', 'Used', 500, 'Used iPhone X in good condition, unlocked, with charger and box.', 'Used iPhone X'),
 (1, 2, 'Nike', 'Air Max 270', 'New', 150, 'New Nike Air Max 270, size US 10, available in multiple colors.', 'New Nike Air Max 270'),
@@ -87,3 +86,15 @@ INSERT INTO wishlist (user_id, item_id) VALUES (3, 2), (4, 3);
 
 -- Insert sample shopping cart items
 INSERT INTO shopping_cart (user_id, item_id) VALUES (3, 1), (4, 4);
+
+-- Insert sample chats
+INSERT INTO chat (sender_id, receiver_id) VALUES 
+(1, 2), 
+(2, 1);
+
+-- Insert sample messages
+INSERT INTO messages (chat_id, sender_id, receiver_id, message) VALUES 
+(1, 1, 2, 'Hello, how are you?'),
+(1, 2, 1, 'I am fine, thank you. How about you?'),
+(1, 2, 1, 'Hey, are you there?'),
+(1, 1, 2, 'Yes, I am here. What can I do for you?');

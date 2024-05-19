@@ -9,7 +9,7 @@ $stmt = $db->prepare("SELECT * FROM categories");
 $stmt->execute();
 $categories = $stmt->fetchAll();
 
-// Get parameters from POST request
+// Get parameters
 $numbersPerPage = isset($_POST['numbers-per-page']) ? $_POST['numbers-per-page'] : 15;
 $sortOption = isset($_POST['sort-option']) ? $_POST['sort-option'] : 'recent-post';
 $categoryFilter = isset($_POST['category']) ? $_POST['category'] : 'all';
@@ -19,7 +19,6 @@ $priceMax = isset($_POST['price-max']) ? $_POST['price-max'] : 100000;
 $brandModel = isset($_POST['brand-model']) ? $_POST['brand-model'] : 'all';
 $search_name = isset($_GET['name']) ? $_GET['name'] : NULL;
 
-// Dynamically build SQL query based on parameters
 switch ($sortOption) {
     case 'high-prices':
         $orderBy = 'price DESC';
@@ -37,7 +36,7 @@ switch ($sortOption) {
         $orderBy = 'date DESC';
 }
 
-// Build the SQL query dynamically based on filters
+// Build the SQL query based on filters
 $query = "SELECT * FROM items WHERE price BETWEEN :priceMin AND :priceMax";
 $params = [
     ':priceMin' => $priceMin,
@@ -169,18 +168,16 @@ session_start();
         $htmlPosts = '';
 
         foreach ($posts as $post) {
-            // Generate HTML markup for each article
             $htmlPosts .= '<article class="iner-box-format background-color-dark-green">';
             $htmlPosts .= '<h3><a href="item.php?id=' . $post['id'] . '"> ' . htmlspecialchars($post['title']) . '</a></h3>';
             $htmlPosts .= '<img src="./assets/noimg.png" alt="">';//open post image
-            $htmlPosts .= '<h4 class="text-box-format" id="price">' . htmlspecialchars($post['price']) . '</h4>';
-            $htmlPosts .= '<h4 class="text-box-format">' . htmlspecialchars($post['description']) . '</h4>';
+            $htmlPosts .= '<h4 class="iner-box-format" id="price">' . htmlspecialchars($post['price']) . '</h4>';
+            $htmlPosts .= '<h4 class="iner-box-format">' . htmlspecialchars($post['description']) . '</h4>';
             $htmlPosts .= '<button><img src="./assets/heartempty.png" alt=""><h5>Add to Wishlist</h5></button>';
             $htmlPosts .= '<button><img src="./assets/shopping-cart.png" alt=""><h5>Add to Cart</h5></button>';
             $htmlPosts .= '</article>';
         }
 
-        // Echo the HTML markup for articles
         echo $htmlPosts;
 
         ?>

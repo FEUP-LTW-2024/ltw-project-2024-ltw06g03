@@ -109,6 +109,23 @@ function pfp_exists(string $email) {
     }
     return NULL;
 }
+
+function addMessage($chat_id, $sender_id, $receiver_id, $message) {
+    $db = getDatabaseConnection('database/database.db');
+    $query = "INSERT INTO messages (chat_id, sender_id, receiver_id, message) VALUES (:chat_id, :sender_id, :receiver_id, :message)";
+    $stmt = $db->prepare($query);
+    $stmt->execute([':chat_id' => $chat_id, ':sender_id' => $sender_id, ':receiver_id' => $receiver_id, ':message' => $message]);
+}
+function getUsernameFromId($userId)
+{
+    $db = getDatabaseConnection('database/database.db');
+    $query = "SELECT username FROM users WHERE id = :userId";
+    $stmt = $db->prepare($query);
+    $stmt->execute([':userId' => $userId]);
+    $user = $stmt->fetch(PDO::FETCH_ASSOC);
+    return $user ? $user['username'] : null;
+}
+
 function pfp_exists_with_id(int $id) {
     $pattern = 'user_images/' . $id . '.*';
     $files = glob($pattern, GLOB_NOSORT);
@@ -218,6 +235,4 @@ function get_categories(string $expr) {
     $stmt->execute();
     return $stmt->fetchAll();
 }
-
-
 ?>

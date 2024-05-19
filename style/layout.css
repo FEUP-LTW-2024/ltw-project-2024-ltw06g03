@@ -283,6 +283,58 @@ label {
     width: 100%;
 }
 
+#chat-page-body
+{
+    display: grid;
+    grid-template-columns: 0.25fr 1fr;
+    grid-template-areas: 
+    "header header"
+    "users chat"
+    "footer footer";
+    overflow: hidden;
+}
+#chat-page-body #navbar{
+    grid-area: header;
+}
+#chat-page-body section{
+    display: flex;
+    flex-direction: column;
+}
+#message-bar{
+    display: flex;
+}
+#message-bar input{
+    flex: 1;
+}
+#chat-page-body footer{
+    grid-area: footer;
+}
+
+.sended-message{
+    float: right;
+    clear: both;
+}
+
+.received-message{
+    float: left;
+    clear: both;
+}
+#chat-box{
+    overflow-y: scroll;
+}
+#chats ul{
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+}
+#chats {
+    overflow-y:scroll;
+}
+
+#chats h2{
+    text-align: center;
+}
+
 /* New Post Page */
 
 

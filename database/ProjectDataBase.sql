@@ -11,7 +11,8 @@ DROP TABLE IF EXISTS inquiries;
 DROP TABLE IF EXISTS shipping_forms;
 DROP TABLE IF EXISTS wishlist;
 DROP TABLE IF EXISTS shopping_cart;
-
+DROP TABLE IF EXISTS chat;
+DROP TABLE IF EXISTS messages;
 CREATE TABLE users (
     id INTEGER PRIMARY KEY AUTOINCREMENT,
     username VARCHAR NOT NULL,
@@ -104,4 +105,23 @@ CREATE TABLE shopping_cart (
     item_id INTEGER,
     FOREIGN KEY(user_id) REFERENCES buyer(id) ON DELETE CASCADE,
     FOREIGN KEY(item_id) REFERENCES items(id) ON DELETE CASCADE
+);
+
+CREATE TABLE chat (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    sender_id INTEGER,
+    receiver_id INTEGER,   
+    FOREIGN KEY(sender_id) REFERENCES users(id),
+    FOREIGN KEY(receiver_id) REFERENCES users(id)
+);
+
+CREATE TABLE messages (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    chat_id INTEGER,
+    sender_id INTEGER,
+    receiver_id INTEGER,
+    message TEXT,
+    FOREIGN KEY(chat_id) REFERENCES chat(id),
+    FOREIGN KEY(sender_id) REFERENCES users(id),
+    FOREIGN KEY(receiver_id) REFERENCES users(id)
 );
