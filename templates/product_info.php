@@ -54,4 +54,17 @@ function output_buying_order_info($info) {
     </div>
     
 <?php }
+
+function output_wishlist_info($info) { 
+    ?>
+    <a href="item.php?id=<?php echo $info['id'] ?>">
+    <div class="product-delete">
+        <!-- Product information -->
+        <div class="product-info">
+            <p>Title: <?php echo $info['title'] ?></p>
+            <p>Price: <?php echo $info['price'] ?>€</p>
+        </div>
+    </div>
+    </a>
+    <?php }
 ?>

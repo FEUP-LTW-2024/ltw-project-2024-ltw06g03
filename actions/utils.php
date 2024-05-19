@@ -1,5 +1,6 @@
 <?php
 include_once('../database/connect.php');
+include_once('actions/item.php');
 
 function is_seller(string $email) : bool {
     $db = getDatabaseConnection('database/database.db');
@@ -235,4 +236,20 @@ function get_categories(string $expr) {
     $stmt->execute();
     return $stmt->fetchAll();
 }
+
+function get_wishlist_items(int $id) {
+    $db = getDatabaseConnection('database/database.db');
+    $stmt = $db->prepare('SELECT * FROM wishlist WHERE user_id = :id');
+    $stmt->bindParam(':id', $id);
+    $stmt->execute();
+    $wishlist = $stmt->fetchAll();
+    $items = [];
+
+    foreach ($wishlist as $li) {
+        $items[] = get_item_info($li['item_id']);
+    }
+
+    return $items;
+}
+
 ?>

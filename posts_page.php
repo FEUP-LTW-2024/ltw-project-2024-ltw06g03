@@ -178,8 +178,8 @@ session_start();
             $htmlPosts .= '<img src="' . $photoPath . '" alt="">'; // Use the photo path
             $htmlPosts .= '<h4 class="iner-box-format" id="price">' . htmlspecialchars($post['price']) . '</h4>';
             $htmlPosts .= '<h4 class="iner-box-format">' . htmlspecialchars($post['description']) . '</h4>';
-            $htmlPosts .= '<button><img src="./assets/heartempty.png" alt=""><h5>Add to Wishlist</h5></button>';
-            $htmlPosts .= '<button class="add-to-cart" item-id="' . $post['id'] . '"><img src="./assets/shopping-cart.png"  alt="" ><h5>Add to Cart</h5></button>';
+            $htmlPosts .= '<button id="add-to-wish" item-id="'.$post['id'].'"><img src="./assets/heartempty.png" alt=""><h5>Add to Wishlist</h5></button>';
+            $htmlPosts .= '<button class="add-to-cart" item-id="'.$post['id'].'"><img src="./assets/shopping-cart.png"  alt="" ><h5>Add to Cart</h5></button>';
             $htmlPosts .= '</article>';
         }
 

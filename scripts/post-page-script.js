@@ -61,6 +61,7 @@ document.addEventListener("DOMContentLoaded", function () {
         const link_tree = document.getElementById("link-tree");
         link_tree.innerHTML = newlink_tree.innerHTML;
         attachAddToCartEventListeners();
+        attachWishlistEventListeners();
       }
     };
 
@@ -136,6 +137,39 @@ document.addEventListener("DOMContentLoaded", function () {
               alert("Item added to cart!");
             } else {
               alert("Failed to add item to cart.");
+            }
+          })
+          .catch((error) => {
+            console.error("Error:", error);
+          });
+      });
+    });
+  }
+
+  function attachWishlistEventListeners() {
+    document.querySelectorAll("#add-to-wish").forEach(function (element) {
+      console.log(element);
+      element.addEventListener("click", function () {
+        console.log("Button clicked");
+        const itemId = this.getAttribute("item-id");
+
+        const item = {
+          id: itemId,
+        };
+
+        fetch("actions/add_to_wishlist.php", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(item),
+        })
+          .then((response) => response.json())
+          .then((data) => {
+            if (data.success) {
+              alert("Item added to wishlist!");
+            } else {
+              alert("Failed to add item to wishlist.");
             }
           })
           .catch((error) => {
