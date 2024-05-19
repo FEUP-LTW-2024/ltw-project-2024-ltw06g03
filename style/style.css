@@ -995,5 +995,99 @@ input[type=number] {
     padding-left: 1em;
     padding-right: 1em;
 }
+/* admin */
+#admin-page {
+    padding: 2em;
+}
+.admin-page-boxes {
+    display: grid; /* Use grid to arrange items */
+    grid-template-columns: repeat(2, 1fr); /* Two columns with equal width */
+    grid-gap: 20px; /* Gap between grid items */
+    padding: 2em;
+    margin: 2em;
+}
+  
+  /* Admin box styling */
+.admin-box {
+    background-color: var(--bright_green);
+    border: 1px solid var(--very_dark_green);
+    border-radius: 5px;
+    padding: 20px;
+}
+  
+.admin-box h2 {
+    margin-top: 0;
+    margin-bottom: 10px;
+    color: var(--dark_green);
+}
+  
+  /* Form styling */
+.admin-box form {
+    margin-bottom: 15px;
+    
+}
 
-/* page items */
+.admin-box input[type="text"] {
+    width: calc(100% - 100px); /* Set the width of the input field */
+    padding: 8px;
+    margin-right: 10px;
+    margin-bottom: 2em;
+}
+
+.admin-box input::placeholder{
+    color: var(--beige);
+}
+.admin-box button {
+    padding: 8px 15px;
+    background-color: var(--dark_green);
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+  
+.admin-box button:hover {
+    color: var(--dark_green);
+    background-color: var(--beige);
+}
+
+.search-results-admin {
+    width: 80%; /* Adjust width as needed */
+    padding: 2em;
+    background-color: var(--bright_green);
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    margin: 2em auto; /* Center the search results */
+}
+.search-results-admin h2{
+    color: var(--dark_green);
+}
+
+.search-results-admin {
+    grid-gap: 20px; /* Adjust gap between grid items as needed */
+    padding: 20px;
+    background-color: var(--bright_green);
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.user-delete,
+.product-delete {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    padding: 10px;
+    background-color: var(--dark_green);
+    border-radius: 5px;
+    margin-bottom: 2em;
+}
+
+.delete-icon img {
+    width: 30px; 
+    height: 30px;
+    cursor: pointer;
+}
+
+
+.user-info,
+.product-info {
+    color: var(--beige);
+}

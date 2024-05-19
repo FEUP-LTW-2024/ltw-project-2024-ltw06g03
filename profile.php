@@ -61,6 +61,7 @@ session_start();
             <a href="my-orders"><button>My Orders</button></a>
             <?php }
             ?>
+            <a href="admin.php"><button>Admin</button></a>
         </div>
     </section>
     
