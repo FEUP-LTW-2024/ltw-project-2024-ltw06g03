@@ -547,7 +547,6 @@ input[type=number] {
 .row {
     display: flex;
     flex-direction: row;
-    height: 500px;
 }
 
 .photo-edit > img {
