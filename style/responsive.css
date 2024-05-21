@@ -387,16 +387,14 @@
         "footer";
         overflow: scroll;
     }
-    #chats
+    #chats ul
     {
         display : grid;
         grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
         height: 8em;
     }
-    #chats h2
-    {
-        grid-column: 1/6;
-    }
+    
+    
     #chat-box
     {
         height: 15em;
