@@ -2,9 +2,9 @@
 
 ## Group ltw06g03
 
-- Alexandre Silva (up202012345) 33%
-- Eduardo Cunha (up202012345) 33%
-- Filipe Esteves (up202012345) 33%
+- Alexandre Silva (up202206633) 33%
+- Eduardo Cunha (up202207126) 33%
+- Filipe Esteves (up202206515) 33%
 
 ## Install Instructions
 
