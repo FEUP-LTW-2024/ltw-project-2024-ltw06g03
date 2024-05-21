@@ -23,7 +23,7 @@ session_start();
         <div class = "admin-box scroll bmargin">
             <h2>My selling orders</h2>
             <?php
-            $seller_id = get_buyer_id(get_id_from_email($_SESSION['user_email']));
+            $seller_id = get_id_from_email($_SESSION['user_email']);
             if ($seller_id) {
                 $items = get_my_selling_orders($seller_id);
             }
@@ -36,7 +36,7 @@ session_start();
         <div class = "admin-box scroll bmargin">
             <h2>My buying orders</h2>
             <?php
-            $buyer_id = get_buyer_id(get_id_from_email($_SESSION['user_email']));
+            $buyer_id = get_id_from_email($_SESSION['user_email']);
             if ($buyer_id)
             {$items = get_my_buying_orders($buyer_id);}
             foreach ($items as $item) {
