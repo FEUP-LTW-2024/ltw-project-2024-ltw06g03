@@ -16,9 +16,9 @@ $stmt->execute([':id' => $id]);
 $chats = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
 if (isset($_GET['user_id'])) {
-    $query = 'SELECT * FROM chat WHERE sender_id = :id OR receiver_id = :id';
+    $query = 'SELECT * FROM chat WHERE (sender_id = :id1 AND receiver_id = :id2) OR (sender_id = :id2 AND receiver_id = :id1)';
     $stmt = $db->prepare($query);
-    $stmt->execute([$_GET['user_id']]);
+    $stmt->execute([$_GET['user_id'], $id]);
     $results = $stmt->fetch(PDO::FETCH_ASSOC);
     if (isset($results['id'])) {
         header("Location: http://localhost:9000/chat.php?chat_id=".$results['id']);
@@ -26,7 +26,7 @@ if (isset($_GET['user_id'])) {
     } else {
         $query = 'INSERT INTO chat (sender_id, receiver_id) VALUES (:current_id, :id)';
         $stmt = $db->prepare($query);
-        $stmt->execute([$id, $_GET['user_id']]);
+        $stmt->execute([$id, $_GET['seller_id']]);
         $chat_id = $db->lastInsertId();
         $query = 'INSERT INTO messages (chat_id, sender_id, receiver_id, message) VALUES (?,?,?,?)';
         $stmt = $db->prepare($query);
